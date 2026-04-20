@@ -23,32 +23,32 @@ import { cn } from "@/lib/utils";
 const formSchema = z.object({
   name: z
     .string()
-    .min(1, { message: "Name is required" })
-    .min(2, { message: "Name must be at least 2 characters" }),
+    .min(1, { message: "El nombre es obligatorio" })
+    .min(2, { message: "El nombre debe tener al menos 2 caracteres" }),
   company: z
     .string()
-    .min(1, { message: "Company name is required" }),
+    .min(1, { message: "El nombre de la empresa es obligatorio" }),
   email: z
     .string()
-    .min(1, { message: "Email is required" })
-    .email({ message: "Please enter a valid email address" }),
+    .min(1, { message: "El email es obligatorio" })
+    .email({ message: "Por favor, introduce una dirección de correo electrónico válida" }),
   password: z
     .string()
-    .min(8, { message: "Password must be at least 8 characters" })
-    .regex(/[A-Z]/, { message: "Must contain at least one uppercase letter" })
-    .regex(/[0-9]/, { message: "Must contain at least one number" }),
-  confirmPassword: z.string().min(1, { message: "Please confirm your password" }),
+    .min(8, { message: "La contraseña debe tener al menos 8 caracteres" })
+    .regex(/[A-Z]/, { message: "Debe contener al menos una letra mayúscula" })
+    .regex(/[0-9]/, { message: "Debe contener al menos un número" }),
+  confirmPassword: z.string().min(1, { message: "Por favor, confirma tu contraseña" }),
 }).refine((data) => data.password === data.confirmPassword, {
-  message: "Passwords do not match",
+  message: "Las contraseñas no coinciden",
   path: ["confirmPassword"],
 });
 
 type FormValues = z.infer<typeof formSchema>;
 
 const passwordRequirements = [
-  { label: "At least 8 characters", test: (p: string) => p.length >= 8 },
-  { label: "One uppercase letter", test: (p: string) => /[A-Z]/.test(p) },
-  { label: "One number", test: (p: string) => /[0-9]/.test(p) },
+  { label: "Al menos 8 caracteres", test: (p: string) => p.length >= 8 },
+  { label: "Una letra mayúscula", test: (p: string) => /[A-Z]/.test(p) },
+  { label: "Un número", test: (p: string) => /[0-9]/.test(p) },
 ];
 
 export default function RegisterPage() {
@@ -92,13 +92,13 @@ export default function RegisterPage() {
       // localStorage.setItem("auth_token", token);
 
       await new Promise((r) => setTimeout(r, 1500)); // Remove when backend is ready
-      toast.success("Account created!", {
-        description: "Welcome to Nova Studio. Redirecting...",
+      toast.success("Cuenta creada!", {
+        description: "Bienvenido a Nova Studio. Redirigiendo...",
       });
       router.push("/dashboard");
     } catch (error: any) {
-      toast.error("Registration failed", {
-        description: error?.message || "Something went wrong. Please try again.",
+      toast.error("Registro fallido", {
+        description: error?.message || "Algo ha ido mal, por favor inténtalo de nuevo.",
       });
     } finally {
       setIsLoading(false);
@@ -124,15 +124,15 @@ export default function RegisterPage() {
         {/* Benefits */}
         <div className="relative z-10 space-y-6">
           <h2 className="text-2xl font-bold text-white">
-            What you get with the Client Portal
+            Lo que obtienes con el Portal de Clientes
           </h2>
           <ul className="space-y-5">
             {[
-              "Real-time project progress tracking",
-              "Direct communication with your team",
-              "Invoices, contracts & shared files",
-              "Approve designs and review milestones",
-              "Access to your dedicated team channel",
+              "Seguimiento del progreso del proyecto en tiempo real",
+              "Comunicación directa con tu equipo",
+              "Facturas, contratos y archivos compartidos",
+              "Aprobar diseños y revisar hitos",
+              "Acceso a tu canal de equipo dedicado",
             ].map((benefit) => (
               <li key={benefit} className="flex items-start gap-3">
                 <CheckCircle className="h-5 w-5 text-emerald-400 shrink-0 mt-0.5" />
@@ -152,7 +152,7 @@ export default function RegisterPage() {
             className="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white transition-colors"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
-            Back to website
+            Volver a la página principal
           </Link>
         </div>
 
@@ -172,10 +172,10 @@ export default function RegisterPage() {
           {/* Header */}
           <div className="mb-10">
             <h1 className="text-3xl font-extrabold text-white tracking-tight mb-2">
-              Request Portal Access
+              Solicitar acceso al portal
             </h1>
             <p className="text-white/45 text-[15px]">
-              Create your account to start working with us.
+              Crea tu cuenta para empezar a trabajar con nosotros.
             </p>
           </div>
 
@@ -189,7 +189,7 @@ export default function RegisterPage() {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="text-white/60 text-sm font-medium">
-                        Full name
+                        Nombre completo
                       </FormLabel>
                       <FormControl>
                         <Input
@@ -215,7 +215,7 @@ export default function RegisterPage() {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="text-white/60 text-sm font-medium">
-                        Company
+                        Empresa
                       </FormLabel>
                       <FormControl>
                         <Input
@@ -243,7 +243,7 @@ export default function RegisterPage() {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="text-white/60 text-sm font-medium">
-                      Work email
+                      Correo electrónico
                     </FormLabel>
                     <FormControl>
                       <Input
@@ -271,7 +271,7 @@ export default function RegisterPage() {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="text-white/60 text-sm font-medium">
-                      Password
+                      Contraseña
                     </FormLabel>
                     <FormControl>
                       <div className="relative">
@@ -326,7 +326,7 @@ export default function RegisterPage() {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="text-white/60 text-sm font-medium">
-                      Confirm password
+                      Confirmar contraseña
                     </FormLabel>
                     <FormControl>
                       <div className="relative">
@@ -367,21 +367,21 @@ export default function RegisterPage() {
                 {isLoading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Creating account...
+                    Creando cuenta...
                   </>
                 ) : (
-                  "Create account"
+                  "Crear cuenta"
                 )}
               </Button>
 
               <p className="text-xs text-white/30 text-center leading-relaxed">
-                By creating an account you agree to our{" "}
+                Al crear una cuenta aceptas nuestros{" "}
                 <Link href="/terms" className="text-white/50 hover:text-white underline underline-offset-4">
-                  Terms of Service
+                  Términos de servicio
                 </Link>{" "}
-                and{" "}
+                y{" "}
                 <Link href="/privacy" className="text-white/50 hover:text-white underline underline-offset-4">
-                  Privacy Policy
+                  Política de privacidad
                 </Link>
               </p>
             </form>
@@ -390,7 +390,7 @@ export default function RegisterPage() {
           {/* Divider */}
           <div className="my-8 flex items-center gap-4">
             <div className="flex-1 h-px bg-white/[0.06]" />
-            <span className="text-xs text-white/25 font-medium">Already a client?</span>
+            <span className="text-xs text-white/25 font-medium">¿Ya eres cliente?</span>
             <div className="flex-1 h-px bg-white/[0.06]" />
           </div>
 
@@ -398,7 +398,7 @@ export default function RegisterPage() {
             href="/login"
             className="block w-full text-center h-12 rounded-xl border border-white/[0.09] text-white/60 font-semibold text-[15px] hover:bg-white/[0.04] hover:text-white transition-all leading-[3rem]"
           >
-            Sign in instead
+            Iniciar sesión
           </Link>
         </div>
       </div>

@@ -23,12 +23,12 @@ import { cn } from "@/lib/utils";
 const formSchema = z.object({
   email: z
     .string()
-    .min(1, { message: "Email is required" })
-    .email({ message: "Please enter a valid email address" }),
+    .min(1, { message: "El correo electrónico es obligatorio" })
+    .email({ message: "Por favor, introduce una dirección de correo electrónico válida" }),
   password: z
     .string()
-    .min(1, { message: "Password is required" })
-    .min(6, { message: "Password must be at least 6 characters" }),
+    .min(1, { message: "La contraseña es obligatoria" })
+    .min(6, { message: "La contraseña debe tener al menos 6 caracteres" }),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -57,11 +57,11 @@ export default function LoginPage() {
       // localStorage.setItem("auth_token", token);
 
       await new Promise((r) => setTimeout(r, 1200)); // Remove when backend is ready
-      toast.success("Welcome back!", { description: "Redirecting to your dashboard..." });
+      toast.success("¡Bienvenido de nuevo!", { description: "Redirigiendo a tu panel de control..." });
       router.push("/dashboard");
     } catch (error) {
-      toast.error("Authentication failed", {
-        description: "Invalid email or password. Please try again.",
+      toast.error("Autenticación fallida", {
+        description: "Correo electrónico o contraseña inválidos. Por favor, intenta de nuevo.",
       });
     } finally {
       setIsLoading(false);
@@ -96,7 +96,7 @@ export default function LoginPage() {
             ))}
           </div>
           <blockquote className="text-xl font-medium text-white leading-relaxed">
-            "Nova Studio redesigned our entire platform in 8 weeks. The quality was staggering — our conversion rate jumped 34%."
+            "Nova Studio rediseñó toda nuestra plataforma en 8 semanas. La calidad fue impresionante — nuestra tasa de conversión aumentó un 34%."
           </blockquote>
           <div className="flex items-center gap-3">
             <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold text-white">
@@ -119,7 +119,7 @@ export default function LoginPage() {
             className="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white transition-colors"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
-            Back to website
+            Volver al sitio web
           </Link>
         </div>
 
@@ -139,10 +139,10 @@ export default function LoginPage() {
           {/* Header */}
           <div className="mb-10">
             <h1 className="text-3xl font-extrabold text-white tracking-tight mb-2">
-              Client Portal
+              Portal de Clientes
             </h1>
             <p className="text-white/45 text-[15px]">
-              Sign in to track your projects and invoices.
+              Inicia sesión para seguir tus proyectos y facturas.
             </p>
           </div>
 
@@ -155,7 +155,7 @@ export default function LoginPage() {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="text-white/60 text-sm font-medium">
-                      Email address
+                      Correo electrónico
                     </FormLabel>
                     <FormControl>
                       <Input
@@ -184,13 +184,13 @@ export default function LoginPage() {
                   <FormItem>
                     <div className="flex items-center justify-between">
                       <FormLabel className="text-white/60 text-sm font-medium">
-                        Password
+                        Contraseña
                       </FormLabel>
                       <Link
                         href="/forgot-password"
                         className="text-xs text-white/40 hover:text-white transition-colors"
                       >
-                        Forgot password?
+                        ¿Olvidaste tu contraseña?
                       </Link>
                     </div>
                     <FormControl>
@@ -236,10 +236,10 @@ export default function LoginPage() {
                 {isLoading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Signing in...
+                    Iniciando sesión...
                   </>
                 ) : (
-                  "Sign in"
+                  "Iniciar sesión"
                 )}
               </Button>
             </form>
@@ -254,12 +254,12 @@ export default function LoginPage() {
 
           {/* Register link */}
           <p className="text-center text-sm text-white/40">
-            Don&apos;t have an account?{" "}
+            ¿No tienes una cuenta?{" "}
             <Link
               href="/register"
               className="text-white font-semibold hover:text-white/70 transition-colors underline underline-offset-4"
             >
-              Request access
+              Solicitar acceso
             </Link>
           </p>
         </div>

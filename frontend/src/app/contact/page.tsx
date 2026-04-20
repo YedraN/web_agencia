@@ -31,32 +31,32 @@ const fadeUp: Record<string, any> = {
 };
 
 const formSchema = z.object({
-  name: z.string().min(2, "Name is required"),
-  email: z.string().email("Enter a valid email"),
+  name: z.string().min(2, "El nombre es requerido"),
+  email: z.string().email("Ingrese un correo electrónico válido"),
   company: z.string().optional(),
-  service: z.string().min(1, "Please select a service"),
-  budget: z.string().min(1, "Please select a budget range"),
-  message: z.string().min(20, "Please describe your project (min. 20 characters)"),
+  service: z.string().min(1, "Por favor seleccione un servicio"),
+  budget: z.string().min(1, "Por favor seleccione un rango de presupuesto"),
+  message: z.string().min(20, "Por favor describa su proyecto (mínimo 20 caracteres)"),
 });
 
 type FormValues = z.infer<typeof formSchema>;
 
 const services = [
-  "Digital Product Design",
-  "Web Engineering",
-  "AI & Automation",
-  "Brand & Identity",
-  "Full-Stack Project",
-  "Other",
+  "Diseño de productos digitales",
+  "Ingeniería web",
+  "IA y automatización",
+  "Marca e identidad",
+  "Proyecto Full-Stack",
+  "Otro",
 ];
 
 const budgets = [
-  "Under $10k",
+  "Menos de $10k",
   "$10k – $25k",
   "$25k – $50k",
   "$50k – $100k",
   "$100k+",
-  "Let's discuss",
+  "Hablemos",
 ];
 
 const fieldClass = cn(
@@ -94,9 +94,9 @@ export default function ContactPage() {
 
       await new Promise((r) => setTimeout(r, 1500));
       setSubmitted(true);
-      toast.success("Message sent!", { description: "We'll get back to you within 24 hours." });
+      toast.success("Mensaje enviado", { description: "Te responderemos en 24 horas." });
     } catch {
-      toast.error("Something went wrong. Please email us directly.");
+      toast.error("Algo salió mal. Por favor envíanos un correo electrónico directamente.");
     } finally {
       setIsLoading(false);
     }
@@ -112,16 +112,16 @@ export default function ContactPage() {
           <div className="mx-auto max-w-7xl px-6 sm:px-10">
             <motion.p variants={fadeUp} initial="hidden" animate="visible"
               className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-4">
-              Get In Touch
+              Ponte en contacto
             </motion.p>
             <motion.h1 variants={fadeUp} initial="hidden" animate="visible" custom={0.5}
               className="text-6xl md:text-7xl font-extrabold text-white tracking-[-0.04em] leading-[0.95] max-w-3xl mb-6">
-              Let's build something{" "}
-              <span className="text-white/25 font-light italic">great.</span>
+              Construyamos algo{" "}
+              <span className="text-white/25 font-light italic">genial.</span>
             </motion.h1>
             <motion.p variants={fadeUp} initial="hidden" animate="visible" custom={1}
               className="text-lg text-white/45 max-w-xl leading-relaxed">
-              Tell us about your project. We'll respond within 24 hours with honest advice, a rough timeline, and a ballpark figure — no strings attached.
+              Háblanos de tu proyecto. Te responderemos en 24 horas con consejos honestos, un cronograma aproximado y una cifra aproximada, sin compromiso.
             </motion.p>
           </div>
         </section>
@@ -142,9 +142,9 @@ export default function ContactPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h2 className="text-3xl font-bold text-white mb-3">Message received!</h2>
+                  <h2 className="text-3xl font-bold text-white mb-3">¡Mensaje recibido!</h2>
                   <p className="text-white/50 max-w-sm">
-                    We'll review your project and get back to you within 24 hours. Check your inbox.
+                    Revisaremos tu proyecto y te responderemos en 24 horas. Revisa tu bandeja de entrada.
                   </p>
                 </motion.div>
               ) : (
@@ -184,7 +184,7 @@ export default function ContactPage() {
                       name="company"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-white/60 text-sm font-medium">Company (optional)</FormLabel>
+                          <FormLabel className="text-white/60 text-sm font-medium">Compañía (opcional)</FormLabel>
                           <FormControl>
                             <Input id="contact-company" placeholder="Acme Corp" disabled={isLoading} className={fieldClass} {...field} />
                           </FormControl>
@@ -199,7 +199,7 @@ export default function ContactPage() {
                         name="service"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-white/60 text-sm font-medium">Service needed *</FormLabel>
+                            <FormLabel className="text-white/60 text-sm font-medium">Servicio necesario *</FormLabel>
                             <FormControl>
                               <select
                                 id="contact-service"
@@ -207,7 +207,7 @@ export default function ContactPage() {
                                 className={cn(fieldClass, "w-full appearance-none px-3 cursor-pointer")}
                                 {...field}
                               >
-                                <option value="" className="bg-[#111]">Select a service...</option>
+                                <option value="" className="bg-[#111]">Selecciona un servicio...</option>
                                 {services.map((s) => (
                                   <option key={s} value={s} className="bg-[#111]">{s}</option>
                                 ))}
@@ -222,7 +222,7 @@ export default function ContactPage() {
                         name="budget"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-white/60 text-sm font-medium">Budget range *</FormLabel>
+                            <FormLabel className="text-white/60 text-sm font-medium">Rango de presupuesto *</FormLabel>
                             <FormControl>
                               <select
                                 id="contact-budget"
@@ -230,7 +230,7 @@ export default function ContactPage() {
                                 className={cn(fieldClass, "w-full appearance-none px-3 cursor-pointer")}
                                 {...field}
                               >
-                                <option value="" className="bg-[#111]">Select budget...</option>
+                                <option value="" className="bg-[#111]">Selecciona un rango de presupuesto...</option>
                                 {budgets.map((b) => (
                                   <option key={b} value={b} className="bg-[#111]">{b}</option>
                                 ))}
@@ -247,7 +247,7 @@ export default function ContactPage() {
                       name="message"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-white/60 text-sm font-medium">Tell us about your project *</FormLabel>
+                          <FormLabel className="text-white/60 text-sm font-medium">Háblanos de tu proyecto *</FormLabel>
                           <FormControl>
                             <textarea
                               id="contact-message"
@@ -275,10 +275,10 @@ export default function ContactPage() {
                       {isLoading ? (
                         <>
                           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                          Sending...
+                          Enviando...
                         </>
                       ) : (
-                        "Send Message"
+                        "Enviar mensaje"
                       )}
                     </Button>
                   </form>
@@ -292,9 +292,9 @@ export default function ContactPage() {
                 <h3 className="font-bold text-white text-lg">Contact details</h3>
                 <div className="space-y-4">
                   {[
-                    { icon: Mail, label: "Email", value: "hello@novastudio.co", href: "mailto:hello@novastudio.co" },
-                    { icon: Clock, label: "Response time", value: "Within 24 hours", href: null },
-                    { icon: MapPin, label: "Location", value: "San Francisco, CA — Remote", href: null },
+                    { icon: Mail, label: "Email", value: "[EMAIL_ADDRESS]", href: "mailto:[EMAIL_ADDRESS]" },
+                    { icon: Clock, label: "Tiempo de respuesta", value: "En 24 horas", href: null },
+                    { icon: MapPin, label: "Ubicación", value: "San Francisco, CA — Remoto", href: null },
                   ].map((contact) => (
                     <div key={contact.label} className="flex items-start gap-3">
                       <div className="h-8 w-8 rounded-lg bg-white/[0.05] flex items-center justify-center shrink-0">
@@ -318,27 +318,27 @@ export default function ContactPage() {
                   <div className="h-9 w-9 rounded-xl bg-white/[0.06] flex items-center justify-center group-hover:bg-white/10 transition-colors">
                     <Video className="h-4 w-4 text-white/50" />
                   </div>
-                  <h3 className="font-bold text-white text-base">Prefer a call?</h3>
+                  <h3 className="font-bold text-white text-base">¿Prefieres una llamada?</h3>
                 </div>
                 <p className="text-sm text-white/45 mb-4 leading-relaxed">
-                  Book a free 30-minute discovery call. Pick a time that works for you.
+                  Agenda una llamada de descubrimiento gratuita de 30 minutos. Elige el horario que mejor te convenga.
                 </p>
                 <button
                   id="open-booking-modal"
                   onClick={() => setBookingOpen(true)}
                   className="w-full py-2.5 rounded-xl bg-white/[0.06] border border-white/[0.08] text-sm font-semibold text-white hover:bg-white/10 hover:border-white/20 transition-all"
                 >
-                  Schedule a Call
+                  Agendar una llamada
                 </button>
               </div>
 
               <div className="p-6 rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.04]">
                 <div className="flex items-center gap-2 mb-2">
                   <div className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span className="text-xs font-semibold text-emerald-400 uppercase tracking-widest">Available</span>
+                  <span className="text-xs font-semibold text-emerald-400 uppercase tracking-widest">Disponible</span>
                 </div>
                 <p className="text-sm text-white/60 leading-relaxed">
-                  We currently have capacity for <span className="text-white font-semibold">1–2 new projects</span> starting this quarter.
+                  Actualmente tenemos capacidad para <span className="text-white font-semibold">1–2 nuevos proyectos</span> a partir de este trimestre.
                 </p>
               </div>
             </div>

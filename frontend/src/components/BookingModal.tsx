@@ -40,10 +40,10 @@ const TIME_SLOTS = [
   "14:00", "14:30", "15:00", "15:30", "16:00", "16:30",
 ];
 
-const DAY_NAMES = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+const DAY_NAMES = ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sá"];
 const MONTH_NAMES = [
-  "January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December",
+  "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+  "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre",
 ];
 
 const CALL_DURATION = 30; // minutes
@@ -162,10 +162,10 @@ function CalendarPicker({
                 isSelected
                   ? "bg-white text-black font-bold"
                   : disabled
-                  ? "text-white/15 cursor-not-allowed"
-                  : isToday
-                  ? "text-white border border-white/20 hover:bg-white/[0.08]"
-                  : "text-white/70 hover:bg-white/[0.08] hover:text-white"
+                    ? "text-white/15 cursor-not-allowed"
+                    : isToday
+                      ? "text-white border border-white/20 hover:bg-white/[0.08]"
+                      : "text-white/70 hover:bg-white/[0.08] hover:text-white"
               )}
             >
               {date.getDate()}
@@ -236,10 +236,10 @@ export function BookingModal({ open, onOpenChange }: BookingModalProps) {
   function validate(): boolean {
     const newErrors: Partial<BookingForm> = {};
     if (!form.name.trim() || form.name.trim().length < 2) {
-      newErrors.name = "Please enter your name";
+      newErrors.name = "Por favor, introduce tu nombre";
     }
     if (!form.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
-      newErrors.email = "Please enter a valid email";
+      newErrors.email = "Por favor, introduce un correo electrónico válido";
     }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -270,7 +270,7 @@ export function BookingModal({ open, onOpenChange }: BookingModalProps) {
       await new Promise((r) => setTimeout(r, 1500)); // remove when real API is ready
       setStep("success");
     } catch (error) {
-      toast.error("Couldn't confirm the booking. Please try again or email us directly.");
+      toast.error("No se pudo confirmar la reserva. Por favor, inténtalo de nuevo o envíanos un correo electrónico directamente.");
     } finally {
       setIsLoading(false);
     }
@@ -298,11 +298,11 @@ export function BookingModal({ open, onOpenChange }: BookingModalProps) {
           </div>
           <div>
             <DialogTitle className="text-base font-bold text-white leading-tight">
-              Discovery Call · {CALL_DURATION} min
+              Llamada de Descubrimiento · {CALL_DURATION} min
             </DialogTitle>
             <div className="flex items-center gap-3 mt-1">
               <span className="flex items-center gap-1 text-xs text-white/40">
-                <Clock className="h-3 w-3" /> {CALL_DURATION} minutes
+                <Clock className="h-3 w-3" /> {CALL_DURATION} minutos
               </span>
               <span className="text-white/20">·</span>
               <span className="flex items-center gap-1 text-xs text-white/40">
@@ -325,8 +325,8 @@ export function BookingModal({ open, onOpenChange }: BookingModalProps) {
                   step === s
                     ? "w-6 bg-white"
                     : i < ["calendar", "form", "success"].indexOf(step)
-                    ? "w-3 bg-white/40"
-                    : "w-3 bg-white/10"
+                      ? "w-3 bg-white/40"
+                      : "w-3 bg-white/10"
                 )}
               />
             ))}
@@ -350,7 +350,7 @@ export function BookingModal({ open, onOpenChange }: BookingModalProps) {
                 {/* Left: Calendar */}
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-widest text-white/30 mb-4">
-                    Select a date
+                    Selecciona una fecha
                   </p>
                   <CalendarPicker
                     selected={selectedDate}
@@ -368,7 +368,7 @@ export function BookingModal({ open, onOpenChange }: BookingModalProps) {
                       <p className="text-xs font-semibold uppercase tracking-widest text-white/30 mb-1">
                         {formatDate(selectedDate)}
                       </p>
-                      <p className="text-xs text-white/25 mb-4">Available slots</p>
+                      <p className="text-xs text-white/25 mb-4">Horas disponibles</p>
                       <TimeSlots
                         selected={selectedTime}
                         onSelect={setSelectedTime}
@@ -377,7 +377,7 @@ export function BookingModal({ open, onOpenChange }: BookingModalProps) {
                   ) : (
                     <div className="h-full flex flex-col items-center justify-center text-center text-white/25">
                       <Calendar className="h-10 w-10 mb-3 opacity-30" />
-                      <p className="text-sm">Select a date to see available time slots</p>
+                      <p className="text-sm">Selecciona una fecha para ver las horas disponibles</p>
                     </div>
                   )}
                 </div>
@@ -404,24 +404,24 @@ export function BookingModal({ open, onOpenChange }: BookingModalProps) {
                     <div className="text-sm font-semibold text-white">
                       {selectedDate ? formatDate(selectedDate) : ""} · {selectedTime}
                     </div>
-                    <div className="text-xs text-white/40">Discovery Call · {CALL_DURATION} min · Google Meet</div>
+                    <div className="text-xs text-white/40">Llamada de Descubrimiento · {CALL_DURATION} min · Google Meet</div>
                   </div>
                   <button
                     onClick={() => setStep("calendar")}
                     className="ml-auto text-xs text-white/40 hover:text-white transition-colors underline underline-offset-4"
                   >
-                    Change
+                    Cambiar
                   </button>
                 </div>
 
                 <div className="space-y-4">
                   <p className="text-xs font-semibold uppercase tracking-widest text-white/30 mb-4">
-                    Your details
+                    Tus datos
                   </p>
 
                   <div>
                     <label className="block text-sm font-medium text-white/60 mb-1.5">
-                      Full name *
+                      Nombre completo *
                     </label>
                     <Input
                       id="booking-name"
@@ -435,12 +435,12 @@ export function BookingModal({ open, onOpenChange }: BookingModalProps) {
 
                   <div>
                     <label className="block text-sm font-medium text-white/60 mb-1.5">
-                      Email address *
+                      Correo electrónico *
                     </label>
                     <Input
                       id="booking-email"
                       type="email"
-                      placeholder="you@company.com"
+                      placeholder="[EMAIL_ADDRESS]"
                       value={form.email}
                       onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
                       className="h-11 bg-white/[0.04] border-white/[0.09] text-white placeholder:text-white/25 focus-visible:ring-white/20 focus-visible:border-white/20 rounded-xl"
@@ -450,12 +450,12 @@ export function BookingModal({ open, onOpenChange }: BookingModalProps) {
 
                   <div>
                     <label className="block text-sm font-medium text-white/60 mb-1.5">
-                      What would you like to discuss? <span className="text-white/25">(optional)</span>
+                      ¿Sobre qué te gustaría hablar? <span className="text-white/25">(opcional)</span>
                     </label>
                     <textarea
                       id="booking-topic"
                       rows={3}
-                      placeholder="e.g. We need a new e-commerce platform and are evaluating agencies..."
+                      placeholder="e.g. Necesitamos una nueva plataforma de e-commerce y estamos evaluando agencias..."
                       value={form.topic}
                       onChange={(e) => setForm((f) => ({ ...f, topic: e.target.value }))}
                       className="w-full px-3 py-2.5 bg-white/[0.04] border border-white/[0.09] text-white placeholder:text-white/25 focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-white/20 rounded-xl resize-none text-sm"
@@ -489,7 +489,7 @@ export function BookingModal({ open, onOpenChange }: BookingModalProps) {
                   transition={{ delay: 0.25 }}
                   className="text-2xl font-extrabold text-white mb-2"
                 >
-                  You're booked!
+                  ¡Reserva confirmada!
                 </motion.h3>
                 <motion.p
                   initial={{ opacity: 0 }}
@@ -497,11 +497,11 @@ export function BookingModal({ open, onOpenChange }: BookingModalProps) {
                   transition={{ delay: 0.35 }}
                   className="text-white/50 text-sm max-w-sm mb-8 leading-relaxed"
                 >
-                  A confirmation has been sent to{" "}
+                  Hemos enviado una confirmación a{" "}
                   <span className="text-white font-semibold">{form.email}</span>.
-                  We'll see you on{" "}
+                  Nos vemos el{" "}
                   <span className="text-white font-semibold">
-                    {selectedDate ? formatDate(selectedDate) : ""} at {selectedTime}
+                    {selectedDate ? formatDate(selectedDate) : ""} a las {selectedTime}
                   </span>.
                 </motion.p>
 
@@ -518,18 +518,18 @@ export function BookingModal({ open, onOpenChange }: BookingModalProps) {
                     }}
                     className="rounded-full bg-white text-black hover:bg-white/90 font-semibold px-6"
                   >
-                    Back to site
+                    Volver al sitio
                   </Button>
                   <Button
                     variant="ghost"
                     onClick={() => {
                       // TODO: Generate .ics file download or add to Google Calendar
-                      toast.info("Add to calendar — coming soon");
+                      toast.info("Añadir al calendario — próximamente");
                     }}
                     className="rounded-full border border-white/10 hover:bg-white/[0.05] text-white/60 hover:text-white px-6"
                   >
                     <Calendar className="h-4 w-4 mr-2" />
-                    Add to Calendar
+                    Añadir al calendario
                   </Button>
                 </motion.div>
               </motion.div>
@@ -546,7 +546,7 @@ export function BookingModal({ open, onOpenChange }: BookingModalProps) {
                 className="flex items-center gap-1.5 text-sm text-white/40 hover:text-white transition-colors"
               >
                 <ChevronLeft className="h-4 w-4" />
-                Back
+                Volver
               </button>
             ) : (
               <div />
@@ -558,7 +558,7 @@ export function BookingModal({ open, onOpenChange }: BookingModalProps) {
                 disabled={!canContinue}
                 className="rounded-full bg-white text-black hover:bg-white/90 font-semibold px-6 disabled:opacity-30"
               >
-                Continue
+                Continuar
                 <ChevronRight className="ml-1.5 h-4 w-4" />
               </Button>
             ) : (
@@ -571,10 +571,10 @@ export function BookingModal({ open, onOpenChange }: BookingModalProps) {
                 {isLoading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Confirming...
+                    Confirmando...
                   </>
                 ) : (
-                  "Confirm Booking"
+                  "Confirmar Reserva"
                 )}
               </Button>
             )}

@@ -14,12 +14,12 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Nova Studio | Creative & AI Agency",
-  description: "We build high-end digital experiences — from stunning web applications to complex AI-driven automation systems. Partner with Nova Studio.",
-  keywords: ["digital agency", "web design", "AI automation", "UI/UX", "web development"],
+  title: "Nova Studio | Agencia de IA",
+  description: "Creamos experiencias digitales de alto nivel, desde aplicaciones web impresionantes hasta sistemas complejos de automatización impulsados por IA. Asóciate con Nova Studio.",
+  keywords: ["agencia digital", "diseño web", "automatización de IA", "UI/UX", "desarrollo web"],
   openGraph: {
-    title: "Nova Studio | Creative & AI Agency",
-    description: "We build high-end digital experiences for ambitious brands.",
+    title: "Nova Studio | Agencia de IA",
+    description: "Creamos experiencias digitales de alto nivel para marcas ambiciosas.",
     type: "website",
   },
 };

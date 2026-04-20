@@ -21,68 +21,68 @@ const services = [
     id: "design",
     icon: Palette,
     number: "01",
-    title: "Digital Product Design",
+    title: "Diseño de productos digitales",
     subtitle: "UX & UI Design",
     description:
-      "We design interfaces that users actually enjoy using. From initial concept to pixel-perfect Figma files, every screen is crafted with real users in mind — not just aesthetics.",
+      "Diseñamos interfaces que los usuarios realmente disfrutan usando. Desde el concepto inicial hasta archivos Figma perfectos, cada pantalla se crea pensando en usuarios reales, no solo en la estética.",
     features: [
-      "UX Research & User Testing",
-      "Information Architecture",
-      "Wireframing & Prototyping",
-      "High-Fidelity UI Design",
-      "Design System Creation",
-      "Accessibility (WCAG 2.1 AA)",
+      "Investigación de UX y pruebas de usuario",
+      "Arquitectura de la información",
+      "Wireframing y prototipado",
+      "Diseño UI de alta fidelidad",
+      "Creación de sistemas de diseño",
+      "Accesibilidad (WCAG 2.1 AA)",
     ],
   },
   {
     id: "engineering",
     icon: Code2,
     number: "02",
-    title: "Web Engineering",
+    title: "Ingeniería web",
     subtitle: "Frontend & Backend",
     description:
-      "We build fast, scalable, and maintainable applications using the technologies best suited to your needs. We don't follow trends blindly — we choose what works.",
+      "Creamos aplicaciones rápidas, escalables y mantenibles utilizando las tecnologías más adecuadas para tus necesidades. No seguimos tendencias ciegamente, elegimos lo que funciona.",
     features: [
-      "React / Next.js Applications",
-      "REST & GraphQL APIs",
-      "Database Design & Optimization",
-      "Cloud Deployment (AWS, Vercel)",
-      "Performance Optimization",
-      "CI/CD & DevOps",
+      "Aplicaciones React / Next.js",
+      "APIs REST y GraphQL",
+      "Diseño y optimización de bases de datos",
+      "Despliegue en la nube (AWS, Vercel)",
+      "Optimización del rendimiento",
+      "CI/CD y DevOps",
     ],
   },
   {
     id: "ai",
     icon: Cpu,
     number: "03",
-    title: "AI & Automation",
+    title: "IA y automatización",
     subtitle: "LLMs & Intelligent Workflows",
     description:
-      "We integrate AI into real products — not demos. From intelligent document processing to custom LLM-powered assistants, we build automation that actually saves time and money.",
+      "Integramos IA en productos reales, no en demos. Desde el procesamiento inteligente de documentos hasta asistentes personalizados impulsados por LLM, creamos automatizaciones que realmente ahorran tiempo y dinero.",
     features: [
-      "LLM Integration (GPT-4, Claude, Gemini)",
-      "Custom AI Chatbots & Agents",
-      "Document & Data Processing",
-      "Workflow Automation (n8n, Zapier)",
-      "Predictive Analytics",
-      "AI-Assisted Content Systems",
+      "Integración de LLM (GPT-4, Claude, Gemini)",
+      "Chatbots y agentes de IA personalizados",
+      "Procesamiento de documentos y datos",
+      "Automatización de flujos de trabajo (n8n, Zapier)",
+      "Análisis predictivo",
+      "Sistemas de contenido asistidos por IA",
     ],
   },
   {
     id: "branding",
     icon: Layers,
     number: "04",
-    title: "Brand & Identity",
-    subtitle: "Visual Strategy",
+    title: "Marca e identidad",
+    subtitle: "Estrategia visual",
     description:
-      "Your brand is more than a logo. We develop comprehensive visual identities that scale across every touchpoint — from web to print, from pitch decks to social media.",
+      "Tu marca es más que un logo. Desarrollamos identidades visuales completas que escalan en todos los puntos de contacto, desde la web hasta la imprenta, desde presentaciones hasta redes sociales.",
     features: [
-      "Logo & Mark Design",
-      "Color & Typography Systems",
-      "Brand Voice & Positioning",
-      "Marketing Asset Creation",
-      "Pitch Deck Design",
-      "Social Media Kit",
+      "Diseño de logos y marcas",
+      "Sistemas de color y tipografía",
+      "Voz y posicionamiento de marca",
+      "Creación de activos de marketing",
+      "Diseño de presentaciones",
+      "Kit de redes sociales",
     ],
   },
 ];
@@ -102,12 +102,12 @@ export default function ServicesPage() {
             </motion.p>
             <motion.h1 variants={fadeUp} initial="hidden" animate="visible" custom={0.5}
               className="text-6xl md:text-7xl font-extrabold text-white tracking-[-0.04em] leading-[0.95] max-w-3xl mb-6">
-              Services built for{" "}
-              <span className="text-white/25 font-light italic">impact.</span>
+              Servicios diseñados para{" "}
+              <span className="text-white/25 font-light italic">impacto.</span>
             </motion.h1>
             <motion.p variants={fadeUp} initial="hidden" animate="visible" custom={1}
               className="text-lg text-white/45 max-w-xl leading-relaxed">
-              We offer end-to-end digital services. Whether you need a single specialized skill or a full-stack partner, we adapt to your needs.
+              Ofrecemos servicios digitales completos. Ya sea que necesites una habilidad especializada o un socio full-stack, nos adaptamos a tus necesidades.
             </motion.p>
           </div>
         </section>
@@ -152,7 +152,7 @@ export default function ServicesPage() {
                         "rounded-full bg-white text-black hover:bg-white/90 font-semibold group"
                       )}
                     >
-                      Discuss this service
+                      Hablar de este servicio
                       <ArrowRight className="ml-2 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </div>
@@ -178,16 +178,16 @@ export default function ServicesPage() {
         <section className="py-32">
           <div className="mx-auto max-w-4xl px-6 sm:px-10 text-center">
             <h2 className="text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-[0.95] mb-6">
-              Not sure what you need?
+              ¿No estás seguro de lo que necesitas?
             </h2>
             <p className="text-white/45 text-lg mb-10 max-w-lg mx-auto">
-              Book a free 30-minute discovery call. We'll listen, ask the right questions, and recommend the best path forward — no sales pressure.
+              Reserva una llamada de descubrimiento gratuita de 30 minutos. Escucharemos, haremos las preguntas correctas y recomendaremos el mejor camino a seguir, sin presión de ventas.
             </p>
             <Link
               href="/contact"
               className={cn(buttonVariants({ size: "lg" }), "rounded-full bg-white text-black hover:bg-white/90 font-bold h-14 px-8")}
             >
-              Book a Discovery Call
+              Reservar una reunión
               <ArrowUpRight className="ml-2 h-4 w-4" />
             </Link>
           </div>

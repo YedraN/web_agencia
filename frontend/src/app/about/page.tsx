@@ -19,31 +19,31 @@ const fadeUp: Record<string, any> = {
 const values = [
   {
     num: "01",
-    title: "Radical transparency",
-    desc: "You'll always know what we're working on, why, and what it costs. No hidden fees, no surprises.",
+    title: "Transparencia radical",
+    desc: "Siempre sabrás en qué estamos trabajando, por qué y cuánto cuesta. Sin cargos ocultos, sin sorpresas.",
   },
   {
     num: "02",
-    title: "Quality over volume",
-    desc: "We work with fewer clients to give each engagement the attention it deserves. Your project is never just a number.",
+    title: "Calidad sobre cantidad",
+    desc: "Trabajamos con menos clientes para dar a cada proyecto la atención que merece. Tu proyecto nunca es solo un número.",
   },
   {
     num: "03",
-    title: "Senior talent, always",
-    desc: "Every engagement is led by experienced seniors. We don't hand your project off to juniors.",
+    title: "Talento senior, siempre",
+    desc: "Cada proyecto es liderado por seniors experimentados. No entregamos tu proyecto a juniors.",
   },
   {
     num: "04",
-    title: "Results that make sense",
-    desc: "We measure success by outcomes, not deliverables. If it doesn't move the needle, we iterate.",
+    title: "Resultados que tienen sentido",
+    desc: "Medimos el éxito por los resultados, no por las entregas. Si no mueve la aguja, iteramos.",
   },
 ];
 
 const team = [
-  { name: "Alex Monroe", role: "Creative Director", initials: "AM" },
-  { name: "Sarah Chen", role: "Lead Engineer", initials: "SC" },
-  { name: "Marcus Silva", role: "AI Specialist", initials: "MS" },
-  { name: "Priya Patel", role: "UX Lead", initials: "PP" },
+  { name: "Alex Monroe", role: "Director Creativo", initials: "AM" },
+  { name: "Sarah Chen", role: "Ingeniera Principal", initials: "SC" },
+  { name: "Marcus Silva", role: "Especialista en IA", initials: "MS" },
+  { name: "Priya Patel", role: "Líder de UX", initials: "PP" },
 ];
 
 export default function AboutPage() {
@@ -57,18 +57,18 @@ export default function AboutPage() {
           <div className="mx-auto max-w-7xl px-6 sm:px-10">
             <motion.p variants={fadeUp} initial="hidden" animate="visible"
               className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-4">
-              The Agency
+              La Agencia
             </motion.p>
             <motion.h1 variants={fadeUp} initial="hidden" animate="visible" custom={0.5}
               className="text-6xl md:text-7xl font-extrabold text-white tracking-[-0.04em] leading-[0.95] max-w-4xl mb-8">
-              We're Nova Studio.
+              Somos Nova Studio.
               <br />
-              <span className="text-white/25 font-light italic">Small team, big ideas.</span>
+              <span className="text-white/25 font-light italic">Equipo pequeño, grandes ideas.</span>
             </motion.h1>
             <motion.p variants={fadeUp} initial="hidden" animate="visible" custom={1}
               className="text-xl text-white/45 max-w-2xl leading-relaxed">
-              Founded in 2021, we're a boutique digital agency of designers, engineers, and AI specialists.
-              We don't take on 40 clients at once. We focus on a handful of ambitious projects and pour everything into making them exceptional.
+              Fundada en 2021, somos una agencia digital boutique de diseñadores, ingenieros y especialistas en IA.
+              No aceptamos 40 clientes a la vez. Nos enfocamos en un puñado de proyectos ambiciosos y ponemos todo nuestro esfuerzo en hacerlos excepcionales.
             </motion.p>
           </div>
         </section>
@@ -79,17 +79,17 @@ export default function AboutPage() {
             <div>
               <motion.h2 variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
                 className="text-5xl font-extrabold text-white tracking-tight leading-[1.05] mb-8">
-                Why we exist
+                Por qué existimos
               </motion.h2>
               <div className="space-y-5 text-white/50 text-[17px] leading-relaxed">
                 <motion.p variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0.5}>
-                  Most digital agencies grew too fast. They scaled to hundreds of employees, took on every client they could, and started optimizing for revenue over results. Your project would be handled by whoever was available, not who was best.
+                  La mayoría de las agencias digitales crecieron demasiado rápido. Escalaron a cientos de empleados, aceptaron a todos los clientes que pudieron y comenzaron a optimizar por ingresos en lugar de resultados. Tu proyecto sería manejado por quien estuviera disponible, no por quien fuera el mejor.
                 </motion.p>
                 <motion.p variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0.8}>
-                  We built Nova Studio as the antidote. A small, focused agency where every senior person you meet in the pitch is actually the one doing the work.
+                  Creamos Nova Studio como el antídoto. Una agencia pequeña y enfocada donde cada persona senior que conoces en la presentación es realmente la que hace el trabajo.
                 </motion.p>
                 <motion.p variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1.1}>
-                  We're selective about the projects we take on — not because we're arrogant, but because we genuinely believe that fewer, better projects lead to better outcomes for everyone.
+                  Somos selectivos con los proyectos que aceptamos, no porque seamos arrogantes, sino porque creemos genuinamente que menos proyectos, pero mejores, conducen a mejores resultados para todos.
                 </motion.p>
               </div>
             </div>
@@ -119,9 +119,9 @@ export default function AboutPage() {
         <section className="py-32 border-b border-white/[0.06]">
           <div className="mx-auto max-w-7xl px-6 sm:px-10">
             <div className="mb-16">
-              <p className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-4">Our Principles</p>
+              <p className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-4">Nuestros Principios</p>
               <h2 className="text-5xl font-extrabold text-white tracking-tight leading-[1.05]">
-                How we operate
+                Cómo operamos
               </h2>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -148,9 +148,9 @@ export default function AboutPage() {
         <section className="py-32 border-b border-white/[0.06]">
           <div className="mx-auto max-w-7xl px-6 sm:px-10">
             <div className="mb-16">
-              <p className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-4">The People</p>
+              <p className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-4">El equipo</p>
               <h2 className="text-5xl font-extrabold text-white tracking-tight leading-[1.05]">
-                Who you'll work with
+                Con quién trabajarás
               </h2>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -179,16 +179,16 @@ export default function AboutPage() {
         <section className="py-32">
           <div className="mx-auto max-w-4xl px-6 sm:px-10 text-center">
             <h2 className="text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-[0.95] mb-6">
-              Sound like a fit?
+              ¿Suena como un buen equipo?
             </h2>
             <p className="text-white/45 text-lg mb-10 max-w-lg mx-auto">
-              We have capacity for one or two new clients this quarter. If you're building something ambitious, we want to hear from you.
+              Tenemos capacidad para uno o dos nuevos clientes este trimestre. Si estás construyendo algo ambicioso, queremos saber de ti.
             </p>
             <Link
               href="/contact"
               className={cn(buttonVariants({ size: "lg" }), "rounded-full bg-white text-black hover:bg-white/90 font-bold h-14 px-8 group")}
             >
-              Start a Conversation
+              Empecemos a trabajar
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>

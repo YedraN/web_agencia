@@ -32,52 +32,52 @@ const fadeUp: Record<string, any> = {
 const services = [
   {
     icon: MonitorSmartphone,
-    title: "Digital Product Design",
-    desc: "Interfaces that users love — from wireframes to polished, pixel-perfect products.",
-    tag: "Design",
+    title: "Diseño de Productos Digitales",
+    desc: "Interfaces que a los usuarios les encantan — desde wireframes hasta productos pulidos y perfectos.",
+    tag: "Diseño",
   },
   {
     icon: Code2,
-    title: "Web Development",
-    desc: "Fast, scalable applications built with the latest frameworks and best practices.",
-    tag: "Engineering",
+    title: "Desarrollo Web",
+    desc: "Aplicaciones rápidas y escalables construidas con los últimos frameworks y mejores prácticas.",
+    tag: "Ingeniería",
   },
   {
     icon: Cpu,
-    title: "AI & Automation",
-    desc: "Intelligent workflows and LLM-powered tools that save time and reduce errors.",
-    tag: "AI",
+    title: "IA y Automatización",
+    desc: "Flujos de trabajo inteligentes y herramientas impulsadas por LLM que ahorran tiempo y reducen errores.",
+    tag: "IA",
   },
   {
     icon: Globe,
-    title: "Brand & Identity",
-    desc: "Cohesive visual languages that make your brand instantly recognizable worldwide.",
+    title: "Marca e Identidad",
+    desc: "Lenguajes visuales cohesivos que hacen que su marca sea instantáneamente reconocible en todo el mundo.",
     tag: "Branding",
   },
 ];
 
 const results = [
-  { stat: "3.2×", label: "Average revenue growth for clients in year 1" },
-  { stat: "98%", label: "Client satisfaction rate across all engagements" },
-  { stat: "40+", label: "Products shipped across 12 countries" },
-  { stat: "<2wk", label: "From kick-off to first working prototype" },
+  { stat: "3.2×", label: "Crecimiento promedio de ingresos para clientes en el primer año" },
+  { stat: "98%", label: "Tasa de satisfacción del cliente en todos los compromisos" },
+  { stat: "40+", label: "Productos entregados en 12 países" },
+  { stat: "<2 sem", label: "Desde el inicio hasta el primer prototipo funcional" },
 ];
 
 const testimonials = [
   {
-    quote: "Nova Studio redesigned our entire platform in 8 weeks. The quality was staggering — our conversion rate jumped 34%.",
+    quote: "Nova Studio rediseñó toda nuestra plataforma en 8 semanas. La calidad fue asombrosa — nuestra tasa de conversión aumentó un 34 %.",
     name: "Elena Rostova",
     role: "CEO, Lumina Commerce",
     initials: "ER",
   },
   {
-    quote: "They don't just execute. They think strategically about what you're building and why. Best agency we've worked with.",
+    quote: "No solo ejecutan. Piensan estratégicamente en lo que estás construyendo y por qué. La mejor agencia con la que hemos trabajado.",
     name: "David Wright",
-    role: "Founder, FinFast",
+    role: "Fundador, FinFast",
     initials: "DW",
   },
   {
-    quote: "The AI automation pipeline Nova built cut our operations cost by 60%. It runs flawlessly 24/7 with zero intervention.",
+    quote: "El pipeline de automatización de IA que construyó Nova redujo nuestros costos operativos en un 60 %. Funciona sin problemas las 24 horas, los 7 días de la semana, con intervención cero.",
     name: "Carlos Mendoza",
     role: "CTO, LogisticsX",
     initials: "CM",
@@ -87,23 +87,23 @@ const testimonials = [
 const processSteps = [
   {
     num: "01",
-    title: "Discovery & Strategy",
-    desc: "We deep-dive into your goals, users, and market. We define what success looks like before writing a single line of code.",
+    title: "Descubrimiento y Estrategia",
+    desc: "Deep-dive en sus objetivos, usuarios y mercado. Definimos cómo es el éxito antes de escribir una sola línea de código.",
   },
   {
     num: "02",
-    title: "Design & Prototype",
-    desc: "High-fidelity designs and interactive prototypes let you see and feel the product before we build it.",
+    title: "Diseño y Prototipo",
+    desc: "Diseños de alta fidelidad y prototipos interactivos que le permiten ver y sentir el producto antes de construirlo.",
   },
   {
     num: "03",
-    title: "Build & Iterate",
-    desc: "Agile development cycles with weekly demos. You always know what we're working on and why.",
+    title: "Construcción e Iteración",
+    desc: "Ciclos de desarrollo ágiles con demostraciones semanales. Siempre sabe en qué estamos trabajando y por qué.",
   },
   {
     num: "04",
-    title: "Launch & Scale",
-    desc: "We handle deployment, monitor performance, and stay with you post-launch to iterate and grow.",
+    title: "Lanzamiento y Escalado",
+    desc: "Nos encargamos del despliegue, monitoreamos el rendimiento y nos quedamos con usted después del lanzamiento para iterar y crecer.",
   },
 ];
 
@@ -136,7 +136,7 @@ export default function AgencyHome() {
               className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white/60 mb-10"
             >
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              Available for new projects · 2026
+              Disponible para nuevos proyectos · 2026
             </motion.div>
 
             <motion.h1
@@ -146,11 +146,11 @@ export default function AgencyHome() {
               custom={1}
               className="text-[clamp(3rem,9vw,8rem)] font-extrabold leading-[0.95] tracking-[-0.04em] text-white mb-8"
             >
-              We build
+              Construimos
               <br />
-              <span className="text-white/25 font-light italic">digital products</span>
+              <span className="text-white/25 font-light italic">productos digitales</span>
               <br />
-              that matter.
+              que importan.
             </motion.h1>
 
             <motion.p
@@ -160,8 +160,8 @@ export default function AgencyHome() {
               custom={2}
               className="mx-auto max-w-xl text-[17px] text-white/50 leading-relaxed mb-12"
             >
-              Nova Studio is a boutique agency specializing in design, engineering, and AI.
-              We partner with ambitious founders and teams to build what others can't.
+              Nova Studio es una agencia boutique especializada en diseño, ingeniería e IA.
+              Nos asociamos con fundadores y equipos ambiciosos para construir lo que otros no pueden.
             </motion.p>
 
             <motion.div
@@ -178,7 +178,7 @@ export default function AgencyHome() {
                   "rounded-full bg-white text-black hover:bg-white/90 font-bold text-base h-14 px-8 group"
                 )}
               >
-                Start a Project
+                Iniciar un Proyecto
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
               <Link
@@ -188,7 +188,7 @@ export default function AgencyHome() {
                   "rounded-full text-white/60 hover:text-white hover:bg-white/5 font-medium text-base h-14 px-8"
                 )}
               >
-                View Our Work
+                Ver Nuestro Trabajo
               </Link>
             </motion.div>
 
@@ -200,7 +200,7 @@ export default function AgencyHome() {
               custom={4}
               className="mt-20 flex flex-wrap items-center justify-center gap-8 text-white/30 text-sm"
             >
-              <span className="font-medium text-white/50">Trusted by teams at</span>
+              <span className="font-medium text-white/50">Con la confianza de equipos en</span>
               {["Lumina", "FinFast", "LogisticsX", "StayLux", "Zenith"].map((name) => (
                 <span key={name} className="font-semibold text-white/40 hover:text-white/70 transition-colors cursor-default">
                   {name}
@@ -244,7 +244,7 @@ export default function AgencyHome() {
                   viewport={{ once: true }}
                   className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-4"
                 >
-                  What We Do
+                  Lo Que Hacemos
                 </motion.p>
                 <motion.h2
                   variants={fadeUp}
@@ -254,16 +254,16 @@ export default function AgencyHome() {
                   custom={0.5}
                   className="text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-[1.05]"
                 >
-                  End-to-end digital
+                  Experiencia digital de
                   <br />
-                  <span className="text-white/30 font-light italic">expertise.</span>
+                  <span className="text-white/30 font-light italic">extremo a extremo.</span>
                 </motion.h2>
               </div>
               <Link
                 href="/services"
                 className="inline-flex items-center gap-2 text-sm font-semibold text-white/50 hover:text-white transition-colors group"
               >
-                See all services
+                Ver todos los servicios
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
             </div>
@@ -302,7 +302,12 @@ export default function AgencyHome() {
                   {i === 0 && (
                     <div className="mt-8">
                       <ul className="space-y-2.5">
-                        {["Mobile-first responsive design", "Accessibility (WCAG 2.1 AA)", "Design system creation", "User testing & iteration"].map((feat) => (
+                        {[
+                          "Diseño responsivo centrado en móviles",
+                          "Accesibilidad (WCAG 2.1 AA)",
+                          "Creación de sistemas de diseño",
+                          "Pruebas de usuario e iteración",
+                        ].map((feat) => (
                           <li key={feat} className="flex items-center gap-3 text-sm text-white/50">
                             <CheckCircle className="h-3.5 w-3.5 text-white/30 shrink-0" />
                             {feat}
@@ -327,7 +332,7 @@ export default function AgencyHome() {
               viewport={{ once: true }}
               className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-4"
             >
-              How We Work
+              Cómo Trabajamos
             </motion.p>
             <motion.h2
               variants={fadeUp}
@@ -337,8 +342,8 @@ export default function AgencyHome() {
               custom={0.5}
               className="text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-[1.05] mb-20"
             >
-              Our process,{" "}
-              <span className="text-white/30 font-light italic">simplified.</span>
+              Nuestro proceso,{" "}
+              <span className="text-white/30 font-light italic">simplificado.</span>
             </motion.h2>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -370,7 +375,7 @@ export default function AgencyHome() {
               viewport={{ once: true }}
               className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-4"
             >
-              Client Stories
+              Historias de Clientes
             </motion.p>
             <motion.h2
               variants={fadeUp}
@@ -380,9 +385,9 @@ export default function AgencyHome() {
               custom={0.5}
               className="text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-[1.05] mb-16"
             >
-              Don't take our word
+              No confíe solo en
               <br />
-              <span className="text-white/30 font-light italic">for it.</span>
+              <span className="text-white/30 font-light italic">nuestra palabra.</span>
             </motion.h2>
 
             <div className="grid md:grid-cols-3 gap-6">
@@ -431,7 +436,7 @@ export default function AgencyHome() {
                   viewport={{ once: true }}
                   className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-4"
                 >
-                  Why Nova Studio
+                  Por Qué Nova Studio
                 </motion.p>
                 <motion.h2
                   variants={fadeUp}
@@ -441,9 +446,9 @@ export default function AgencyHome() {
                   custom={0.5}
                   className="text-5xl font-extrabold text-white tracking-tight leading-[1.05] mb-8"
                 >
-                  Built for
+                  Construido para
                   <br />
-                  <span className="text-white/30 font-light italic">ambitious teams.</span>
+                  <span className="text-white/30 font-light italic">equipos ambiciosos.</span>
                 </motion.h2>
                 <motion.p
                   variants={fadeUp}
@@ -453,8 +458,8 @@ export default function AgencyHome() {
                   custom={1}
                   className="text-white/50 leading-relaxed mb-8 text-[17px]"
                 >
-                  Most agencies over-promise and under-deliver. We operate differently.
-                  Small team, senior talent, radical transparency, and a bias for shipping.
+                  La mayoría de las agencias prometen demasiado y no cumplen lo suficiente. Operamos de manera diferente.
+                  Equipo pequeño, talento senior, transparencia radical y una inclinación por la entrega.
                 </motion.p>
                 <motion.div
                   variants={fadeUp}
@@ -467,7 +472,7 @@ export default function AgencyHome() {
                     href="/about"
                     className="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-white/70 transition-colors"
                   >
-                    Learn about us
+                    Conócenos
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </motion.div>
@@ -475,9 +480,9 @@ export default function AgencyHome() {
 
               <div className="grid grid-cols-1 gap-4">
                 {[
-                  { icon: TrendingUp, title: "Results-Driven", desc: "We measure everything and optimize relentlessly. If it's not working, we adapt." },
-                  { icon: Shield, title: "Senior-Only Team", desc: "No juniors on your project. Every engagement is led by a seasoned senior." },
-                  { icon: Zap, title: "Rapid Execution", desc: "First prototype in under 2 weeks. We move fast without sacrificing quality." },
+                  { icon: TrendingUp, title: "Orientado a Resultados", desc: "Medimos todo y optimizamos sin descanso. Si no funciona, nos adaptamos." },
+                  { icon: Shield, title: "Equipo Solo Senior", desc: "Sin juniors en su proyecto. Cada compromiso está liderado por un senior experimentado." },
+                  { icon: Zap, title: "Ejecución Rápida", desc: "Primer prototipo en menos de 2 semanas. Nos movemos rápido sin sacrificar la calidad." },
                 ].map((item, i) => (
                   <motion.div
                     key={i}
@@ -512,9 +517,9 @@ export default function AgencyHome() {
               viewport={{ once: true }}
               className="text-6xl md:text-8xl font-extrabold text-white tracking-[-0.04em] leading-[0.95] mb-8"
             >
-              Let's build
+              Construyamos
               <br />
-              <span className="text-white/25 font-light italic">something great.</span>
+              <span className="text-white/25 font-light italic">algo grandioso.</span>
             </motion.h2>
             <motion.p
               variants={fadeUp}
@@ -524,7 +529,7 @@ export default function AgencyHome() {
               custom={0.5}
               className="text-lg text-white/45 mb-12 max-w-lg mx-auto leading-relaxed"
             >
-              Tell us about your project. We'll get back to you within 24 hours with honest advice — no sales pitch.
+              Cuéntenos sobre su proyecto. Nos pondremos en contacto con usted en un plazo de 24 horas con un asesoramiento honesto, sin argumentos de venta.
             </motion.p>
             <motion.div
               variants={fadeUp}
@@ -540,7 +545,7 @@ export default function AgencyHome() {
                   "rounded-full bg-white text-black hover:bg-white/90 font-bold text-lg h-16 px-12 group"
                 )}
               >
-                Get in Touch
+                Póngase en Contacto
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </motion.div>
