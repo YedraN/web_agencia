@@ -20,7 +20,7 @@ const loginSchema = z.object({
 });
 
 export const authRoutes: FastifyPluginAsync = async (app) => {
-  app.post("/api/auth/register", async (request, reply) => {
+  app.post("/api/auth/register", { config: { rateLimit: { max: 5, timeWindow: "1 minute" } } }, async (request, reply) => {
     const body = validateOrThrow(registerSchema, request.body);
     const anonClient = createAnonSupabaseClient();
     const serviceClient = getServiceSupabaseClient();
@@ -85,7 +85,7 @@ export const authRoutes: FastifyPluginAsync = async (app) => {
     return { user };
   });
 
-  app.post("/api/auth/login", async (request, reply) => {
+  app.post("/api/auth/login", { config: { rateLimit: { max: 10, timeWindow: "1 minute" } } }, async (request, reply) => {
     const body = validateOrThrow(loginSchema, request.body);
     const anonClient = createAnonSupabaseClient();
     const { data, error } = await anonClient.auth.signInWithPassword({

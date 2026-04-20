@@ -1,6 +1,8 @@
 import Fastify from "fastify";
 import cookie from "@fastify/cookie";
 import cors from "@fastify/cors";
+import helmet from "@fastify/helmet";
+import rateLimit from "@fastify/rate-limit";
 import { ZodError } from "zod";
 import { env } from "./config/env.js";
 import { HttpError } from "./lib/http.js";
@@ -15,11 +17,28 @@ import { executionRoutes } from "./routes/executions.js";
 import { notificationRoutes } from "./routes/notifications.js";
 
 export async function buildApp() {
-  const app = Fastify({ logger: true });
+  const app = Fastify({
+    logger: true,
+    trustProxy: env.TRUST_PROXY,
+  });
 
   await app.register(cookie);
+  await app.register(helmet, {
+    contentSecurityPolicy: false,
+  });
+  await app.register(rateLimit, {
+    max: 100,
+    timeWindow: "1 minute",
+  });
   await app.register(cors, {
-    origin: env.FRONTEND_URL,
+    origin: (origin, callback) => {
+      if (!origin || env.ALLOWED_ORIGINS.includes(origin)) {
+        callback(null, true);
+        return;
+      }
+
+      callback(new Error("Origin not allowed"), false);
+    },
     credentials: true,
   });
 

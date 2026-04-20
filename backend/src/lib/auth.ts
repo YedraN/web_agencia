@@ -63,18 +63,24 @@ export function getAuthContext(request: FastifyRequest): AuthContext {
   return request.auth;
 }
 
+function getCookieOptions() {
+  return {
+    httpOnly: true,
+    sameSite: env.AUTH_COOKIE_SAME_SITE,
+    secure: env.AUTH_COOKIE_SECURE,
+    path: "/",
+    domain: env.AUTH_COOKIE_DOMAIN,
+  };
+}
+
 export function clearAuthCookies(reply: FastifyReply) {
-  reply.clearCookie(env.AUTH_ACCESS_COOKIE, { path: "/" });
-  reply.clearCookie(env.AUTH_REFRESH_COOKIE, { path: "/" });
+  const cookieOptions = getCookieOptions();
+  reply.clearCookie(env.AUTH_ACCESS_COOKIE, cookieOptions);
+  reply.clearCookie(env.AUTH_REFRESH_COOKIE, cookieOptions);
 }
 
 export function setAuthCookies(reply: FastifyReply, accessToken: string, refreshToken: string) {
-  const baseCookieOptions = {
-    httpOnly: true,
-    sameSite: "lax" as const,
-    secure: false,
-    path: "/",
-  };
+  const baseCookieOptions = getCookieOptions();
 
   reply.setCookie(env.AUTH_ACCESS_COOKIE, accessToken, {
     ...baseCookieOptions,

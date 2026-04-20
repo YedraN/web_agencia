@@ -22,15 +22,20 @@ Backend base para `web_agencia`, construido con Fastify + TypeScript + Supabase.
 
 Copia `.env.example` a `.env` y completa:
 
+- `NODE_ENV`
 - `PORT`
 - `HOST`
-- `FRONTEND_URL`
+- `TRUST_PROXY`
+- `ALLOWED_ORIGINS`
 - `SUPABASE_URL`
 - `SUPABASE_ANON_KEY`
 - `SUPABASE_SERVICE_ROLE_KEY`
 - `PUBLIC_ORGANIZATION_ID`
 - `AUTH_ACCESS_COOKIE`
 - `AUTH_REFRESH_COOKIE`
+- `AUTH_COOKIE_SECURE`
+- `AUTH_COOKIE_SAME_SITE`
+- `AUTH_COOKIE_DOMAIN`
 
 ## Endpoints implementados
 
@@ -63,6 +68,29 @@ Copia `.env.example` a `.env` y completa:
 4. `webhook_secret` existe en el schema de contexto, pero este backend no lo expone ni lo gestiona todavía.
 5. La autenticación se apoya en Supabase Auth. Si quieres sesiones 100% cerradas con SSR/cookies finas, luego conviene definir el flujo exacto con el frontend.
 
+## Producción y despliegue
+
+Se ha dejado preparado para desplegarlo fuera de local con:
+
+- `Dockerfile`
+- `.dockerignore`
+- `railway.json`
+- endpoint de salud en `/health`
+- cabeceras de seguridad con Helmet
+- rate limiting básico para auth y formularios públicos
+- CORS basado en lista de orígenes permitidos
+- cookies configurables para entornos con frontend y backend en dominios o subdominios distintos
+
+Recomendación de despliegue:
+
+- frontend en Vercel
+- backend en Railway
+- backend con dominio tipo `api.tudominio.com`
+- frontend con `tudominio.com`
+- `ALLOWED_ORIGINS` apuntando al frontend final
+- `AUTH_COOKIE_SECURE=true` en producción
+- si usas subdominios, revisar `AUTH_COOKIE_DOMAIN` y `AUTH_COOKIE_SAME_SITE`
+
 ## Siguiente paso recomendado
 
-Conectar el frontend a estas rutas y sustituir los mocks del dashboard por llamadas reales.
+Conectar el frontend a estas rutas, sustituir los mocks del dashboard por llamadas reales y terminar de fijar el flujo final de auth para producción.

@@ -37,7 +37,7 @@ function combineDateAndTime(dateValue: string, timeValue: string) {
 }
 
 export const publicRoutes: FastifyPluginAsync = async (app) => {
-  app.post("/api/contact", async (request, reply) => {
+  app.post("/api/contact", { config: { rateLimit: { max: 10, timeWindow: "1 minute" } } }, async (request, reply) => {
     const body = validateOrThrow(contactSchema, request.body);
     const { firstName, lastName } = splitFullName(body.name);
     const serviceClient = getServiceSupabaseClient();
@@ -62,7 +62,7 @@ export const publicRoutes: FastifyPluginAsync = async (app) => {
     return { success: true };
   });
 
-  app.post("/api/bookings", async (request, reply) => {
+  app.post("/api/bookings", { config: { rateLimit: { max: 10, timeWindow: "1 minute" } } }, async (request, reply) => {
     const body = validateOrThrow(bookingSchema, request.body);
     const { firstName, lastName } = splitFullName(body.name);
     const serviceClient = getServiceSupabaseClient();
