@@ -67,7 +67,7 @@ export default function AboutPage() {
             </motion.h1>
             <motion.p variants={fadeUp} initial="hidden" animate="visible" custom={1}
               className="text-xl text-white/45 max-w-2xl leading-relaxed">
-              Fundada en 2021, somos una agencia digital boutique de diseñadores, ingenieros y especialistas en IA.
+              Fundada en 2026, somos una agencia digital especialistas en IA.
               No aceptamos 40 clientes a la vez. Nos enfocamos en un puñado de proyectos ambiciosos y ponemos todo nuestro esfuerzo en hacerlos excepcionales.
             </motion.p>
           </div>
@@ -86,7 +86,7 @@ export default function AboutPage() {
                   La mayoría de las agencias digitales crecieron demasiado rápido. Escalaron a cientos de empleados, aceptaron a todos los clientes que pudieron y comenzaron a optimizar por ingresos en lugar de resultados. Tu proyecto sería manejado por quien estuviera disponible, no por quien fuera el mejor.
                 </motion.p>
                 <motion.p variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0.8}>
-                  Creamos Nova Studio como el antídoto. Una agencia pequeña y enfocada donde cada persona senior que conoces en la presentación es realmente la que hace el trabajo.
+                  Creamos Nova Studio como la solución. Una agencia pequeña y enfocada donde cada persona hace su trabajo adecuándose a tus criterios sin ningún problema.
                 </motion.p>
                 <motion.p variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1.1}>
                   Somos selectivos con los proyectos que aceptamos, no porque seamos arrogantes, sino porque creemos genuinamente que menos proyectos, pero mejores, conducen a mejores resultados para todos.
@@ -101,10 +101,10 @@ export default function AboutPage() {
               className="grid grid-cols-2 gap-4"
             >
               {[
-                { num: "40+", label: "Projects shipped" },
-                { num: "98%", label: "Client satisfaction" },
-                { num: "4.5yr", label: "Average retention" },
-                { num: "12", label: "Countries served" },
+                { num: "40+", label: "Proyectos completados" },
+                { num: "98%", label: "Satisfacción del cliente" },
+                { num: "4.5", label: "Retención promedio" },
+                { num: "12", label: "Países atendidos" },
               ].map((stat, i) => (
                 <div key={i} className="p-8 rounded-2xl border border-white/[0.06] bg-white/[0.02]">
                   <div className="text-4xl font-extrabold text-white mb-2">{stat.num}</div>
@@ -138,37 +138,6 @@ export default function AboutPage() {
                   <div className="text-5xl font-extrabold text-white/[0.07] mb-6 leading-none">{value.num}</div>
                   <h3 className="text-lg font-bold text-white mb-3">{value.title}</h3>
                   <p className="text-sm text-white/45 leading-relaxed">{value.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Team */}
-        <section className="py-32 border-b border-white/[0.06]">
-          <div className="mx-auto max-w-7xl px-6 sm:px-10">
-            <div className="mb-16">
-              <p className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-4">El equipo</p>
-              <h2 className="text-5xl font-extrabold text-white tracking-tight leading-[1.05]">
-                Con quién trabajarás
-              </h2>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              {team.map((member, i) => (
-                <motion.div
-                  key={i}
-                  variants={fadeUp}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  custom={i * 0.15}
-                  className="group p-6 rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04] transition-all"
-                >
-                  <div className="h-20 w-20 rounded-2xl bg-white/[0.06] flex items-center justify-center mb-5 text-xl font-bold text-white/40 group-hover:bg-white/10 transition-colors">
-                    {member.initials}
-                  </div>
-                  <h3 className="font-bold text-white text-lg mb-1">{member.name}</h3>
-                  <p className="text-sm text-white/40">{member.role}</p>
                 </motion.div>
               ))}
             </div>

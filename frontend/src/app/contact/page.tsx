@@ -51,11 +51,11 @@ const services = [
 ];
 
 const budgets = [
-  "Menos de $10k",
-  "$10k – $25k",
-  "$25k – $50k",
-  "$50k – $100k",
-  "$100k+",
+  "Menos de 200€",
+  "200€ - 500€",
+  "500€ - 1000€",
+  "1000€ - 2000€",
+  "2000€+",
   "Hablemos",
 ];
 
@@ -158,7 +158,7 @@ export default function ContactPage() {
                           <FormItem>
                             <FormLabel className="text-white/60 text-sm font-medium">Full name *</FormLabel>
                             <FormControl>
-                              <Input id="contact-name" placeholder="John Doe" disabled={isLoading} className={fieldClass} {...field} />
+                              <Input id="contact-name" placeholder="Tu nombre" disabled={isLoading} className={fieldClass} {...field} />
                             </FormControl>
                             <FormMessage className="text-red-400 text-xs" />
                           </FormItem>
@@ -171,7 +171,7 @@ export default function ContactPage() {
                           <FormItem>
                             <FormLabel className="text-white/60 text-sm font-medium">Email *</FormLabel>
                             <FormControl>
-                              <Input id="contact-email" type="email" placeholder="you@company.com" disabled={isLoading} className={fieldClass} {...field} />
+                              <Input id="contact-email" type="email" placeholder="ejemplo@ejemplo.com" disabled={isLoading} className={fieldClass} {...field} />
                             </FormControl>
                             <FormMessage className="text-red-400 text-xs" />
                           </FormItem>
@@ -186,7 +186,7 @@ export default function ContactPage() {
                         <FormItem>
                           <FormLabel className="text-white/60 text-sm font-medium">Compañía (opcional)</FormLabel>
                           <FormControl>
-                            <Input id="contact-company" placeholder="Acme Corp" disabled={isLoading} className={fieldClass} {...field} />
+                            <Input id="contact-company" placeholder="Compañía" disabled={isLoading} className={fieldClass} {...field} />
                           </FormControl>
                           <FormMessage className="text-red-400 text-xs" />
                         </FormItem>
@@ -253,7 +253,7 @@ export default function ContactPage() {
                               id="contact-message"
                               rows={6}
                               disabled={isLoading}
-                              placeholder="Describe your project, goals, timeline, and any other relevant details..."
+                              placeholder="Describe tu proyecto, objetivos, plazos y cualquier otro detalle relevante..."
                               className={cn(
                                 fieldClass,
                                 "h-auto w-full px-3 py-3 resize-none focus-visible:outline-none focus-visible:ring-2"
@@ -292,9 +292,9 @@ export default function ContactPage() {
                 <h3 className="font-bold text-white text-lg">Contact details</h3>
                 <div className="space-y-4">
                   {[
-                    { icon: Mail, label: "Email", value: "[EMAIL_ADDRESS]", href: "mailto:[EMAIL_ADDRESS]" },
+                    { icon: Mail, label: "Email", value: "contact@novastudio.com", href: "mailto:[EMAIL_ADDRESS]" },
                     { icon: Clock, label: "Tiempo de respuesta", value: "En 24 horas", href: null },
-                    { icon: MapPin, label: "Ubicación", value: "San Francisco, CA — Remoto", href: null },
+                    { icon: MapPin, label: "Ubicación", value: "Valencia, España", href: null },
                   ].map((contact) => (
                     <div key={contact.label} className="flex items-start gap-3">
                       <div className="h-8 w-8 rounded-lg bg-white/[0.05] flex items-center justify-center shrink-0">

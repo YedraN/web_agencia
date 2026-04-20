@@ -194,7 +194,7 @@ export default function RegisterPage() {
                       <FormControl>
                         <Input
                           id="register-name"
-                          placeholder="John Doe"
+                          placeholder="Tu nombre"
                           autoComplete="name"
                           disabled={isLoading}
                           className={cn(
@@ -220,7 +220,7 @@ export default function RegisterPage() {
                       <FormControl>
                         <Input
                           id="register-company"
-                          placeholder="Acme Corp"
+                          placeholder="Empresa"
                           autoComplete="organization"
                           disabled={isLoading}
                           className={cn(
@@ -249,7 +249,7 @@ export default function RegisterPage() {
                       <Input
                         id="register-email"
                         type="email"
-                        placeholder="you@company.com"
+                        placeholder="ejemplo@ejemplo.com"
                         autoComplete="email"
                         disabled={isLoading}
                         className={cn(
@@ -278,7 +278,7 @@ export default function RegisterPage() {
                         <Input
                           id="register-password"
                           type={showPassword ? "text" : "password"}
-                          placeholder="Create a strong password"
+                          placeholder="Crea una contraseña segura"
                           autoComplete="new-password"
                           disabled={isLoading}
                           className={cn(
@@ -333,7 +333,7 @@ export default function RegisterPage() {
                         <Input
                           id="register-confirm-password"
                           type={showConfirm ? "text" : "password"}
-                          placeholder="Repeat your password"
+                          placeholder="Repite tu contraseña"
                           autoComplete="new-password"
                           disabled={isLoading}
                           className={cn(

@@ -98,7 +98,7 @@ export default function ServicesPage() {
           <div className="mx-auto max-w-7xl px-6 sm:px-10">
             <motion.p variants={fadeUp} initial="hidden" animate="visible"
               className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-4">
-              What We Do
+              ¿Qué hacemos?
             </motion.p>
             <motion.h1 variants={fadeUp} initial="hidden" animate="visible" custom={0.5}
               className="text-6xl md:text-7xl font-extrabold text-white tracking-[-0.04em] leading-[0.95] max-w-3xl mb-6">
@@ -149,7 +149,7 @@ export default function ServicesPage() {
                       href="/contact"
                       className={cn(
                         buttonVariants({ size: "sm" }),
-                        "rounded-full bg-white text-black hover:bg-white/90 font-semibold group"
+                        "rounded-full bg-white text-black hover:bg-white/90 font-semibold group p-4.5"
                       )}
                     >
                       Hablar de este servicio
@@ -181,7 +181,7 @@ export default function ServicesPage() {
               ¿No estás seguro de lo que necesitas?
             </h2>
             <p className="text-white/45 text-lg mb-10 max-w-lg mx-auto">
-              Reserva una llamada de descubrimiento gratuita de 30 minutos. Escucharemos, haremos las preguntas correctas y recomendaremos el mejor camino a seguir, sin presión de ventas.
+              Reserva una reunión gratuita de 30 minutos. Escucharemos, haremos las preguntas correctas y recomendaremos el mejor camino a seguir, sin presión de ventas.
             </p>
             <Link
               href="/contact"

@@ -37,17 +37,17 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-sm text-white/40 leading-relaxed max-w-xs">
-              A boutique creative agency helping ambitious companies build world-class digital products.
+              Una agencia profesional creada para satisfacer tus necesidades a través de la tecnología.
             </p>
             <div className="space-y-3 text-sm text-white/40">
               <a href="mailto:hello@novastudio.co" className="flex items-center gap-2.5 hover:text-white transition-colors">
-                <Mail className="h-4 w-4" /> hello@novastudio.co
+                <Mail className="h-4 w-4" /> contact@novastudio.com
               </a>
               <a href="tel:+1234567890" className="flex items-center gap-2.5 hover:text-white transition-colors">
-                <Phone className="h-4 w-4" /> +1 (234) 567-890
+                <Phone className="h-4 w-4" /> +34 682 37 38 24
               </a>
               <div className="flex items-center gap-2.5">
-                <MapPin className="h-4 w-4" /> San Francisco, CA — Remote
+                <MapPin className="h-4 w-4" /> Valencia, España
               </div>
             </div>
           </div>
@@ -77,10 +77,10 @@ export function Footer() {
         {/* Bottom */}
         <div className="mt-16 pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/30">
-            © {new Date().getFullYear()} Nova Studio. All rights reserved.
+            © {new Date().getFullYear()} Nova Studio. Todos los derechos reservados.
           </p>
           <div className="flex items-center gap-6">
-            {["X / Twitter", "LinkedIn", "Dribbble", "GitHub"].map((social) => (
+            {["X / Twitter", "LinkedIn"].map((social) => (
               <a
                 key={social}
                 href="#"

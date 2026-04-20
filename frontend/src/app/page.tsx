@@ -191,22 +191,6 @@ export default function AgencyHome() {
                 Ver Nuestro Trabajo
               </Link>
             </motion.div>
-
-            {/* Social proof strip */}
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              animate="visible"
-              custom={4}
-              className="mt-20 flex flex-wrap items-center justify-center gap-8 text-white/30 text-sm"
-            >
-              <span className="font-medium text-white/50">Con la confianza de equipos en</span>
-              {["Lumina", "FinFast", "LogisticsX", "StayLux", "Zenith"].map((name) => (
-                <span key={name} className="font-semibold text-white/40 hover:text-white/70 transition-colors cursor-default">
-                  {name}
-                </span>
-              ))}
-            </motion.div>
           </div>
         </section>
 
@@ -365,65 +349,6 @@ export default function AgencyHome() {
           </div>
         </section>
 
-        {/* ─── TESTIMONIALS ─────────────────────────────────── */}
-        <section className="py-32 border-t border-white/[0.06]">
-          <div className="mx-auto max-w-7xl px-6 sm:px-10">
-            <motion.p
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-4"
-            >
-              Historias de Clientes
-            </motion.p>
-            <motion.h2
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              custom={0.5}
-              className="text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-[1.05] mb-16"
-            >
-              No confíe solo en
-              <br />
-              <span className="text-white/30 font-light italic">nuestra palabra.</span>
-            </motion.h2>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              {testimonials.map((t, i) => (
-                <motion.div
-                  key={i}
-                  variants={fadeUp}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  custom={i * 0.2}
-                  className="p-8 rounded-2xl border border-white/[0.06] bg-white/[0.02] flex flex-col gap-6"
-                >
-                  <div className="flex gap-0.5">
-                    {[...Array(5)].map((_, s) => (
-                      <Star key={s} className="h-4 w-4 fill-white/60 text-white/60" />
-                    ))}
-                  </div>
-                  <p className="text-white/70 leading-relaxed text-[15px] flex-1">
-                    &ldquo;{t.quote}&rdquo;
-                  </p>
-                  <div className="flex items-center gap-3 pt-4 border-t border-white/[0.06]">
-                    <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold text-white/70">
-                      {t.initials}
-                    </div>
-                    <div>
-                      <div className="text-sm font-semibold text-white">{t.name}</div>
-                      <div className="text-xs text-white/40">{t.role}</div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* ─── WHY US ───────────────────────────────────────── */}
         <section className="py-32 border-t border-white/[0.06]">
           <div className="mx-auto max-w-7xl px-6 sm:px-10">
@@ -459,7 +384,7 @@ export default function AgencyHome() {
                   className="text-white/50 leading-relaxed mb-8 text-[17px]"
                 >
                   La mayoría de las agencias prometen demasiado y no cumplen lo suficiente. Operamos de manera diferente.
-                  Equipo pequeño, talento senior, transparencia radical y una inclinación por la entrega.
+                  Equipo pequeño, transparencia radical y una inclinación por la entrega.
                 </motion.p>
                 <motion.div
                   variants={fadeUp}

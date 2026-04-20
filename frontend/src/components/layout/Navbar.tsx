@@ -8,9 +8,8 @@ import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
 
 const navLinks = [
-  { href: "/services", label: "Services" },
-  { href: "/portfolio", label: "Work" },
-  { href: "/about", label: "Agency" },
+  { href: "/services", label: "Servicios" },
+  { href: "/about", label: "Agencia" },
 ];
 
 export function Navbar() {
@@ -69,7 +68,7 @@ export function Navbar() {
               href="/login"
               className="hidden md:block text-sm font-medium text-white/50 hover:text-white transition-colors"
             >
-              Client Portal
+              Portal del cliente
             </Link>
             <Link
               href="/contact"
@@ -78,7 +77,7 @@ export function Navbar() {
                 "rounded-full bg-white text-black hover:bg-white/90 font-semibold px-5 h-9"
               )}
             >
-              Start a Project
+              Empieza un proyecto
               <ArrowUpRight className="ml-1.5 h-3.5 w-3.5" />
             </Link>
           </div>
