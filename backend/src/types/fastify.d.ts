@@ -1,0 +1,9 @@
+import type { AuthContext } from "../lib/auth.js";
+
+declare module "fastify" {
+  interface FastifyRequest {
+    auth?: AuthContext;
+  }
+}
+
+export {};
