@@ -19,6 +19,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Diamond, Loader2, ArrowLeft, Eye, EyeOff } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { login } from "@/lib/auth";
 
 const formSchema = z.object({
   email: z
@@ -46,22 +47,14 @@ export default function LoginPage() {
   async function onSubmit(values: FormValues) {
     setIsLoading(true);
     try {
-      // TODO: Replace with real API call
-      // const response = await fetch("/api/auth/login", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify(values),
-      // });
-      // if (!response.ok) throw new Error("Invalid credentials");
-      // const { token } = await response.json();
-      // localStorage.setItem("auth_token", token);
-
-      await new Promise((r) => setTimeout(r, 1200)); // Remove when backend is ready
-      toast.success("¡Bienvenido de nuevo!", { description: "Redirigiendo a tu panel de control..." });
+      const { user } = await login(values);
+      toast.success(`¡Bienvenido de nuevo, ${user.name}!`, {
+        description: "Redirigiendo a tu panel de control..."
+      });
       router.push("/dashboard");
-    } catch (error) {
+    } catch (error: any) {
       toast.error("Autenticación fallida", {
-        description: "Correo electrónico o contraseña inválidos. Por favor, intenta de nuevo.",
+        description: error?.message || "Correo electrónico o contraseña inválidos. Por favor, intenta de nuevo.",
       });
     } finally {
       setIsLoading(false);

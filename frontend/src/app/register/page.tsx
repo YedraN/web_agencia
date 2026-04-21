@@ -19,6 +19,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Diamond, Loader2, ArrowLeft, Eye, EyeOff, CheckCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { register as registerUser } from "@/lib/auth";
 
 const formSchema = z.object({
   name: z
@@ -73,25 +74,12 @@ export default function RegisterPage() {
   async function onSubmit(values: FormValues) {
     setIsLoading(true);
     try {
-      // TODO: Replace with real API call
-      // const response = await fetch("/api/auth/register", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify({
-      //     name: values.name,
-      //     company: values.company,
-      //     email: values.email,
-      //     password: values.password,
-      //   }),
-      // });
-      // if (!response.ok) {
-      //   const err = await response.json();
-      //   throw new Error(err.message || "Registration failed");
-      // }
-      // const { token } = await response.json();
-      // localStorage.setItem("auth_token", token);
-
-      await new Promise((r) => setTimeout(r, 1500)); // Remove when backend is ready
+      await registerUser({
+        name: values.name,
+        company: values.company,
+        email: values.email,
+        password: values.password,
+      });
       toast.success("Cuenta creada!", {
         description: "Bienvenido a Nova Studio. Redirigiendo...",
       });

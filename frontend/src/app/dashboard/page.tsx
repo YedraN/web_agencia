@@ -6,24 +6,31 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { DashboardStats } from "@/lib/types";
 
-// Simulated fetch function for Client Portal
-async function fetchMockClientStats() {
-  return new Promise<{ activeProjects: number; totalSpent: number; nextMilestoneDate: string; unreadInvoices: number }>((resolve) => {
-    setTimeout(() => {
-      resolve({
-        activeProjects: 2,
-        totalSpent: 45000,
-        nextMilestoneDate: "Oct 12, 2026",
-        unreadInvoices: 1,
-      });
-    }, 800);
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+
+interface ClientStats {
+  activeProjects: number;
+  totalSpent: number;
+  nextMilestoneDate: string | null;
+  unreadInvoices: number;
+}
+
+async function fetchClientStats(): Promise<ClientStats> {
+  const response = await fetch(`${API_URL}/api/dashboard/stats`, {
+    credentials: "include",
   });
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch stats");
+  }
+
+  return response.json();
 }
 
 export default function DashboardOverviewPage() {
   const { data, isLoading } = useQuery({
     queryKey: ["clientStats"],
-    queryFn: fetchMockClientStats,
+    queryFn: fetchClientStats,
   });
 
   return (
