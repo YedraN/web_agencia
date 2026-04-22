@@ -21,16 +21,16 @@ async def get_current_user_profile(
     result = await db.execute(
         select(Organization)
         .join(OrganizationMember)
-        .where(OrganizationMember.user_id == current_user.id)
-        .order_by(OrganizationMember.created_at)
+        .where(OrganizationMember.usuario_id == current_user.id)
+        .order_by(OrganizationMember.creado)
     )
     organization = result.scalar_one_or_none()
 
     return UserResponse(
         id=current_user.id,
-        name=current_user.full_name or "Usuario",
-        email=current_user.email,
-        company=organization.name if organization else "",
+        name=current_user.nombre_completo or "Usuario",
+        email=current_user.correo,
+        company=organization.nombre if organization else "",
         avatar_url=current_user.avatar_url,
         plan=organization.plan.value if organization else "free"
     )

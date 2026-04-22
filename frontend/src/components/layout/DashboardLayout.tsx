@@ -22,15 +22,15 @@ export default function DashboardLayout({
         )}
       >
         <Topbar />
-        
+
         {/* Overlay for mobile sidebar */}
         {sidebarOpen && (
-          <div 
+          <div
             className="fixed inset-0 z-30 bg-background/80 backdrop-blur-sm lg:hidden"
             onClick={() => setSidebarOpen(false)}
           />
         )}
-        
+
         <main className="flex-1 p-6 md:p-8 w-full max-w-7xl mx-auto">
           {children}
         </main>

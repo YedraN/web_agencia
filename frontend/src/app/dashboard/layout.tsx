@@ -8,4 +8,3 @@ export default function DashboardLayoutWrapper({ children }: { children: React.R
     </ProtectedRoute>
   );
 }
-

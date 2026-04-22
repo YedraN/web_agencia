@@ -89,18 +89,15 @@ export default function DashboardOverviewPage() {
             </Card>
 
             <Card className={`bg-white/[0.02] border-white/5 ${data?.unreadInvoices && data.unreadInvoices > 0 ? "border-primary/50 relative overflow-hidden" : ""}`}>
-              {data?.unreadInvoices && data.unreadInvoices > 0 && (
-                <div className="absolute inset-0 bg-primary/5 pointer-events-none" />
-              )}
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 relative z-10">
-                <CardTitle className="text-sm font-medium text-white/70">Unpaid Invoices</CardTitle>
+                <CardTitle className="text-sm font-medium text-white/70">Facturas pendientes</CardTitle>
                 <FileText className={`h-4 w-4 ${data?.unreadInvoices && data.unreadInvoices > 0 ? "text-primary" : "text-white/50"}`} />
               </CardHeader>
               <CardContent className="relative z-10">
                 <div className={`text-3xl font-heading font-bold ${data?.unreadInvoices && data.unreadInvoices > 0 ? "text-white" : ""}`}>
                   {data?.unreadInvoices}
                 </div>
-                <p className="text-xs text-white/40 mt-1">Acción requerida</p>
+                <p className="text-xs text-white/40 mt-1.5">Acción requerida</p>
               </CardContent>
             </Card>
           </>

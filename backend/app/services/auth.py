@@ -7,6 +7,8 @@ from app.models.organization import Organization, OrganizationMember, Organizati
 from app.schemas.auth import UserRegister, UserLogin
 from app.utils.security import hash_password, verify_password, create_access_token, create_refresh_token
 import re
+import random
+import string
 
 
 class AuthService:
@@ -15,15 +17,13 @@ class AuthService:
 
     @staticmethod
     def _slugify(text: str) -> str:
-        """Convierte un texto a slug URL-friendly"""
         slug = re.sub(r'[^\w\s-]', '', text.lower())
         slug = re.sub(r'[-\s]+', '-', slug)
         return slug.strip('-')
 
     async def register(self, data: UserRegister) -> dict:
-        # Verificar si el email ya existe
         result = await self.db.execute(
-            select(User).where(User.email == data.email)
+            select(User).where(User.correo == data.email)
         )
         if result.scalar_one_or_none():
             raise HTTPException(
@@ -31,36 +31,30 @@ class AuthService:
                 detail="El email ya está registrado"
             )
 
-        # Crear usuario
         user = User(
-            email=data.email,
-            hashed_password=hash_password(data.password),
-            full_name=data.name
+            correo=data.email,
+            password_hash=hash_password(data.password),
+            nombre_completo=data.name
         )
         self.db.add(user)
-        await self.db.flush()  # Para obtener el ID del usuario
+        await self.db.flush()
 
-        # Crear slug único para la organización
         base_slug = self._slugify(data.company) or "workspace"
-        import random
-        import string
         random_suffix = ''.join(random.choices(string.ascii_lowercase + string.digits, k=6))
         slug = f"{base_slug}-{random_suffix}"
 
-        # Crear organización
         organization = Organization(
-            name=data.company,
+            nombre=data.company,
             slug=slug
         )
         self.db.add(organization)
         await self.db.flush()
 
-        # Crear membresía
         membership = OrganizationMember(
-            organization_id=organization.id,
-            user_id=user.id,
-            role=OrganizationRole.OWNER,
-            accepted_at=datetime.utcnow()
+            organizacion_id=organization.id,
+            usuario_id=user.id,
+            rol=OrganizationRole.OWNER,       # era role=
+            aceptado_en=datetime.utcnow()
         )
         self.db.add(membership)
 
@@ -68,7 +62,6 @@ class AuthService:
         await self.db.refresh(user)
         await self.db.refresh(organization)
 
-        # Generar tokens
         access_token = create_access_token({"sub": user.id})
         refresh_token = create_refresh_token({"sub": user.id})
 
@@ -77,44 +70,41 @@ class AuthService:
             "refresh_token": refresh_token,
             "user": {
                 "id": user.id,
-                "name": user.full_name or "Usuario",
-                "email": user.email,
-                "company": organization.name,
+                "name": user.nombre_completo or "Usuario",  # era full_name
+                "email": user.correo,                       # era email
+                "company": organization.nombre,             # era name
                 "avatar_url": user.avatar_url,
                 "plan": organization.plan.value
             }
         }
 
     async def login(self, data: UserLogin) -> dict:
-        # Buscar usuario
         result = await self.db.execute(
-            select(User).where(User.email == data.email)
+            select(User).where(User.correo == data.email)
         )
         user = result.scalar_one_or_none()
 
-        if not user or not verify_password(data.password, user.hashed_password):
+        if not user or not verify_password(data.password, user.password_hash):  # era hashed_password
             raise HTTPException(
                 status_code=status.HTTP_401_UNAUTHORIZED,
                 detail="Credenciales inválidas",
                 headers={"WWW-Authenticate": "Bearer"},
             )
 
-        if not user.is_active:
+        if not user.activo:                                 # era is_active
             raise HTTPException(
                 status_code=status.HTTP_403_FORBIDDEN,
                 detail="Usuario desactivado"
             )
 
-        # Obtener organización principal del usuario
         result = await self.db.execute(
             select(Organization)
             .join(OrganizationMember)
-            .where(OrganizationMember.user_id == user.id)
-            .order_by(OrganizationMember.created_at)
+            .where(OrganizationMember.usuario_id == user.id)  # era user_id
+            .order_by(OrganizationMember.creado)              # era created_at
         )
         organization = result.scalar_one_or_none()
 
-        # Generar tokens
         access_token = create_access_token({"sub": user.id})
         refresh_token = create_refresh_token({"sub": user.id})
 
@@ -123,9 +113,9 @@ class AuthService:
             "refresh_token": refresh_token,
             "user": {
                 "id": user.id,
-                "name": user.full_name or "Usuario",
-                "email": user.email,
-                "company": organization.name if organization else "",
+                "name": user.nombre_completo or "Usuario",  # era full_name
+                "email": user.correo,                       # era email
+                "company": organization.nombre if organization else "",  # era name
                 "avatar_url": user.avatar_url,
                 "plan": organization.plan.value if organization else "free"
             }

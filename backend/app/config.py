@@ -3,7 +3,7 @@ from typing import List
 
 
 class Settings(BaseSettings):
-    database_url: str = "mysql+aiomysql://user:password@localhost:3306/web_agencia"
+    database_url: str = "sqlite+aiosqlite:///./data.sqlite"
     secret_key: str = "your-super-secret-key-here-change-in-production"
     access_token_expire_minutes: int = 60
     refresh_token_expire_days: int = 30

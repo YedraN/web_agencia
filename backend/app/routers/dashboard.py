@@ -24,8 +24,8 @@ async def get_dashboard_stats(
     from app.models.organization import OrganizationMember
     result = await db.execute(
         select(OrganizationMember)
-        .where(OrganizationMember.user_id == current_user.id)
-        .order_by(OrganizationMember.created_at)
+        .where(OrganizationMember.usuario_id == current_user.id)
+        .order_by(OrganizationMember.creado)
     )
     membership = result.scalar_one_or_none()
 
@@ -35,15 +35,15 @@ async def get_dashboard_stats(
             detail="Usuario sin organización asignada"
         )
 
-    org_id = membership.organization_id
+    org_id = membership.organizacion_id
 
     # Contar proyectos activos
     result = await db.execute(
         select(func.count(Project.id))
         .where(
             and_(
-                Project.organization_id == org_id,
-                Project.status.in_(["planning", "in_progress", "review"])
+                Project.organizacion_id == org_id,
+                Project.estado.in_([ProjectStatus.PLANNING, ProjectStatus.IN_PROGRESS, ProjectStatus.REVIEW])
             )
         )
     )
@@ -54,7 +54,7 @@ async def get_dashboard_stats(
         select(func.sum(Invoice.total_cents))
         .where(
             and_(
-                Invoice.organization_id == org_id,
+                Invoice.organizacion_id == org_id,
                 Invoice.status == InvoiceStatus.PAID
             )
         )
@@ -66,7 +66,7 @@ async def get_dashboard_stats(
         select(func.count(Invoice.id))
         .where(
             and_(
-                Invoice.organization_id == org_id,
+                Invoice.organizacion_id == org_id,
                 Invoice.status.in_([InvoiceStatus.SENT, InvoiceStatus.VIEWED, InvoiceStatus.OVERDUE])
             )
         )
@@ -79,19 +79,19 @@ async def get_dashboard_stats(
         .join(Project)
         .where(
             and_(
-                Project.organization_id == org_id,
+                Project.organizacion_id == org_id,
                 ProjectMilestone.status.in_([MilestoneStatus.PENDING, MilestoneStatus.IN_PROGRESS]),
-                ProjectMilestone.due_at != None
+                ProjectMilestone.fecha_vencimiento != None
             )
         )
-        .order_by(ProjectMilestone.due_at)
+        .order_by(ProjectMilestone.fecha_vencimiento)
         .limit(1)
     )
     next_milestone = result.scalar_one_or_none()
 
     next_milestone_date = None
-    if next_milestone and next_milestone.due_at:
-        next_milestone_date = next_milestone.due_at.strftime("%b %d, %Y")
+    if next_milestone and next_milestone.fecha_vencimiento:
+        next_milestone_date = next_milestone.fecha_vencimiento.strftime("%b %d, %Y")
 
     return DashboardStatsResponse(
         activeProjects=active_projects,
@@ -122,14 +122,14 @@ async def get_dashboard_data(
             detail="Usuario sin organización asignada"
         )
 
-    org_id = membership.organization_id
+    org_id = membership.organizacion_id
 
     # Estadísticas
     result = await db.execute(
         select(func.count(Project.id))
         .where(
             and_(
-                Project.organization_id == org_id,
+                Project.organizacion_id == org_id,
                 Project.status.in_(["planning", "in_progress", "review"])
             )
         )
@@ -140,7 +140,7 @@ async def get_dashboard_data(
         select(func.sum(Invoice.total_cents))
         .where(
             and_(
-                Invoice.organization_id == org_id,
+                Invoice.organizacion_id == org_id,
                 Invoice.status == InvoiceStatus.PAID
             )
         )
@@ -151,7 +151,7 @@ async def get_dashboard_data(
         select(func.count(Invoice.id))
         .where(
             and_(
-                Invoice.organization_id == org_id,
+                Invoice.organizacion_id == org_id,
                 Invoice.status.in_([InvoiceStatus.SENT, InvoiceStatus.VIEWED, InvoiceStatus.OVERDUE])
             )
         )
@@ -163,17 +163,17 @@ async def get_dashboard_data(
         .join(Project)
         .where(
             and_(
-                Project.organization_id == org_id,
+                Project.organizacion_id == org_id,
                 ProjectMilestone.status.in_([MilestoneStatus.PENDING, MilestoneStatus.IN_PROGRESS]),
-                ProjectMilestone.due_at != None
+                ProjectMilestone.fecha_vencimiento != None
             )
         )
-        .order_by(ProjectMilestone.due_at)
+        .order_by(ProjectMilestone.fecha_vencimiento)
         .limit(1)
     )
     next_milestone = result.scalar_one_or_none()
 
-    next_milestone_date = next_milestone.due_at.strftime("%b %d, %Y") if next_milestone and next_milestone.due_at else None
+    next_milestone_date = next_milestone.fecha_vencimiento.strftime("%b %d, %Y") if next_milestone and next_milestone.fecha_vencimiento else None
 
     stats = DashboardStatsResponse(
         activeProjects=active_projects,
@@ -185,7 +185,7 @@ async def get_dashboard_data(
     # Actividad reciente (últimos 10 registros)
     result = await db.execute(
         select(ActivityLog)
-        .where(ActivityLog.organization_id == org_id)
+        .where(ActivityLog.organizacion_id == org_id)
         .order_by(ActivityLog.created_at.desc())
         .limit(10)
     )
@@ -207,7 +207,7 @@ async def get_dashboard_data(
         .join(Project)
         .where(
             and_(
-                Project.organization_id == org_id,
+                Project.organizacion_id == org_id,
             )
         )
         .order_by(ProjectMilestone.position)
@@ -220,7 +220,7 @@ async def get_dashboard_data(
         milestones.append(MilestoneItem(
             id=ms.id,
             title=ms.name,
-            date=ms.due_at.strftime("%b %d") if ms.due_at else "TBD",
+            date=ms.fecha_vencimiento.strftime("%b %d") if ms.fecha_vencimiento else "TBD",
             description=ms.description or "",
             completed=ms.status == MilestoneStatus.COMPLETED
         ))

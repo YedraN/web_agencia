@@ -16,22 +16,22 @@ class InvoiceStatus(str, PyEnum):
 
 
 class Invoice(Base):
-    __tablename__ = "invoices"
+    __tablename__ = "facturas"
 
     id: Mapped[str] = mapped_column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
-    organization_id: Mapped[str] = mapped_column(String(36), ForeignKey("organizations.id"), nullable=False)
-    project_id: Mapped[str | None] = mapped_column(String(36), ForeignKey("projects.id"), nullable=True)
-    number: Mapped[str] = mapped_column(String(100), nullable=False)
+    organizacion_id: Mapped[str] = mapped_column(String(36), ForeignKey("organizaciones.id"), nullable=False)
+    proyecto_id: Mapped[str | None] = mapped_column(String(36), ForeignKey("proyectos.id"), nullable=True)
+    numero: Mapped[str] = mapped_column(String(100), nullable=False)
     status: Mapped[InvoiceStatus] = mapped_column(Enum(InvoiceStatus), default=InvoiceStatus.DRAFT)
     subtotal_cents: Mapped[int] = mapped_column(Integer, default=0)
     tax_cents: Mapped[int] = mapped_column(Integer, default=0)
     total_cents: Mapped[int] = mapped_column(Integer, default=0)
     paid_cents: Mapped[int] = mapped_column(Integer, default=0)
-    currency: Mapped[str] = mapped_column(String(3), default="EUR")
-    issued_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
-    due_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
-    paid_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
-    pdf_path: Mapped[str | None] = mapped_column(String(500), nullable=True)
-    notes: Mapped[str | None] = mapped_column(Text, nullable=True)
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
-    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
+    moneda: Mapped[str] = mapped_column(String(3), default="EUR")
+    emitida_en: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    vencimiento: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    pagada_en: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    ruta_pdf: Mapped[str | None] = mapped_column(String(500), nullable=True)
+    notas: Mapped[str | None] = mapped_column(Text, nullable=True)
+    creado: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+    actualizado: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())

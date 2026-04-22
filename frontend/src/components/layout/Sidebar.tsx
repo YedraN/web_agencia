@@ -17,11 +17,11 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { useRouter } from "next/navigation";
 
 const navItems = [
-  { name: "Overview", href: "/dashboard", icon: LayoutDashboard },
-  { name: "Projects", href: "/dashboard/proyectos", icon: Briefcase },
-  { name: "Invoices", href: "/dashboard/facturas", icon: FileText },
-  { name: "Notifications", href: "/dashboard/notificaciones", icon: Bell },
-  { name: "Settings", href: "/dashboard/ajustes", icon: Settings },
+  { name: "Inicio", href: "/dashboard", icon: LayoutDashboard },
+  { name: "Proyectos", href: "/dashboard/proyectos", icon: Briefcase },
+  { name: "Facturas", href: "/dashboard/facturas", icon: FileText },
+  { name: "Notificaciones", href: "/dashboard/notificaciones", icon: Bell },
+  { name: "Ajustes", href: "/dashboard/ajustes", icon: Settings },
 ];
 
 export function Sidebar() {
@@ -50,7 +50,7 @@ export function Sidebar() {
       <ScrollArea className="flex-1 py-6">
         <div className="px-3 mb-2">
           <p className="px-3 text-[11px] font-semibold text-white/30 uppercase tracking-widest mb-3">
-            Workspace
+            Espacio de trabajo
           </p>
           <nav className="flex flex-col gap-1">
             {navItems.map((item) => {
@@ -91,7 +91,7 @@ export function Sidebar() {
           className="flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-sm font-medium text-white/35 hover:text-white/60 hover:bg-white/[0.04] transition-all"
         >
           <LogOut className="h-4 w-4" />
-          Sign out
+          Cerrar sesión
         </button>
       </div>
     </aside>
