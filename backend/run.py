@@ -16,8 +16,8 @@ import uvicorn
 from app.config import settings
 
 if __name__ == "__main__":
-    print(f"Iniciando Web Agencia Backend en http://localhost:{settings.port}")
-    print(f"Documentacion disponible en http://localhost:{settings.port}/docs")
+    print(f"Iniciando Web Agencia Backend en https://web-agencia-backend.onrender.com")
+    print(f"Documentacion disponible en https://web-agencia-backend.onrender.com/docs")
     uvicorn.run(
         "app.main:app",
         host="0.0.0.0",

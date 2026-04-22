@@ -15,6 +15,10 @@ import {
 } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { User } from "@/lib/types";
+import { useEffect } from "react";
+import { useAuth } from "@/hooks/useAuth";
 
 const navItems = [
   { name: "Inicio", href: "/dashboard", icon: LayoutDashboard },
@@ -28,6 +32,17 @@ export function Sidebar() {
   const pathname = usePathname();
   const { sidebarOpen } = useAppStore();
   const router = useRouter();
+  const { user, isLoading } = useAuth();
+
+  const getInitials = (name?: string) => {
+    if (!name) return "??";
+    return name
+      .split(" ")
+      .map((n) => n[0])
+      .join("")
+      .toUpperCase()
+      .substring(0, 2);
+  };
 
   return (
     <aside
@@ -77,15 +92,26 @@ export function Sidebar() {
 
       {/* Footer */}
       <div className="shrink-0 border-t border-white/[0.06] p-4">
-        <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/[0.04] transition-colors cursor-pointer group mb-2">
-          <div className="h-8 w-8 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold text-white/60">
-            CW
+        {isLoading ? (
+          <div className="flex items-center gap-3 p-3 animate-pulse">
+            <div className="h-8 w-8 rounded-full bg-white/10" />
+            <div className="flex-1 space-y-2">
+              <div className="h-3 w-20 bg-white/10 rounded" />
+              <div className="h-2 w-32 bg-white/5 rounded" />
+            </div>
           </div>
-          <div className="flex-1 min-w-0">
-            <div className="text-sm font-medium text-white truncate">Client Workspace</div>
-            <div className="text-xs text-white/35 truncate">client@company.com</div>
+        ) : user ? (
+          <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/[0.04] transition-colors cursor-pointer group mb-2">
+            <div className="h-8 w-8 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold text-white/60 group-hover:text-white transition-colors">
+              {getInitials(user.name)}
+            </div>
+            <div className="flex-1 min-w-0">
+              <div className="text-sm font-medium text-white truncate">{user.name}</div>
+              <div className="text-xs text-white/35 truncate">{user.email}</div>
+            </div>
           </div>
-        </div>
+        ) : null}
+        
         <button
           onClick={() => router.push("/login")}
           className="flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-sm font-medium text-white/35 hover:text-white/60 hover:bg-white/[0.04] transition-all"

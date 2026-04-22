@@ -9,6 +9,7 @@ from app.models.activity import ActivityLog
 from app.schemas.dashboard import DashboardStatsResponse, ActivityItem, MilestoneItem, DashboardDataResponse
 from app.utils.dependencies import get_current_user
 from app.models.user import User
+from app.models.notification import Notification
 
 router = APIRouter(prefix="/api/dashboard", tags=["dashboard"])
 
@@ -111,8 +112,8 @@ async def get_dashboard_data(
     from app.models.organization import OrganizationMember
     result = await db.execute(
         select(OrganizationMember)
-        .where(OrganizationMember.user_id == current_user.id)
-        .order_by(OrganizationMember.created_at)
+        .where(OrganizationMember.usuario_id == current_user.id)
+        .order_by(OrganizationMember.creado)
     )
     membership = result.scalar_one_or_none()
 
@@ -130,7 +131,7 @@ async def get_dashboard_data(
         .where(
             and_(
                 Project.organizacion_id == org_id,
-                Project.status.in_(["planning", "in_progress", "review"])
+                Project.estado.in_([ProjectStatus.PLANNING, ProjectStatus.IN_PROGRESS, ProjectStatus.REVIEW])
             )
         )
     )
@@ -186,19 +187,19 @@ async def get_dashboard_data(
     result = await db.execute(
         select(ActivityLog)
         .where(ActivityLog.organizacion_id == org_id)
-        .order_by(ActivityLog.created_at.desc())
+        .order_by(ActivityLog.creado.desc())
         .limit(10)
     )
     activities_db = result.scalars().all()
 
     activities = []
     for activity in activities_db:
-        time_ago = _get_time_ago(activity.created_at)
+        time_ago = _get_time_ago(activity.creado)
         activities.append(ActivityItem(
             id=activity.id,
-            title=activity.action,
+            title=activity.accion,
             time=time_ago,
-            hasDocument=activity.resource_type in ["invoice", "document"]
+            hasDocument=activity.tipo_recurso in ["invoice", "document"]
         ))
 
     # Milestones
@@ -219,9 +220,9 @@ async def get_dashboard_data(
     for ms in milestones_db:
         milestones.append(MilestoneItem(
             id=ms.id,
-            title=ms.name,
+            title=ms.nombre,
             date=ms.fecha_vencimiento.strftime("%b %d") if ms.fecha_vencimiento else "TBD",
-            description=ms.description or "",
+            description=ms.descripcion or "",
             completed=ms.status == MilestoneStatus.COMPLETED
         ))
 
@@ -230,6 +231,7 @@ async def get_dashboard_data(
         activities=activities,
         milestones=milestones
     )
+
 
 
 def _get_time_ago(created_at: datetime) -> str:

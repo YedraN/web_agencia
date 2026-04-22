@@ -4,7 +4,7 @@ export type User = {
   email: string;
   company: string;
   avatarUrl?: string;
-  plan: "Starter" | "Pro" | "Enterprise";
+  plan: "free" | "starter" | "pro" | "enterprise";
 };
 
 export type AutomationStatus = "active" | "paused" | "error";
@@ -49,4 +49,31 @@ export type DashboardStats = {
   executionsToday: number;
   successRate: number;
   pendingAlerts: number;
+};
+
+export type ProjectStatus =
+  | "draft"
+  | "planning"
+  | "in_progress"
+  | "review"
+  | "completed"
+  | "cancelled";
+
+export type ProjectMilestone = {
+  id: string;
+  nombre: string;
+  descripcion?: string;
+  fecha_vencimiento?: string;
+  completado_en?: string;
+  status: string;
+  position: number;
+};
+
+export type Project = {
+  id: string;
+  nombre: string;
+  descripcion?: string;
+  estado: ProjectStatus;
+  creado: string;
+  milestones: ProjectMilestone[];
 };
