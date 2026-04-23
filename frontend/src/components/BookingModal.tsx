@@ -185,7 +185,7 @@ function TimeSlots({
   onSelect: (t: string) => void;
 }) {
   return (
-    <div className="grid grid-cols-2 gap-2">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 gap-2">
       {TIME_SLOTS.map((slot) => (
         <button
           key={slot}
@@ -292,31 +292,49 @@ export function BookingModal({ open, onOpenChange }: BookingModalProps) {
     >
       <DialogContent className="bg-[#0f0f0f] border-white/[0.08] text-white p-0 overflow-hidden !max-w-[860px] w-[calc(100vw-2rem)] rounded-2xl shadow-2xl">
         {/* ── Top info bar ── */}
-        <div className="flex items-center gap-5 px-6 pt-6 pb-5 border-b border-white/[0.06]">
-          <div className="h-10 w-10 rounded-xl bg-white/[0.06] flex items-center justify-center shrink-0">
-            <Video className="h-5 w-5 text-white/50" />
-          </div>
-          <div>
-            <DialogTitle className="text-base font-bold text-white leading-tight">
-              Llamada de Descubrimiento · {CALL_DURATION} min
-            </DialogTitle>
-            <div className="flex items-center gap-3 mt-1">
-              <span className="flex items-center gap-1 text-xs text-white/40">
-                <Clock className="h-3 w-3" /> {CALL_DURATION} minutos
-              </span>
-              <span className="text-white/20">·</span>
-              <span className="flex items-center gap-1 text-xs text-white/40">
-                <Globe className="h-3 w-3" /> Google Meet
-              </span>
-              <span className="text-white/20">·</span>
-              <span className="flex items-center gap-1 text-xs text-white/40">
-                <Calendar className="h-3 w-3" /> {TIMEZONE}
-              </span>
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5 px-4 sm:px-6 pt-5 sm:pt-6 pb-4 sm:pb-5 border-b border-white/[0.06]">
+          <div className="flex items-start sm:items-center gap-4 flex-1">
+            <div className="h-10 w-10 rounded-xl bg-white/[0.06] flex items-center justify-center shrink-0 mt-0.5 sm:mt-0">
+              <Video className="h-5 w-5 text-white/50" />
+            </div>
+            <div className="flex-1">
+              <DialogTitle className="text-base font-bold text-white leading-tight flex items-center justify-between">
+                <span>Llamada de Descubrimiento <span className="hidden sm:inline">· {CALL_DURATION} min</span></span>
+                {/* Step indicators mobile */}
+                <div className="flex sm:hidden items-center gap-1.5 ml-2">
+                  {(["calendar", "form", "success"] as Step[]).map((s, i) => (
+                    <div
+                      key={s}
+                      className={cn(
+                        "h-1.5 rounded-full transition-all duration-300",
+                        step === s
+                          ? "w-4 bg-white"
+                          : i < ["calendar", "form", "success"].indexOf(step)
+                            ? "w-2 bg-white/40"
+                            : "w-2 bg-white/10"
+                      )}
+                    />
+                  ))}
+                </div>
+              </DialogTitle>
+              <div className="flex flex-wrap items-center gap-x-2 gap-y-1 sm:gap-3 mt-1.5 sm:mt-1">
+                <span className="flex items-center gap-1 text-xs text-white/40">
+                  <Clock className="h-3 w-3" /> {CALL_DURATION} <span className="hidden sm:inline">minutos</span><span className="sm:hidden">min</span>
+                </span>
+                <span className="text-white/20">·</span>
+                <span className="flex items-center gap-1 text-xs text-white/40">
+                  <Globe className="h-3 w-3" /> <span className="hidden sm:inline">Google </span>Meet
+                </span>
+                <span className="text-white/20 hidden sm:inline">·</span>
+                <span className="flex items-center gap-1 text-xs text-white/40 w-full sm:w-auto mt-0.5 sm:mt-0">
+                  <Calendar className="h-3 w-3" /> {TIMEZONE}
+                </span>
+              </div>
             </div>
           </div>
 
-          {/* Step indicators */}
-          <div className="ml-auto flex items-center gap-1.5">
+          {/* Step indicators desktop */}
+          <div className="hidden sm:flex items-center gap-1.5 ml-auto">
             {(["calendar", "form", "success"] as Step[]).map((s, i) => (
               <div
                 key={s}
@@ -345,7 +363,7 @@ export function BookingModal({ open, onOpenChange }: BookingModalProps) {
                 animate="center"
                 exit="exit"
                 transition={{ duration: 0.25, ease: "easeInOut" }}
-                className="p-8 grid md:grid-cols-2 gap-10"
+                className="p-4 sm:p-6 md:p-8 grid md:grid-cols-2 gap-8 md:gap-10"
               >
                 {/* Left: Calendar */}
                 <div>
@@ -393,22 +411,24 @@ export function BookingModal({ open, onOpenChange }: BookingModalProps) {
                 animate="center"
                 exit="exit"
                 transition={{ duration: 0.25, ease: "easeInOut" }}
-                className="p-8"
+                className="p-4 sm:p-6 md:p-8"
               >
                 {/* Summary bar */}
-                <div className="flex items-center gap-3 p-4 rounded-xl bg-white/[0.04] border border-white/[0.08] mb-6">
-                  <div className="h-8 w-8 rounded-lg bg-white/[0.06] flex items-center justify-center">
-                    <Calendar className="h-4 w-4 text-white/50" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-semibold text-white">
-                      {selectedDate ? formatDate(selectedDate) : ""} · {selectedTime}
+                <div className="flex flex-col sm:flex-row sm:items-center gap-3 p-4 rounded-xl bg-white/[0.04] border border-white/[0.08] mb-6">
+                  <div className="flex items-center gap-3">
+                    <div className="h-8 w-8 rounded-lg bg-white/[0.06] flex items-center justify-center shrink-0">
+                      <Calendar className="h-4 w-4 text-white/50" />
                     </div>
-                    <div className="text-xs text-white/40">Llamada de Descubrimiento · {CALL_DURATION} min · Google Meet</div>
+                    <div>
+                      <div className="text-sm font-semibold text-white">
+                        {selectedDate ? formatDate(selectedDate) : ""} · {selectedTime}
+                      </div>
+                      <div className="text-xs text-white/40">Llamada de Descubrimiento · {CALL_DURATION} min</div>
+                    </div>
                   </div>
                   <button
                     onClick={() => setStep("calendar")}
-                    className="ml-auto text-xs text-white/40 hover:text-white transition-colors underline underline-offset-4"
+                    className="sm:ml-auto text-xs text-white/40 hover:text-white transition-colors underline underline-offset-4 self-start sm:self-auto ml-11 sm:ml-0"
                   >
                     Cambiar
                   </button>
@@ -472,7 +492,7 @@ export function BookingModal({ open, onOpenChange }: BookingModalProps) {
                 initial={{ opacity: 0, scale: 0.96 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.35, ease: "easeOut" }}
-                className="p-6 flex flex-col items-center justify-center text-center min-h-[380px]"
+                className="p-6 sm:p-8 flex flex-col items-center justify-center text-center min-h-[380px]"
               >
                 <motion.div
                   initial={{ scale: 0 }}
@@ -539,7 +559,7 @@ export function BookingModal({ open, onOpenChange }: BookingModalProps) {
 
         {/* ── Footer actions ── */}
         {step !== "success" && (
-          <div className="px-6 py-4 border-t border-white/[0.06] flex items-center justify-between">
+          <div className="px-4 sm:px-6 py-4 border-t border-white/[0.06] flex items-center justify-between bg-[#0f0f0f]">
             {step === "form" ? (
               <button
                 onClick={() => setStep("calendar")}
