@@ -17,20 +17,23 @@ async def register(
     auth_service = AuthService(db)
     result = await auth_service.register(data)
 
-    # Setear cookies
+    # Setear cookies — samesite="none" + secure=True es obligatorio
+    # para que las cookies funcionen en peticiones cross-origin (frontend != backend domain)
     response.set_cookie(
         key="wa_access_token",
         value=result["access_token"],
         httponly=True,
         max_age=3600,  # 1 hora
-        samesite="lax"
+        samesite="none",
+        secure=True
     )
     response.set_cookie(
         key="wa_refresh_token",
         value=result["refresh_token"],
         httponly=True,
         max_age=2592000,  # 30 días
-        samesite="lax"
+        samesite="none",
+        secure=True
     )
 
     return result
@@ -46,20 +49,23 @@ async def login(
     auth_service = AuthService(db)
     result = await auth_service.login(data)
 
-    # Setear cookies
+    # Setear cookies — samesite="none" + secure=True es obligatorio
+    # para que las cookies funcionen en peticiones cross-origin (frontend != backend domain)
     response.set_cookie(
         key="wa_access_token",
         value=result["access_token"],
         httponly=True,
         max_age=3600,
-        samesite="lax"
+        samesite="none",
+        secure=True
     )
     response.set_cookie(
         key="wa_refresh_token",
         value=result["refresh_token"],
         httponly=True,
         max_age=2592000,
-        samesite="lax"
+        samesite="none",
+        secure=True
     )
 
     return result
@@ -68,6 +74,6 @@ async def login(
 @router.post("/logout")
 async def logout(response: Response):
     """Cierra la sesión del usuario"""
-    response.delete_cookie("wa_access_token")
-    response.delete_cookie("wa_refresh_token")
+    response.delete_cookie("wa_access_token", samesite="none", secure=True)
+    response.delete_cookie("wa_refresh_token", samesite="none", secure=True)
     return {"success": True}
