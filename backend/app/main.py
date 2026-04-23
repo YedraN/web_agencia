@@ -30,6 +30,9 @@ app.include_router(users_router)
 app.include_router(notifications_router)
 app.include_router(projects_router)
 
+@app.get("/")
+async def root():
+    return {"status": "ok", "message": "Web Agencia API"}
 
 @app.on_event("startup")
 async def startup():
