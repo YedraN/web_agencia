@@ -160,8 +160,8 @@ export default function AgencyHome() {
               custom={2}
               className="mx-auto max-w-xl text-[17px] text-white/50 leading-relaxed mb-12"
             >
-              Nova Studio es una agencia boutique especializada en diseño, ingeniería e IA.
-              Nos asociamos con fundadores y equipos ambiciosos para construir lo que otros no pueden.
+              Somos una agencia especializada en diseño, ingeniería e IA.
+              Construimos productos digitales que importan.
             </motion.p>
 
             <motion.div
