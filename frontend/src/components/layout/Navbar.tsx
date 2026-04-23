@@ -85,7 +85,7 @@ export function Navbar() {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="md:hidden relative z-50 p-2 -mr-2 text-white/70 hover:text-white transition-colors"
+            className="md:hidden relative z-50 p-2 text-white/70 hover:text-white transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             <span className="sr-only">Toggle menu</span>

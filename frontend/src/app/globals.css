@@ -122,13 +122,19 @@
   * {
     @apply border-border outline-ring/50;
   }
-  body {
-    @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
-  }
   html {
     @apply font-sans;
     scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
   }
 
   /* Custom Scrollbar */

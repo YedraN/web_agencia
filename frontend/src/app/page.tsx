@@ -125,7 +125,7 @@ export default function AgencyHome() {
             }}
           />
           {/* Radial glow */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-to-b from-white/[0.04] to-transparent rounded-full blur-3xl" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[900px] h-[500px] bg-gradient-to-b from-white/[0.04] to-transparent rounded-full blur-3xl" />
 
           <div className="relative z-10 mx-auto max-w-6xl px-6 sm:px-10 text-center">
             <motion.div
@@ -144,7 +144,7 @@ export default function AgencyHome() {
               initial="hidden"
               animate="visible"
               custom={1}
-              className="text-[clamp(3rem,9vw,8rem)] font-extrabold leading-[0.95] tracking-[-0.04em] text-white mb-8"
+              className="text-[clamp(2.5rem,9vw,8rem)] font-extrabold leading-[0.95] tracking-[-0.04em] text-white mb-8 text-balance"
             >
               Construimos
               <br />
@@ -440,7 +440,7 @@ export default function AgencyHome() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="text-6xl md:text-8xl font-extrabold text-white tracking-[-0.04em] leading-[0.95] mb-8"
+              className="text-5xl md:text-8xl font-extrabold text-white tracking-[-0.04em] leading-[0.95] mb-8 text-balance"
             >
               Construyamos
               <br />

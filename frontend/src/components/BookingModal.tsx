@@ -290,7 +290,7 @@ export function BookingModal({ open, onOpenChange }: BookingModalProps) {
         onOpenChange(v);
       }}
     >
-      <DialogContent className="bg-[#0f0f0f] border-white/[0.08] text-white p-0 overflow-hidden !max-w-[860px] w-[calc(100vw-2rem)] rounded-2xl shadow-2xl">
+      <DialogContent className="bg-[#0f0f0f] border-white/[0.08] text-white p-0 overflow-hidden !max-w-[860px] w-[calc(100vw-2rem)] rounded-2xl shadow-2xl max-h-[90vh] overflow-y-auto">
         {/* ── Top info bar ── */}
         <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5 px-4 sm:px-6 pt-5 sm:pt-6 pb-4 sm:pb-5 border-b border-white/[0.06]">
           <div className="flex items-start sm:items-center gap-4 flex-1">

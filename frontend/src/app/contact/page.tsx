@@ -127,7 +127,7 @@ export default function ContactPage() {
               Ponte en contacto
             </motion.p>
             <motion.h1 variants={fadeUp} initial="hidden" animate="visible" custom={0.5}
-              className="text-6xl md:text-7xl font-extrabold text-white tracking-[-0.04em] leading-[0.95] max-w-3xl mb-6">
+              className="text-5xl md:text-7xl font-extrabold text-white tracking-[-0.04em] leading-[0.95] max-w-3xl mb-6 text-balance">
               Construyamos algo{" "}
               <span className="text-white/25 font-light italic">genial.</span>
             </motion.h1>
