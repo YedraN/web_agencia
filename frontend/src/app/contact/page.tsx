@@ -21,6 +21,11 @@ import { Loader2, Mail, Clock, MapPin, Video } from "lucide-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { BookingModal } from "@/components/BookingModal";
+import emailjs from "@emailjs/browser";
+
+const EMAILJS_SERVICE_ID = "email_juanjo";
+const EMAILJS_TEMPLATE_ID = "template_vuc3amx";
+const EMAILJS_PUBLIC_KEY = "kELxHlcYNM8Donv6X";
 
 const fadeUp: Record<string, any> = {
   hidden: { opacity: 0, y: 24 },
@@ -85,17 +90,24 @@ export default function ContactPage() {
   async function onSubmit(values: FormValues) {
     setIsLoading(true);
     try {
-      // TODO: Replace with real API call
-      // await fetch("/api/contact", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify(values),
-      // });
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: values.name,
+          from_email: values.email,
+          company: values.company || "No indicada",
+          service: values.service,
+          budget: values.budget,
+          message: values.message,
+        },
+        EMAILJS_PUBLIC_KEY
+      );
 
-      await new Promise((r) => setTimeout(r, 1500));
       setSubmitted(true);
       toast.success("Mensaje enviado", { description: "Te responderemos en 24 horas." });
-    } catch {
+    } catch (error) {
+      console.error("EmailJS error:", error);
       toast.error("Algo salió mal. Por favor envíanos un correo electrónico directamente.");
     } finally {
       setIsLoading(false);
@@ -292,7 +304,7 @@ export default function ContactPage() {
                 <h3 className="font-bold text-white text-lg">Contact details</h3>
                 <div className="space-y-4">
                   {[
-                    { icon: Mail, label: "Email", value: "contact@novastudio.com", href: "mailto:[EMAIL_ADDRESS]" },
+                    { icon: Mail, label: "Email", value: "contact@novastudio.com", href: "mailto:contact@novastudio.com" },
                     { icon: Clock, label: "Tiempo de respuesta", value: "En 24 horas", href: null },
                     { icon: MapPin, label: "Ubicación", value: "Valencia, España", href: null },
                   ].map((contact) => (
@@ -352,5 +364,3 @@ export default function ContactPage() {
     </div>
   );
 }
-
-

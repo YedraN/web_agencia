@@ -4,20 +4,17 @@ import { Diamond, ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 const footerLinks = {
   Services: [
     { label: "Digital Design", href: "/services#design" },
-    { label: "Web Engineering", href: "/services#engineering" },
-    { label: "AI Automation", href: "/services#ai" },
-    { label: "Brand Identity", href: "/services#branding" },
+    { label: "Desarrollo Web", href: "/services#engineering" },
+    { label: "Automatización con IA", href: "/services#ai" },
+    { label: "Identidad de marca", href: "/services#branding" },
   ],
   Agency: [
-    { label: "About Us", href: "/about" },
-    { label: "Our Work", href: "/portfolio" },
-    { label: "Contact", href: "/contact" },
-    { label: "Client Portal", href: "/login" },
+    { label: "Sobre nosotros", href: "/about" },
+    { label: "Contacto", href: "/contact" },
+    { label: "Portal de clientes", href: "/login" },
   ],
   Legal: [
-    { label: "Privacy Policy", href: "/privacy" },
-    { label: "Terms of Service", href: "/terms" },
-    { label: "Cookie Policy", href: "/cookies" },
+    { label: "Política de privacidad", href: "/privacy" },
   ],
 };
 
@@ -41,7 +38,7 @@ export function Footer() {
             </p>
             <div className="space-y-3 text-sm text-white/40">
               <a href="mailto:hello@novastudio.co" className="flex items-center gap-2.5 hover:text-white transition-colors">
-                <Mail className="h-4 w-4" /> contact@novastudio.com
+                <Mail className="h-4 w-4" /> juanjoyedra2017@gmail.com
               </a>
               <a href="tel:+1234567890" className="flex items-center gap-2.5 hover:text-white transition-colors">
                 <Phone className="h-4 w-4" /> +34 682 37 38 24
