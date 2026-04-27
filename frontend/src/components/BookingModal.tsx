@@ -250,24 +250,24 @@ export function BookingModal({ open, onOpenChange }: BookingModalProps) {
 
     setIsLoading(true);
     try {
-      // TODO: Replace with real API call
-      // await fetch("/api/bookings", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify({
-      //     name: form.name,
-      //     email: form.email,
-      //     topic: form.topic,
-      //     date: selectedDate?.toISOString(),
-      //     time: selectedTime,
-      //     timezone: TIMEZONE,
-      //     duration: CALL_DURATION,
-      //   }),
-      // });
-      // TODO: Send confirmation email via /api/bookings/confirm
-      // TODO: Create Calendly/Google Calendar event via the API
+      const response = await fetch("/api/bookings", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          topic: form.topic,
+          date: selectedDate?.toISOString(),
+          time: selectedTime,
+          timezone: TIMEZONE,
+          duration: CALL_DURATION,
+        }),
+      });
 
-      await new Promise((r) => setTimeout(r, 1500)); // remove when real API is ready
+      if (!response.ok) {
+        throw new Error("No se pudo crear la reserva");
+      }
+
       setStep("success");
     } catch (error) {
       toast.error("No se pudo confirmar la reserva. Por favor, inténtalo de nuevo o envíanos un correo electrónico directamente.");
