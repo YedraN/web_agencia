@@ -20,16 +20,12 @@ export function ProtectedRoute({ children }: ProtectedRouteProps) {
     }
   }, [isLoading, isAuthenticated, router, pathname]);
 
-  if (isLoading) {
+  if (isLoading || !isAuthenticated) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-[#090909]">
         <Loader2 className="h-8 w-8 animate-spin text-white/40" />
       </div>
     );
-  }
-
-  if (!isAuthenticated) {
-    return null;
   }
 
   return <>{children}</>;

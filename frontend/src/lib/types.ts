@@ -7,32 +7,6 @@ export type User = {
   plan: "free" | "starter" | "pro" | "enterprise";
 };
 
-export type AutomationStatus = "active" | "paused" | "error";
-
-export type Automation = {
-  id: string;
-  name: string;
-  description: string;
-  status: AutomationStatus;
-  lastExecution?: string;
-  nextExecution?: string;
-  successRate: number;
-  config: Record<string, any>;
-};
-
-export type ExecutionStatus = "success" | "error" | "running";
-
-export type Execution = {
-  id: string;
-  automationId: string;
-  automationName: string;
-  startTime: string;
-  durationMs: number;
-  status: ExecutionStatus;
-  logPreview: string;
-  fullLog: Record<string, any>;
-};
-
 export type NotificationSeverity = "info" | "warning" | "critical";
 
 export type Notification = {
@@ -45,10 +19,35 @@ export type Notification = {
 };
 
 export type DashboardStats = {
-  activeAutomations: number;
-  executionsToday: number;
-  successRate: number;
-  pendingAlerts: number;
+  activeProjects: number;
+  totalSpent: number;
+  nextMilestoneDate: string | null;
+  unreadInvoices: number;
+};
+
+export type InvoiceStatus =
+  | "draft"
+  | "sent"
+  | "viewed"
+  | "paid"
+  | "overdue"
+  | "cancelled";
+
+export type Invoice = {
+  id: string;
+  numero: string;
+  status: InvoiceStatus;
+  subtotal_cents: number;
+  tax_cents: number;
+  total_cents: number;
+  paid_cents: number;
+  moneda: string;
+  emitida_en: string | null;
+  vencimiento: string | null;
+  pagada_en: string | null;
+  notas: string | null;
+  proyecto_id: string | null;
+  creado: string;
 };
 
 export type ProjectStatus =
