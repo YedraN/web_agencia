@@ -36,7 +36,6 @@ export async function POST(request: Request) {
         dateTime: endDateTime.toISOString(),
         timeZone: timezone,
       },
-      attendees: [{ email }], // Añade al cliente como invitado (Google le mandará un correo)
       conferenceData: {
         createRequest: {
           requestId: Math.random().toString(36).substring(7),
