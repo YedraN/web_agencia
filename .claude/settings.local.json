@@ -3,7 +3,9 @@
     "allow": [
       "Bash(npm install *)",
       "Bash(npm run *)",
-      "Bash(python -m venv venv)"
+      "Bash(python -m venv venv)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\FDCV\\\\Documents\\\\web_agencia\" -Directory)",
+      "Bash(Select-Object Name)"
     ]
   }
 }
