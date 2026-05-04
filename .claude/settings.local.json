@@ -5,7 +5,9 @@
       "Bash(npm run *)",
       "Bash(python -m venv venv)",
       "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\FDCV\\\\Documents\\\\web_agencia\" -Directory)",
-      "Bash(Select-Object Name)"
+      "Bash(Select-Object Name)",
+      "Bash(npx tsc *)",
+      "Bash(node_modules/.bin/tsc --noEmit)"
     ]
   }
 }

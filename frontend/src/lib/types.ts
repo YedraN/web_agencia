@@ -68,6 +68,12 @@ export type ProjectMilestone = {
   position: number;
 };
 
+export type Automation = {
+  id: string;
+  name: string;
+  config?: Record<string, unknown>;
+};
+
 export type Project = {
   id: string;
   nombre: string;
