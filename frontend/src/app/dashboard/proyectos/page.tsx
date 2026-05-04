@@ -10,7 +10,7 @@ import { Badge } from "@/components/ui/badge";
 export default function ProjectsPage() {
   const { data, isLoading } = useQuery<Project[]>({
     queryKey: ["projects"],
-    queryFn: api.getProjects,
+    queryFn: () => api.getProjects(),
   });
 
   return (
