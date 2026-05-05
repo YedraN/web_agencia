@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException, Query, status
-from fastapi.responses import FileResponse, StreamingResponse
+from fastapi.responses import StreamingResponse
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, func
 from typing import Optional
@@ -76,6 +76,29 @@ async def list_invoices(
     )
 
 
+@router.get("/{invoice_id}", response_model=InvoiceResponse)
+async def get_invoice(
+    invoice_id: str,
+    db: AsyncSession = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+):
+    org_subq = _get_user_org_subquery(current_user.id)
+
+    result = await db.execute(
+        select(Invoice, Organization.nombre.label("cliente_nombre"))
+        .join(Organization, Organization.id == Invoice.organizacion_id)
+        .where(Invoice.id == invoice_id, Invoice.organizacion_id.in_(org_subq))
+    )
+    row = result.one_or_none()
+    if not row:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Factura no encontrada")
+
+    invoice, cliente_nombre = row
+    return InvoiceResponse.model_validate(invoice, from_attributes=True).model_copy(
+        update={"cliente_nombre": cliente_nombre}
+    )
+
+
 @router.post("", response_model=InvoiceResponse, status_code=status.HTTP_201_CREATED)
 async def create_invoice(
     data: InvoiceCreate,
@@ -92,10 +115,7 @@ async def create_invoice(
     if not org_id:
         raise HTTPException(status_code=400, detail="El usuario no pertenece a ninguna organización")
 
-    invoice = Invoice(
-        organizacion_id=org_id,
-        **data.model_dump(),
-    )
+    invoice = Invoice(organizacion_id=org_id, **data.model_dump())
     db.add(invoice)
     await db.commit()
     await db.refresh(invoice)
@@ -136,7 +156,7 @@ async def download_invoice_pdf(
         elements.append(Paragraph(f"Factura {invoice.numero}", styles["Title"]))
         elements.append(Spacer(1, 0.5 * cm))
 
-        data = [
+        rows = [
             ["Campo", "Valor"],
             ["Número", invoice.numero],
             ["Estado", invoice.status.value],
@@ -145,15 +165,14 @@ async def download_invoice_pdf(
             ["Impuestos", f"{invoice.tax_cents / 100:.2f} {invoice.moneda}"],
             ["Total", f"{invoice.total_cents / 100:.2f} {invoice.moneda}"],
         ]
-
         if invoice.emitida_en:
-            data.append(["Fecha emisión", invoice.emitida_en.strftime("%d/%m/%Y")])
+            rows.append(["Fecha emisión", invoice.emitida_en.strftime("%d/%m/%Y")])
         if invoice.vencimiento:
-            data.append(["Vencimiento", invoice.vencimiento.strftime("%d/%m/%Y")])
+            rows.append(["Vencimiento", invoice.vencimiento.strftime("%d/%m/%Y")])
         if invoice.notas:
-            data.append(["Notas", invoice.notas])
+            rows.append(["Notas", invoice.notas])
 
-        table = Table(data, colWidths=[5 * cm, 10 * cm])
+        table = Table(rows, colWidths=[5 * cm, 10 * cm])
         table.setStyle(TableStyle([
             ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#1a1a2e")),
             ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),

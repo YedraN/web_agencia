@@ -7,32 +7,6 @@ export type User = {
   plan: "free" | "starter" | "pro" | "enterprise";
 };
 
-export type AutomationStatus = "active" | "paused" | "error";
-
-export type Automation = {
-  id: string;
-  name: string;
-  description: string;
-  status: AutomationStatus;
-  lastExecution?: string;
-  nextExecution?: string;
-  successRate: number;
-  config: Record<string, any>;
-};
-
-export type ExecutionStatus = "success" | "error" | "running";
-
-export type Execution = {
-  id: string;
-  automationId: string;
-  automationName: string;
-  startTime: string;
-  durationMs: number;
-  status: ExecutionStatus;
-  logPreview: string;
-  fullLog: Record<string, any>;
-};
-
 export type NotificationSeverity = "info" | "warning" | "critical";
 
 export type Notification = {
@@ -45,10 +19,10 @@ export type Notification = {
 };
 
 export type DashboardStats = {
-  activeAutomations: number;
-  executionsToday: number;
-  successRate: number;
-  pendingAlerts: number;
+  activeProjects: number;
+  totalSpent: number;
+  nextMilestoneDate: string | null;
+  unreadInvoices: number;
 };
 
 export type InvoiceStatus =
@@ -108,6 +82,12 @@ export type ProjectMilestone = {
   completado_en?: string;
   status: string;
   position: number;
+};
+
+export type Automation = {
+  id: string;
+  name: string;
+  config?: Record<string, unknown>;
 };
 
 export type Project = {

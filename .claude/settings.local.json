@@ -4,9 +4,12 @@
       "Bash(npm install *)",
       "Bash(npm run *)",
       "Bash(python -m venv venv)",
-      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\juanj\\\\Documents\\\\web_agencia\" -Force)",
+      "Bash(Get-ChildItem -Path \"C:\\Users\\juanj\\Documents\\web_agencia\" -Force)",
       "Bash(Select-Object Name, PSIsContainer)",
-      "PowerShell(head *)"
+      "Bash(npx tsc *)",
+      "Bash(node_modules/.bin/tsc --noEmit)",
+      "PowerShell(head *)",
+      "Bash(git add *)"
     ]
   }
 }

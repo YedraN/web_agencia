@@ -36,26 +36,17 @@ export async function POST(request: Request) {
         dateTime: endDateTime.toISOString(),
         timeZone: timezone,
       },
-      attendees: [{ email }], // Añade al cliente como invitado (Google le mandará un correo)
-      conferenceData: {
-        createRequest: {
-          requestId: Math.random().toString(36).substring(7),
-          conferenceSolutionKey: { type: "hangoutsMeet" },
-        },
-      },
     };
 
     // Insertar el evento en tu calendario
     const response = await calendar.events.insert({
       calendarId: process.env.GOOGLE_CALENDAR_ID,
-      conferenceDataVersion: 1, // Obligatorio para que se genere el link de Google Meet
       requestBody: event,
     });
 
     return NextResponse.json({
       success: true,
       eventLink: response.data.htmlLink,
-      meetLink: response.data.hangoutLink,
     });
   } catch (error) {
     console.error("Error al crear el evento de Google Calendar:", error);

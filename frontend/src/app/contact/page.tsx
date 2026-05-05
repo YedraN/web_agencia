@@ -304,7 +304,7 @@ export default function ContactPage() {
                 <h3 className="font-bold text-white text-lg">Contact details</h3>
                 <div className="space-y-4">
                   {[
-                    { icon: Mail, label: "Email", value: "contact@novastudio.com", href: "mailto:contact@novastudio.com" },
+                    { icon: Mail, label: "Email", value: "contact@novastudio.com", href: "mailto:juanjoyedra2017@gmail.com" },
                     { icon: Clock, label: "Tiempo de respuesta", value: "En 24 horas", href: null },
                     { icon: MapPin, label: "Ubicación", value: "Valencia, España", href: null },
                   ].map((contact) => (
