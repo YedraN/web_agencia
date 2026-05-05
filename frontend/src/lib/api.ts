@@ -1,4 +1,4 @@
-import { Automation, DashboardStats, Execution, Notification, User, Project } from "./types";
+import { Automation, DashboardStats, Execution, Notification, User, Project, InvoiceListResponse, Invoice, InvoiceFilters } from "./types";
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://web-agencia-backend.onrender.com";
 
@@ -132,4 +132,50 @@ export const api = {
     fetchAPI<{ success: boolean }>(`/api/projects/${id}`, {
       method: "DELETE",
     }),
+
+  // ==========================================
+  // INVOICES
+  // ==========================================
+  // GET: List invoices with optional filters and pagination
+  getInvoices: (filters: InvoiceFilters = {}) => {
+    const params = new URLSearchParams();
+    if (filters.page) params.set("page", String(filters.page));
+    if (filters.page_size) params.set("page_size", String(filters.page_size));
+    if (filters.status) params.set("status", filters.status);
+    if (filters.search) params.set("search", filters.search);
+    const qs = params.toString();
+    return fetchAPI<InvoiceListResponse>(`/api/invoices${qs ? `?${qs}` : ""}`);
+  },
+
+  // POST: Create new invoice
+  createInvoice: (data: {
+    numero: string;
+    proyecto_id?: string;
+    subtotal_cents?: number;
+    tax_cents?: number;
+    total_cents?: number;
+    moneda?: string;
+    vencimiento?: string;
+    notas?: string;
+  }) =>
+    fetchAPI<Invoice>("/api/invoices", {
+      method: "POST",
+      body: JSON.stringify(data),
+    }),
+
+  // GET: Download invoice PDF (returns a blob URL)
+  downloadInvoicePdf: async (id: string): Promise<void> => {
+    const url = `${API_BASE_URL}/api/invoices/${id}/pdf`;
+    const response = await fetch(url, { credentials: "include" });
+    if (!response.ok) throw new Error(`Error al descargar PDF: ${response.status}`);
+    const blob = await response.blob();
+    const blobUrl = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = blobUrl;
+    link.download = `factura-${id}.pdf`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(blobUrl);
+  },
 };

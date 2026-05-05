@@ -6,6 +6,7 @@ from app.routers.dashboard import router as dashboard_router
 from app.routers.users import router as users_router
 from app.routers.notifications import router as notifications_router
 from app.routers.projects import router as projects_router
+from app.routers.invoices import router as invoices_router
 from app.database import engine, Base
 
 app = FastAPI(
@@ -29,6 +30,7 @@ app.include_router(dashboard_router)
 app.include_router(users_router)
 app.include_router(notifications_router)
 app.include_router(projects_router)
+app.include_router(invoices_router)
 
 @app.get("/")
 async def root():
