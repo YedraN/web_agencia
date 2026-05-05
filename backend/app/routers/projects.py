@@ -5,7 +5,7 @@ from sqlalchemy.orm import selectinload
 
 from app.database import get_db
 from app.utils.dependencies import get_current_user
-from app.models.user import User
+from app.models.profile import Perfil
 from app.models.project import Project
 from app.models.organization import OrganizationMember
 from app.schemas.project import ProjectResponse
@@ -20,7 +20,7 @@ async def get_projects(
     page: int = Query(1, ge=1),
     limit: int = Query(20, ge=1, le=100),
     db: AsyncSession = Depends(get_db),
-    current_user: User = Depends(get_current_user)
+    current_user: Perfil = Depends(get_current_user)
 ):
     offset = (page - 1) * limit
     result = await db.execute(

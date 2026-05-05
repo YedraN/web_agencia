@@ -1,79 +1,71 @@
-from fastapi import APIRouter, Depends, Response
+import re
+import uuid
+from datetime import datetime, timezone
+from fastapi import APIRouter, Depends, HTTPException, Request
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy import select
+
 from app.database import get_db
-from app.schemas.auth import UserRegister, UserLogin, TokenResponse
-from app.services.auth import AuthService
+from app.models.profile import Perfil
+from app.models.organization import Organization, OrganizationMember, OrganizationRole
+from app.schemas.auth import OnboardingData, UserResponse
+from app.utils.dependencies import get_current_user
 
 router = APIRouter(prefix="/api/auth", tags=["auth"])
 
 
-@router.post("/register", response_model=TokenResponse, status_code=201)
-async def register(
-    data: UserRegister,
-    response: Response,
-    db: AsyncSession = Depends(get_db)
+def _slugify(text: str) -> str:
+    text = text.lower().strip()
+    text = re.sub(r"[^\w\s-]", "", text)
+    text = re.sub(r"[\s_-]+", "-", text)
+    return re.sub(r"^-+|-+$", "", text)
+
+
+@router.post("/onboarding", response_model=UserResponse, status_code=201)
+async def onboarding(
+    data: OnboardingData,
+    request: Request,
+    db: AsyncSession = Depends(get_db),
+    current_user: Perfil = Depends(get_current_user),
 ):
-    """Registra un nuevo usuario con su organización"""
-    auth_service = AuthService(db)
-    result = await auth_service.register(data)
+    """Configura perfil y organización tras el registro en Supabase Auth.
+    Llamar una sola vez justo después del signUp."""
 
-    # Setear cookies — samesite="none" + secure=True es obligatorio
-    # para que las cookies funcionen en peticiones cross-origin (frontend != backend domain)
-    response.set_cookie(
-        key="wa_access_token",
-        value=result["access_token"],
-        httponly=True,
-        max_age=3600,  # 1 hora
-        samesite="none",
-        secure=True
+    existing = await db.execute(
+        select(OrganizationMember).where(OrganizationMember.usuario_id == current_user.id)
     )
-    response.set_cookie(
-        key="wa_refresh_token",
-        value=result["refresh_token"],
-        httponly=True,
-        max_age=2592000,  # 30 días
-        samesite="none",
-        secure=True
+    if existing.scalar_one_or_none():
+        raise HTTPException(status_code=409, detail="Ya tienes una organización configurada")
+
+    current_user.nombre_completo = data.nombre_completo
+
+    base_slug = _slugify(data.company)
+    slug, counter = base_slug, 1
+    while True:
+        row = await db.execute(select(Organization).where(Organization.slug == slug))
+        if not row.scalar_one_or_none():
+            break
+        slug = f"{base_slug}-{counter}"
+        counter += 1
+
+    org = Organization(nombre=data.company, slug=slug)
+    db.add(org)
+    await db.flush()
+
+    member = OrganizationMember(
+        organizacion_id=org.id,
+        usuario_id=current_user.id,
+        rol=OrganizationRole.OWNER,
+        aceptado_en=datetime.now(timezone.utc),
     )
+    db.add(member)
+    await db.commit()
 
-    return result
-
-
-@router.post("/login", response_model=TokenResponse)
-async def login(
-    data: UserLogin,
-    response: Response,
-    db: AsyncSession = Depends(get_db)
-):
-    """Inicia sesión con email y contraseña"""
-    auth_service = AuthService(db)
-    result = await auth_service.login(data)
-
-    # Setear cookies — samesite="none" + secure=True es obligatorio
-    # para que las cookies funcionen en peticiones cross-origin (frontend != backend domain)
-    response.set_cookie(
-        key="wa_access_token",
-        value=result["access_token"],
-        httponly=True,
-        max_age=3600,
-        samesite="none",
-        secure=True
+    return UserResponse(
+        id=str(current_user.id),
+        name=current_user.nombre_completo or "",
+        email=getattr(request.state, "user_email", ""),
+        company=org.nombre,
+        avatar_url=current_user.avatar_url,
+        plan=org.plan.value,
     )
-    response.set_cookie(
-        key="wa_refresh_token",
-        value=result["refresh_token"],
-        httponly=True,
-        max_age=2592000,
-        samesite="none",
-        secure=True
-    )
-
-    return result
-
-
-@router.post("/logout")
-async def logout(response: Response):
-    """Cierra la sesión del usuario"""
-    response.delete_cookie("wa_access_token", samesite="none", secure=True)
-    response.delete_cookie("wa_refresh_token", samesite="none", secure=True)
-    return {"success": True}

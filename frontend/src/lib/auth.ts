@@ -1,66 +1,92 @@
+import { supabase } from "./supabase";
 import { User } from "./types";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://web-agencia-backend.onrender.com";
 
-interface LoginData { email: string; password: string; }
-interface RegisterData { name: string; company: string; email: string; password: string; }
-interface AuthResponse { access_token: string; refresh_token: string; user: User; }
+interface LoginData { email: string; password: string }
+interface RegisterData { name: string; company: string; email: string; password: string }
 
 export async function login(data: LoginData): Promise<{ user: User }> {
-  const response = await fetch(`${API_URL}/api/auth/login`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    credentials: "include",
-    body: JSON.stringify(data),
+  const { data: authData, error } = await supabase.auth.signInWithPassword({
+    email: data.email,
+    password: data.password,
   });
-  if (!response.ok) {
-    const error = await response.json();
-    throw new Error(error.detail || "Credenciales inválidas");
+  if (error) throw new Error(error.message);
+
+  // Fetch full profile from backend (org, plan, etc.)
+  const token = authData.session.access_token;
+  const res = await fetch(`${API_URL}/api/users/me`, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+
+  if (res.ok) {
+    const user: User = await res.json();
+    return { user };
   }
-  const result: AuthResponse = await response.json();
-  return { user: result.user };
+
+  // Fallback: build user from Supabase data only
+  return {
+    user: {
+      id: authData.user.id,
+      name: authData.user.user_metadata?.nombre_completo || authData.user.email?.split("@")[0] || "",
+      email: authData.user.email || "",
+      company: "",
+      plan: "free",
+    },
+  };
 }
 
 export async function register(data: RegisterData): Promise<{ user: User }> {
-  const response = await fetch(`${API_URL}/api/auth/register`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    credentials: "include",
-    body: JSON.stringify(data),
+  const { data: authData, error } = await supabase.auth.signUp({
+    email: data.email,
+    password: data.password,
+    options: { data: { nombre_completo: data.name } },
   });
-  if (!response.ok) {
-    const error = await response.json();
-    throw new Error(error.detail || "Error al registrar");
+  if (error) throw new Error(error.message);
+  if (!authData.session) throw new Error("Revisa tu email para confirmar la cuenta");
+
+  // Setup org via backend
+  const res = await fetch(`${API_URL}/api/auth/onboarding`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${authData.session.access_token}`,
+    },
+    body: JSON.stringify({ nombre_completo: data.name, company: data.company }),
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.detail || "Error al configurar tu cuenta");
   }
-  const result: AuthResponse = await response.json();
-  return { user: result.user };
+  const user: User = await res.json();
+  return { user };
 }
 
 export async function logout(): Promise<void> {
-  await fetch(`${API_URL}/api/auth/logout`, {
-    method: "POST",
-    credentials: "include",
-  });
+  await supabase.auth.signOut();
 }
 
 export async function getCurrentUser(): Promise<User | null> {
+  const { data: { session } } = await supabase.auth.getSession();
+  if (!session) return null;
   try {
-    const response = await fetch(`${API_URL}/api/users/me`, {
-      credentials: "include",
+    const res = await fetch(`${API_URL}/api/users/me`, {
+      headers: { Authorization: `Bearer ${session.access_token}` },
     });
-    if (!response.ok) return null;
-    return await response.json();
+    if (!res.ok) return null;
+    return await res.json();
   } catch {
     return null;
   }
 }
 
 export async function apiFetch(path: string, options: RequestInit = {}): Promise<Response> {
+  const { data: { session } } = await supabase.auth.getSession();
   return fetch(`${API_URL}${path}`, {
     ...options,
-    credentials: "include",
     headers: {
       "Content-Type": "application/json",
+      ...(session?.access_token ? { Authorization: `Bearer ${session.access_token}` } : {}),
       ...options.headers,
     },
   });

@@ -1,17 +1,10 @@
-from pydantic import BaseModel, EmailStr, Field
+from pydantic import BaseModel, Field
 from typing import Literal
 
 
-class UserRegister(BaseModel):
-    name: str = Field(..., min_length=2, max_length=100)
+class OnboardingData(BaseModel):
+    nombre_completo: str = Field(..., min_length=2, max_length=100)
     company: str = Field(..., min_length=1, max_length=100)
-    email: EmailStr
-    password: str = Field(..., min_length=8, max_length=100)
-
-
-class UserLogin(BaseModel):
-    email: EmailStr
-    password: str = Field(..., min_length=1)
 
 
 class UserResponse(BaseModel):
@@ -24,10 +17,3 @@ class UserResponse(BaseModel):
 
     class Config:
         from_attributes = True
-
-
-class TokenResponse(BaseModel):
-    access_token: str
-    refresh_token: str
-    token_type: str = "bearer"
-    user: UserResponse

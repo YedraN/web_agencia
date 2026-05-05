@@ -5,7 +5,7 @@ from app.database import get_db
 from app.models.notification import Notification
 from app.schemas.notification import NotificationResponse
 from app.utils.dependencies import get_current_user
-from app.models.user import User
+from app.models.profile import Perfil
 from typing import List
 
 router = APIRouter(prefix="/api/notifications", tags=["notifications"])
@@ -13,7 +13,7 @@ router = APIRouter(prefix="/api/notifications", tags=["notifications"])
 @router.get("", response_model=List[NotificationResponse])
 async def get_notifications(
     db: AsyncSession = Depends(get_db),
-    current_user: User = Depends(get_current_user)
+    current_user: Perfil = Depends(get_current_user)
 ):
     """Obtiene las notificaciones del usuario actual"""
     result = await db.execute(
@@ -27,7 +27,7 @@ async def get_notifications(
 async def mark_notification_as_read(
     notification_id: str,
     db: AsyncSession = Depends(get_db),
-    current_user: User = Depends(get_current_user)
+    current_user: Perfil = Depends(get_current_user)
 ):
     """Marca una notificación como leída"""
     result = await db.execute(
@@ -45,7 +45,7 @@ async def mark_notification_as_read(
 @router.patch("/read-all")
 async def mark_all_notifications_as_read(
     db: AsyncSession = Depends(get_db),
-    current_user: User = Depends(get_current_user)
+    current_user: Perfil = Depends(get_current_user)
 ):
     """Marca todas las notificaciones del usuario como leídas"""
     await db.execute(

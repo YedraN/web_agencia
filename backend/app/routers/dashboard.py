@@ -8,7 +8,7 @@ from app.models.project import Project, ProjectStatus, ProjectMilestone, Milesto
 from app.models.activity import ActivityLog
 from app.schemas.dashboard import DashboardStatsResponse, ActivityItem, MilestoneItem, DashboardDataResponse
 from app.utils.dependencies import get_current_user
-from app.models.user import User
+from app.models.profile import Perfil
 from app.models.notification import Notification
 
 router = APIRouter(prefix="/api/dashboard", tags=["dashboard"])
@@ -17,7 +17,7 @@ router = APIRouter(prefix="/api/dashboard", tags=["dashboard"])
 @router.get("/stats", response_model=DashboardStatsResponse)
 async def get_dashboard_stats(
     db: AsyncSession = Depends(get_db),
-    current_user: User = Depends(get_current_user)
+    current_user: Perfil = Depends(get_current_user)
 ):
     """Obtiene las estadísticas del dashboard para el usuario actual"""
 
@@ -26,7 +26,7 @@ async def get_dashboard_stats(
     result = await db.execute(
         select(OrganizationMember)
         .where(OrganizationMember.usuario_id == current_user.id)
-        .order_by(OrganizationMember.creado)
+        .order_by(OrganizationMember.created_at)
     )
     membership = result.scalar_one_or_none()
 
@@ -105,7 +105,7 @@ async def get_dashboard_stats(
 @router.get("/data", response_model=DashboardDataResponse)
 async def get_dashboard_data(
     db: AsyncSession = Depends(get_db),
-    current_user: User = Depends(get_current_user)
+    current_user: Perfil = Depends(get_current_user)
 ):
     """Obtiene todos los datos del dashboard"""
 
@@ -113,7 +113,7 @@ async def get_dashboard_data(
     result = await db.execute(
         select(OrganizationMember)
         .where(OrganizationMember.usuario_id == current_user.id)
-        .order_by(OrganizationMember.creado)
+        .order_by(OrganizationMember.created_at)
     )
     membership = result.scalar_one_or_none()
 

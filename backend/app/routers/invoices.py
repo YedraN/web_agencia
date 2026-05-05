@@ -8,7 +8,7 @@ import io
 
 from app.database import get_db
 from app.utils.dependencies import get_current_user
-from app.models.user import User
+from app.models.profile import Perfil
 from app.models.invoice import Invoice, InvoiceStatus
 from app.models.organization import OrganizationMember, Organization
 from app.schemas.invoice import InvoiceCreate, InvoiceResponse, InvoiceListResponse
@@ -31,7 +31,7 @@ async def list_invoices(
     status: Optional[str] = Query(None),
     search: Optional[str] = Query(None),
     db: AsyncSession = Depends(get_db),
-    current_user: User = Depends(get_current_user),
+    current_user: Perfil = Depends(get_current_user),
 ):
     org_subq = _get_user_org_subquery(current_user.id)
 
@@ -80,7 +80,7 @@ async def list_invoices(
 async def get_invoice(
     invoice_id: str,
     db: AsyncSession = Depends(get_db),
-    current_user: User = Depends(get_current_user),
+    current_user: Perfil = Depends(get_current_user),
 ):
     org_subq = _get_user_org_subquery(current_user.id)
 
@@ -103,7 +103,7 @@ async def get_invoice(
 async def create_invoice(
     data: InvoiceCreate,
     db: AsyncSession = Depends(get_db),
-    current_user: User = Depends(get_current_user),
+    current_user: Perfil = Depends(get_current_user),
 ):
     org_result = await db.execute(
         select(OrganizationMember.organizacion_id)
@@ -126,7 +126,7 @@ async def create_invoice(
 async def download_invoice_pdf(
     invoice_id: str,
     db: AsyncSession = Depends(get_db),
-    current_user: User = Depends(get_current_user),
+    current_user: Perfil = Depends(get_current_user),
 ):
     org_subq = _get_user_org_subquery(current_user.id)
 

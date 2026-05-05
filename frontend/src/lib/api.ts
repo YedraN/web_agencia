@@ -1,13 +1,16 @@
+import { supabase } from "./supabase";
 import { DashboardStats, Invoice, InvoiceFilters, InvoiceListResponse, Notification, Project, User } from "./types";
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://web-agencia-backend.onrender.com";
 
 async function fetchAPI<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
+  const { data: { session } } = await supabase.auth.getSession();
+
   const response = await fetch(`${API_BASE_URL}${endpoint}`, {
     ...options,
-    credentials: "include",
     headers: {
       "Content-Type": "application/json",
+      ...(session?.access_token ? { Authorization: `Bearer ${session.access_token}` } : {}),
       ...options.headers,
     },
   });
@@ -21,13 +24,6 @@ async function fetchAPI<T>(endpoint: string, options: RequestInit = {}): Promise
 }
 
 export const api = {
-  // AUTH
-  login: (data: { email: string; password: string }) =>
-    fetchAPI<{ user: User }>("/api/auth/login", { method: "POST", body: JSON.stringify(data) }),
-  register: (data: { name: string; company: string; email: string; password: string }) =>
-    fetchAPI<{ user: User }>("/api/auth/register", { method: "POST", body: JSON.stringify(data) }),
-  logout: () => fetchAPI("/api/auth/logout", { method: "POST" }),
-
   // DASHBOARD
   getDashboardStats: () => fetchAPI<DashboardStats>("/api/dashboard/stats"),
   getDashboardData: () => fetchAPI("/api/dashboard/data"),
@@ -70,7 +66,10 @@ export const api = {
   }) =>
     fetchAPI<Invoice>("/api/invoices", { method: "POST", body: JSON.stringify(data) }),
   downloadInvoicePdf: async (id: string): Promise<void> => {
-    const response = await fetch(`${API_BASE_URL}/api/invoices/${id}/pdf`, { credentials: "include" });
+    const { data: { session } } = await supabase.auth.getSession();
+    const response = await fetch(`${API_BASE_URL}/api/invoices/${id}/pdf`, {
+      headers: session?.access_token ? { Authorization: `Bearer ${session.access_token}` } : {},
+    });
     if (!response.ok) throw new Error(`Error al descargar PDF: ${response.status}`);
     const blob = await response.blob();
     const blobUrl = URL.createObjectURL(blob);

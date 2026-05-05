@@ -1,8 +1,9 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Request
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
+
 from app.database import get_db
-from app.models.user import User
+from app.models.profile import Perfil
 from app.models.organization import Organization, OrganizationMember
 from app.schemas.auth import UserResponse
 from app.utils.dependencies import get_current_user
@@ -11,26 +12,25 @@ router = APIRouter(prefix="/api/users", tags=["users"])
 
 
 @router.get("/me", response_model=UserResponse)
-async def get_current_user_profile(
+async def get_me(
+    request: Request,
     db: AsyncSession = Depends(get_db),
-    current_user: User = Depends(get_current_user)
+    current_user: Perfil = Depends(get_current_user),
 ):
-    """Obtiene el perfil del usuario actual"""
-
-    # Obtener organización
     result = await db.execute(
         select(Organization)
-        .join(OrganizationMember)
+        .join(OrganizationMember, OrganizationMember.organizacion_id == Organization.id)
         .where(OrganizationMember.usuario_id == current_user.id)
-        .order_by(OrganizationMember.creado)
+        .order_by(OrganizationMember.created_at)
+        .limit(1)
     )
-    organization = result.scalar_one_or_none()
+    org = result.scalar_one_or_none()
 
     return UserResponse(
-        id=current_user.id,
+        id=str(current_user.id),
         name=current_user.nombre_completo or "Usuario",
-        email=current_user.correo,
-        company=organization.nombre if organization else "",
+        email=getattr(request.state, "user_email", ""),
+        company=org.nombre if org else "",
         avatar_url=current_user.avatar_url,
-        plan=organization.plan.value if organization else "free"
+        plan=org.plan.value if org else "free",
     )
