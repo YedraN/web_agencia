@@ -17,9 +17,9 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Diamond, Loader2, ArrowLeft, Eye, EyeOff, CheckCircle } from "lucide-react";
+import { Diamond, Loader2, ArrowLeft, Eye, EyeOff, CheckCircle, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { register as registerUser } from "@/lib/auth";
+import { register as registerUser, resendVerification } from "@/lib/auth";
 
 const formSchema = z.object({
   name: z
@@ -57,6 +57,8 @@ export default function RegisterPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
+  const [registeredEmail, setRegisteredEmail] = useState<string | null>(null);
+  const [isResending, setIsResending] = useState(false);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -85,11 +87,28 @@ export default function RegisterPage() {
       });
       router.push("/dashboard");
     } catch (error: any) {
-      toast.error("Registro fallido", {
-        description: error?.message || "Algo ha ido mal, por favor inténtalo de nuevo.",
-      });
+      if (error?.message === "Revisa tu email para confirmar la cuenta") {
+        setRegisteredEmail(values.email);
+      } else {
+        toast.error("Registro fallido", {
+          description: error?.message || "Algo ha ido mal, por favor inténtalo de nuevo.",
+        });
+      }
     } finally {
       setIsLoading(false);
+    }
+  }
+
+  async function handleResend() {
+    if (!registeredEmail) return;
+    setIsResending(true);
+    try {
+      await resendVerification(registeredEmail);
+      toast.success("Email reenviado", { description: "Revisa tu bandeja de entrada." });
+    } catch (error: any) {
+      toast.error("Error", { description: error?.message });
+    } finally {
+      setIsResending(false);
     }
   }
 

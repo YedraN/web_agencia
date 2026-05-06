@@ -36,11 +36,16 @@ export async function login(data: LoginData): Promise<{ user: User }> {
   };
 }
 
+export async function resendVerification(email: string): Promise<void> {
+  const { error } = await supabase.auth.resend({ type: "signup", email });
+  if (error) throw new Error(error.message);
+}
+
 export async function register(data: RegisterData): Promise<{ user: User }> {
   const { data: authData, error } = await supabase.auth.signUp({
     email: data.email,
     password: data.password,
-    options: { data: { nombre_completo: data.name } },
+    options: { data: { nombre_completo: data.name, company: data.company } },
   });
   if (error) throw new Error(error.message);
   if (!authData.session) throw new Error("Revisa tu email para confirmar la cuenta");
