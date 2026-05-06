@@ -50,7 +50,15 @@
     "Process": {
       "label": "Cómo Trabajamos",
       "title": "Nuestro proceso,",
-      "titleItalic": "simplificado."
+      "titleItalic": "simplificado.",
+      "discoveryTitle": "Descubrimiento y Estrategia",
+      "discoveryDesc": "Inmersión profunda en tus objetivos, usuarios y mercado. Definimos cómo es el éxito antes de escribir una sola línea de código.",
+      "designTitle": "Diseño y Prototipo",
+      "designDesc": "Diseños de alta fidelidad y prototipos interactivos que te permiten ver y sentir el producto antes de construirlo.",
+      "buildTitle": "Construcción e Iteración",
+      "buildDesc": "Ciclos de desarrollo ágiles con demos semanales. Siempre sabes en qué estamos trabajando y por qué.",
+      "launchTitle": "Lanzamiento y Escalado",
+      "launchDesc": "Nos encargamos del despliegue, monitoreamos el rendimiento y nos quedamos contigo después del lanzamiento para iterar y crecer."
     },
     "WhyUs": {
       "label": "Por Qué Nova Studio",

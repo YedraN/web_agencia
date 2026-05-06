@@ -1,20 +1,18 @@
-﻿"use client";
+"use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { buttonVariants } from "@/components/ui/button";
 import { ArrowUpRight, Diamond, Menu, X, Languages } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Link as I18nLink, useRouter } from "@/i18n/routing";
+import { Link as I18nLink, useRouter, usePathname } from "@/i18n/routing";
 
 const navLinks = [
   { href: "/services", labelKey: "servicios" },
@@ -22,19 +20,18 @@ const navLinks = [
 ];
 
 const locales = [
-  { code: "es", label: "ES", name: "Espa�ol" },
+  { code: "es", label: "ES", name: "Español" },
   { code: "en", label: "EN", name: "English" },
 ];
 
 export function Navbar() {
   const t = useTranslations("Navbar");
   const pathname = usePathname();
+  const currentLocale = useLocale();
+  const currentLang = locales.find((l) => l.code === currentLocale) || locales[0];
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const router = useRouter();
-
-  const currentLocale = pathname.split("/")[1] || "es";
-  const currentLang = locales.find((l) => l.code === currentLocale) || locales[0];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);

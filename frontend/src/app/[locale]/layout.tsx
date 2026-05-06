@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
@@ -24,13 +24,15 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const isEn = locale === "en";
 
   return {
-    title: isEn ? "Nova Studio | Digital Agency" : "Nova Studio | Agencia Digital de Dise�o, Ingenier�a e IA",
+    title: isEn
+      ? "Nova Studio | Digital Agency"
+      : "Nova Studio | Agencia Digital de Diseño, Ingeniería e IA",
     description: isEn
       ? "We create high-level digital experiences, from stunning web apps to complex AI-powered automation systems."
-      : "Creamos experiencias digitales de alto nivel, desde aplicaciones web impresionantes hasta sistemas complejos de automatizaci�n impulsados por IA.",
+      : "Creamos experiencias digitales de alto nivel, desde aplicaciones web impresionantes hasta sistemas complejos de automatización impulsados por IA.",
     keywords: isEn
       ? ["digital agency", "web design", "AI automation", "UI/UX", "web development"]
-      : ["agencia digital", "dise�o web", "automatizaci�n de IA", "UI/UX", "desarrollo web"],
+      : ["agencia digital", "diseño web", "automatización de IA", "UI/UX", "desarrollo web"],
     openGraph: {
       title: isEn ? "Nova Studio | Digital Agency" : "Nova Studio | Agencia Digital",
       description: isEn
@@ -45,7 +47,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       title: isEn ? "Nova Studio | Digital Agency" : "Nova Studio | Agencia Digital",
       description: isEn
         ? "We build digital products that matter. Design, engineering, and AI."
-        : "Agencia especializada en dise�o, ingenier�a e IA. Construimos productos digitales que importan.",
+        : "Agencia especializada en diseño, ingeniería e IA. Construimos productos digitales que importan.",
     },
     alternates: {
       canonical: "https://novastudio.co",

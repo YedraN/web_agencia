@@ -22,7 +22,12 @@
       "mcp__plugin_supabase_supabase__get_publishable_keys",
       "mcp__plugin_supabase_supabase__apply_migration",
       "mcp__plugin_supabase_supabase__get_project",
-      "Bash(git rm *)"
+      "Bash(git rm *)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\FDCV\\\\Documents\\\\web_agencia\" -Force)",
+      "Bash(Select-Object Name, Mode)",
+      "Bash(xargs grep -l \"locale\\\\|i18n\")",
+      "Bash(xargs grep -l \"getTranslations\\\\|useTranslations\")",
+      "Bash(xargs grep -l \"useTranslations\\\\|getTranslations\")"
     ]
   }
 }
