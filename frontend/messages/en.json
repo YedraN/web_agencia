@@ -149,25 +149,53 @@
       "title": "Digital product design",
       "subtitle": "UX & UI Design",
       "description": "We design interfaces that users actually enjoy using. From initial concept to polished Figma files, every screen is built with real users in mind, not just aesthetics.",
-      "features": ["UX research and user testing", "Information architecture", "Wireframing and prototyping", "High-fidelity UI design", "Design system creation", "Accessibility (WCAG 2.1 AA)"]
+      "features": [
+        "UX research and user testing",
+        "Information architecture",
+        "Wireframing and prototyping",
+        "High-fidelity UI design",
+        "Design system creation",
+        "Accessibility (WCAG 2.1 AA)"
+      ]
     },
     "s2": {
       "title": "Web engineering",
       "subtitle": "Frontend & Backend",
       "description": "We build fast, scalable, and maintainable applications using the most suitable technologies for your needs. We don't blindly follow trends — we choose what works.",
-      "features": ["React / Next.js applications", "REST and GraphQL APIs", "Database design and optimization", "Cloud deployment (AWS, Vercel)", "Performance optimization", "CI/CD and DevOps"]
+      "features": [
+        "React / Next.js applications",
+        "REST and GraphQL APIs",
+        "Database design and optimization",
+        "Cloud deployment (AWS, Vercel)",
+        "Performance optimization",
+        "CI/CD and DevOps"
+      ]
     },
     "s3": {
       "title": "AI & automation",
       "subtitle": "LLMs & Intelligent Workflows",
       "description": "We integrate AI into real products, not demos. From intelligent document processing to custom LLM-powered assistants, we build automations that actually save time and money.",
-      "features": ["LLM integration (GPT-4, Claude, Gemini)", "Custom AI chatbots and agents", "Document and data processing", "Workflow automation (n8n, Zapier)", "Predictive analytics", "AI-assisted content systems"]
+      "features": [
+        "LLM integration (GPT-4, Claude, Gemini)",
+        "Custom AI chatbots and agents",
+        "Document and data processing",
+        "Workflow automation (n8n, Zapier)",
+        "Predictive analytics",
+        "AI-assisted content systems"
+      ]
     },
     "s4": {
       "title": "Brand & identity",
       "subtitle": "Visual strategy",
       "description": "Your brand is more than a logo. We develop complete visual identities that scale across every touchpoint — from web to print, presentations to social media.",
-      "features": ["Logo and brand design", "Color and typography systems", "Brand voice and positioning", "Marketing asset creation", "Presentation design", "Social media kit"]
+      "features": [
+        "Logo and brand design",
+        "Color and typography systems",
+        "Brand voice and positioning",
+        "Marketing asset creation",
+        "Presentation design",
+        "Social media kit"
+      ]
     },
     "cta": "Talk about this service",
     "ctaTitle": "Not sure what you need?",
@@ -191,10 +219,22 @@
     },
     "principles": "Our Principles",
     "operamos": "How we operate",
-    "v1": { "title": "Radical transparency", "desc": "You'll always know what we're working on, why, and how much it costs. No hidden charges, no surprises." },
-    "v2": { "title": "Quality over quantity", "desc": "We work with fewer clients to give each project the attention it deserves. Your project is never just a number." },
-    "v3": { "title": "Senior talent, always", "desc": "Every project is led by experienced seniors. We never hand your project off to juniors." },
-    "v4": { "title": "Results that make sense", "desc": "We measure success by outcomes, not deliverables. If it doesn't move the needle, we iterate." },
+    "v1": {
+      "title": "Radical transparency",
+      "desc": "You'll always know what we're working on, why, and how much it costs. No hidden charges, no surprises."
+    },
+    "v2": {
+      "title": "Quality over quantity",
+      "desc": "We work with fewer clients to give each project the attention it deserves. Your project is never just a number."
+    },
+    "v3": {
+      "title": "Senior talent, always",
+      "desc": "Every project is led by experienced seniors. We never hand your project off to juniors."
+    },
+    "v4": {
+      "title": "Results that make sense",
+      "desc": "We measure success by outcomes, not deliverables. If it doesn't move the needle, we iterate."
+    },
     "ctaTitle": "Sound like a good team?",
     "ctaSubtitle": "We have room for one or two new clients this quarter. If you're building something ambitious, we'd love to hear from you.",
     "ctaButton": "Let's get to work"
@@ -337,8 +377,29 @@
       "error": "Could not confirm booking. Please try again or email us directly.",
       "calendar": "Add to calendar — coming soon"
     },
-    "days": ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
-    "months": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    "days": [
+      "Su",
+      "Mo",
+      "Tu",
+      "We",
+      "Th",
+      "Fr",
+      "Sa"
+    ],
+    "months": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ],
     "error": "Could not create booking"
   },
   "Dashboard": {

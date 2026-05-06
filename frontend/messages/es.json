@@ -149,25 +149,53 @@
       "title": "Diseño de productos digitales",
       "subtitle": "UX & UI Design",
       "description": "Diseñamos interfaces que los usuarios realmente disfrutan usando. Desde el concepto inicial hasta archivos Figma perfectos, cada pantalla se crea pensando en usuarios reales, no solo en la estética.",
-      "features": ["Investigación de UX y pruebas de usuario", "Arquitectura de la información", "Wireframing y prototipado", "Diseño UI de alta fidelidad", "Creación de sistemas de diseño", "Accesibilidad (WCAG 2.1 AA)"]
+      "features": [
+        "Investigación de UX y pruebas de usuario",
+        "Arquitectura de la información",
+        "Wireframing y prototipado",
+        "Diseño UI de alta fidelidad",
+        "Creación de sistemas de diseño",
+        "Accesibilidad (WCAG 2.1 AA)"
+      ]
     },
     "s2": {
       "title": "Ingeniería web",
       "subtitle": "Frontend & Backend",
       "description": "Creamos aplicaciones rápidas, escalables y mantenibles utilizando las tecnologías más adecuadas para tus necesidades. No seguimos tendencias ciegamente, elegimos lo que funciona.",
-      "features": ["Aplicaciones React / Next.js", "APIs REST y GraphQL", "Diseño y optimización de bases de datos", "Despliegue en la nube (AWS, Vercel)", "Optimización del rendimiento", "CI/CD y DevOps"]
+      "features": [
+        "Aplicaciones React / Next.js",
+        "APIs REST y GraphQL",
+        "Diseño y optimización de bases de datos",
+        "Despliegue en la nube (AWS, Vercel)",
+        "Optimización del rendimiento",
+        "CI/CD y DevOps"
+      ]
     },
     "s3": {
       "title": "IA y automatización",
       "subtitle": "LLMs & Intelligent Workflows",
       "description": "Integramos IA en productos reales, no en demos. Desde el procesamiento inteligente de documentos hasta asistentes personalizados impulsados por LLM, creamos automatizaciones que realmente ahorran tiempo y dinero.",
-      "features": ["Integración de LLM (GPT-4, Claude, Gemini)", "Chatbots y agentes de IA personalizados", "Procesamiento de documentos y datos", "Automatización de flujos de trabajo (n8n, Zapier)", "Análisis predictivo", "Sistemas de contenido asistidos por IA"]
+      "features": [
+        "Integración de LLM (GPT-4, Claude, Gemini)",
+        "Chatbots y agentes de IA personalizados",
+        "Procesamiento de documentos y datos",
+        "Automatización de flujos de trabajo (n8n, Zapier)",
+        "Análisis predictivo",
+        "Sistemas de contenido asistidos por IA"
+      ]
     },
     "s4": {
       "title": "Marca e identidad",
       "subtitle": "Estrategia visual",
       "description": "Tu marca es más que un logo. Desarrollamos identidades visuales completas que escalan en todos los puntos de contacto, desde la web hasta la imprenta, desde presentaciones hasta redes sociales.",
-      "features": ["Diseño de logos y marcas", "Sistemas de color y tipografía", "Voz y posicionamiento de marca", "Creación de activos de marketing", "Diseño de presentaciones", "Kit de redes sociales"]
+      "features": [
+        "Diseño de logos y marcas",
+        "Sistemas de color y tipografía",
+        "Voz y posicionamiento de marca",
+        "Creación de activos de marketing",
+        "Diseño de presentaciones",
+        "Kit de redes sociales"
+      ]
     },
     "cta": "Hablar de este servicio",
     "ctaTitle": "¿No estás seguro de lo que necesitas?",
@@ -191,10 +219,22 @@
     },
     "principles": "Nuestros Principios",
     "operamos": "Cómo operamos",
-    "v1": { "title": "Transparencia radical", "desc": "Siempre sabrás en qué estamos trabajando, por qué y cuánto cuesta. Sin cargos ocultos, sin sorpresas." },
-    "v2": { "title": "Calidad sobre cantidad", "desc": "Trabajamos con menos clientes para dar a cada proyecto la atención que merece. Tu proyecto nunca es solo un número." },
-    "v3": { "title": "Talento senior, siempre", "desc": "Cada proyecto es liderado por seniors experimentados. No entregamos tu proyecto a juniors." },
-    "v4": { "title": "Resultados que tienen sentido", "desc": "Medimos el éxito por los resultados, no por las entregas. Si no mueve la aguja, iteramos." },
+    "v1": {
+      "title": "Transparencia radical",
+      "desc": "Siempre sabrás en qué estamos trabajando, por qué y cuánto cuesta. Sin cargos ocultos, sin sorpresas."
+    },
+    "v2": {
+      "title": "Calidad sobre cantidad",
+      "desc": "Trabajamos con menos clientes para dar a cada proyecto la atención que merece. Tu proyecto nunca es solo un número."
+    },
+    "v3": {
+      "title": "Talento senior, siempre",
+      "desc": "Cada proyecto es liderado por seniors experimentados. No entregamos tu proyecto a juniors."
+    },
+    "v4": {
+      "title": "Resultados que tienen sentido",
+      "desc": "Medimos el éxito por los resultados, no por las entregas. Si no mueve la aguja, iteramos."
+    },
     "ctaTitle": "¿Suena como un buen equipo?",
     "ctaSubtitle": "Tenemos capacidad para uno o dos nuevos clientes este trimestre. Si estás construyendo algo ambicioso, queremos saber de ti.",
     "ctaButton": "Empecemos a trabajar"
@@ -337,8 +377,29 @@
       "error": "No se pudo confirmar la reserva. Por favor, inténtalo de nuevo o envíanos un correo electrónico directamente.",
       "calendar": "Añadir al calendario — próximamente"
     },
-    "days": ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sá"],
-    "months": ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+    "days": [
+      "Do",
+      "Lu",
+      "Ma",
+      "Mi",
+      "Ju",
+      "Vi",
+      "Sá"
+    ],
+    "months": [
+      "Enero",
+      "Febrero",
+      "Marzo",
+      "Abril",
+      "Mayo",
+      "Junio",
+      "Julio",
+      "Agosto",
+      "Septiembre",
+      "Octubre",
+      "Noviembre",
+      "Diciembre"
+    ],
     "error": "No se pudo crear la reserva"
   },
   "Dashboard": {
