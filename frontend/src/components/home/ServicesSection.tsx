@@ -1,4 +1,4 @@
-"use client";
+ï»¿"use client";
 
 import { ArrowUpRight, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
@@ -19,10 +19,10 @@ export function ServicesSection() {
   const ts = useTranslations("Home.Services");
 
   const services = [
-    { icon: "MonitorSmartphone", tag: "Diseño", title: "Diseño de Productos Digitales", desc: "Interfaces que a los usuarios les encantan — desde wireframes hasta productos pulidos y perfectos.", tagKey: "designTag" },
-    { icon: "Code2", tag: "Ingeniería", title: "Desarrollo Web", desc: "Aplicaciones rápidas y escalables construidas con los últimos frameworks y mejores prácticas.", tagKey: "engTag" },
-    { icon: "Cpu", tag: "IA", title: "IA y Automatización", desc: "Flujos de trabajo inteligentes y herramientas impulsadas por LLM que ahorran tiempo y reducen errores.", tagKey: "aiTag" },
-    { icon: "Globe", tag: "Branding", title: "Marca e Identidad", desc: "Lenguajes visuales cohesivos que hacen que su marca sea instantáneamente reconocible en todo el mundo.", tagKey: "brandTag" },
+    { icon: "MonitorSmartphone", tag: "Diseï¿½o", title: "Diseï¿½o de Productos Digitales", desc: "Interfaces que a los usuarios les encantan ï¿½ desde wireframes hasta productos pulidos y perfectos.", tagKey: "designTag" },
+    { icon: "Code2", tag: "Ingenierï¿½a", title: "Desarrollo Web", desc: "Aplicaciones rï¿½pidas y escalables construidas con los ï¿½ltimos frameworks y mejores prï¿½cticas.", tagKey: "engTag" },
+    { icon: "Cpu", tag: "IA", title: "IA y Automatizaciï¿½n", desc: "Flujos de trabajo inteligentes y herramientas impulsadas por LLM que ahorran tiempo y reducen errores.", tagKey: "aiTag" },
+    { icon: "Globe", tag: "Branding", title: "Marca e Identidad", desc: "Lenguajes visuales cohesivos que hacen que su marca sea instantï¿½neamente reconocible en todo el mundo.", tagKey: "brandTag" },
   ];
 
   return (

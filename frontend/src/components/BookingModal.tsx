@@ -1,4 +1,4 @@
-"use client";
+ï»¿"use client";
 
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -75,7 +75,7 @@ function CalendarPicker({ selected, onSelect, dayNames, monthNames }: { selected
       </div>
       <div className="grid grid-cols-7 gap-y-1">
         {daysInMonth.map((date, i) => {
-          if (!date) return <div key={empty-} />;
+          if (!date) return <div key={`empty-${i}`} />;
           const disabled = isBeforeToday(date) || isWeekend(date);
           const isSelected = selected ? isSameDay(date, selected) : false;
           const isToday = isSameDay(date, today);
@@ -161,7 +161,7 @@ export function BookingModal({ open, onOpenChange }: BookingModalProps) {
             <div className="h-10 w-10 rounded-xl bg-white/[0.06] flex items-center justify-center shrink-0 mt-0.5 sm:mt-0"><Video className="h-5 w-5 text-white/50" /></div>
             <div className="flex-1">
               <DialogTitle className="text-base font-bold text-white leading-tight flex items-center justify-between">
-                <span>{t("title")} <span className="hidden sm:inline">· {CALL_DURATION} {t("duration")}</span></span>
+                <span>{t("title")} <span className="hidden sm:inline">ï¿½ {CALL_DURATION} {t("duration")}</span></span>
                 <div className="flex sm:hidden items-center gap-1.5 ml-2">
                   {(["calendar", "form", "success"] as Step[]).map((s, i) => (
                     <div key={s} className={cn("h-1.5 rounded-full transition-all duration-300", step === s ? "w-4 bg-white" : i < ["calendar", "form", "success"].indexOf(step) ? "w-2 bg-white/40" : "w-2 bg-white/10")} />
@@ -170,9 +170,9 @@ export function BookingModal({ open, onOpenChange }: BookingModalProps) {
               </DialogTitle>
               <div className="flex flex-wrap items-center gap-x-2 gap-y-1 sm:gap-3 mt-1.5 sm:mt-1">
                 <span className="flex items-center gap-1 text-xs text-white/40"><Clock className="h-3 w-3" /> {CALL_DURATION} <span className="hidden sm:inline">{t("duration")}</span><span className="sm:hidden">min</span></span>
-                <span className="text-white/20">·</span>
+                <span className="text-white/20">ï¿½</span>
                 <span className="flex items-center gap-1 text-xs text-white/40"><Globe className="h-3 w-3" /> <span className="hidden sm:inline">Google </span>Meet</span>
-                <span className="text-white/20 hidden sm:inline">·</span>
+                <span className="text-white/20 hidden sm:inline">ï¿½</span>
                 <span className="flex items-center gap-1 text-xs text-white/40 w-full sm:w-auto mt-0.5 sm:mt-0"><Calendar className="h-3 w-3" /> {TIMEZONE}</span>
               </div>
             </div>
@@ -215,8 +215,8 @@ export function BookingModal({ open, onOpenChange }: BookingModalProps) {
                   <div className="flex items-center gap-3">
                     <div className="h-8 w-8 rounded-lg bg-white/[0.06] flex items-center justify-center shrink-0"><Calendar className="h-4 w-4 text-white/50" /></div>
                     <div>
-                      <div className="text-sm font-semibold text-white">{selectedDate ? formatDate(selectedDate) : ""} · {selectedTime}</div>
-                      <div className="text-xs text-white/40">{t("title")} · {CALL_DURATION} {t("duration")}</div>
+                      <div className="text-sm font-semibold text-white">{selectedDate ? formatDate(selectedDate) : ""} ï¿½ {selectedTime}</div>
+                      <div className="text-xs text-white/40">{t("title")} ï¿½ {CALL_DURATION} {t("duration")}</div>
                     </div>
                   </div>
                   <button onClick={() => setStep("calendar")} className="sm:ml-auto text-xs text-white/40 hover:text-white transition-colors underline underline-offset-4 self-start sm:self-auto ml-11 sm:ml-0">{t("step2.change")}</button>

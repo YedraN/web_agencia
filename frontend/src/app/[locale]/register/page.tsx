@@ -1,4 +1,4 @@
-"use client";
+ï»¿"use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -111,7 +111,7 @@ export default function RegisterPage() {
                 <CheckCircle className="h-8 w-8 text-emerald-400" />
               </div>
               <h2 className="text-2xl font-bold text-white">Verifica tu email</h2>
-              <p className="text-white/50">Hemos enviado un enlace de verificación a <strong className="text-white">{registeredEmail}</strong></p>
+              <p className="text-white/50">Hemos enviado un enlace de verificaciï¿½n a <strong className="text-white">{registeredEmail}</strong></p>
               <Button onClick={handleResend} disabled={isResending} className="bg-white text-black hover:bg-white/90 font-semibold">
                 {isResending ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" />Enviando...</> : "Reenviar email"}
               </Button>

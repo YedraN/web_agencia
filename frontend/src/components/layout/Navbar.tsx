@@ -1,4 +1,4 @@
-"use client";
+ï»¿"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -22,7 +22,7 @@ const navLinks = [
 ];
 
 const locales = [
-  { code: "es", label: "ES", name: "Español" },
+  { code: "es", label: "ES", name: "Espaï¿½ol" },
   { code: "en", label: "EN", name: "English" },
 ];
 

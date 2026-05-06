@@ -1,4 +1,4 @@
-"use client";
+ï»¿"use client";
 
 import { motion } from "framer-motion";
 import { fadeUp } from "./animations";
@@ -15,10 +15,10 @@ export function ProcessSection() {
   const t = useTranslations("Home.Process");
 
   const processSteps = [
-    { num: "01", title: "Descubrimiento y Estrategia", desc: "Deep-dive en sus objetivos, usuarios y mercado. Definimos cómo es el éxito antes de escribir una sola línea de código." },
-    { num: "02", title: "Diseño y Prototipo", desc: "Diseños de alta fidelidad y prototipos interactivos que le permiten ver y sentir el producto antes de construirlo." },
-    { num: "03", title: "Construcción e Iteración", desc: "Ciclos de desarrollo ágiles con demostraciones semanales. Siempre sabe en qué estamos trabajando y por qué." },
-    { num: "04", title: "Lanzamiento y Escalado", desc: "Nos encargamos del despliegue, monitoreamos el rendimiento y nos quedamos con usted después del lanzamiento para iterar y crecer." },
+    { num: "01", title: "Descubrimiento y Estrategia", desc: "Deep-dive en sus objetivos, usuarios y mercado. Definimos cï¿½mo es el ï¿½xito antes de escribir una sola lï¿½nea de cï¿½digo." },
+    { num: "02", title: "Diseï¿½o y Prototipo", desc: "Diseï¿½os de alta fidelidad y prototipos interactivos que le permiten ver y sentir el producto antes de construirlo." },
+    { num: "03", title: "Construcciï¿½n e Iteraciï¿½n", desc: "Ciclos de desarrollo ï¿½giles con demostraciones semanales. Siempre sabe en quï¿½ estamos trabajando y por quï¿½." },
+    { num: "04", title: "Lanzamiento y Escalado", desc: "Nos encargamos del despliegue, monitoreamos el rendimiento y nos quedamos con usted despuï¿½s del lanzamiento para iterar y crecer." },
   ];
 
   return (

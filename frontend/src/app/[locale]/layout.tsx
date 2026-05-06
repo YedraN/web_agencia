@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+ï»¿import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
@@ -19,18 +19,18 @@ const plusJakarta = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
-  const { locale } = params;
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
   const isEn = locale === "en";
 
   return {
-    title: isEn ? "Nova Studio | Digital Agency" : "Nova Studio | Agencia Digital de Diseño, Ingeniería e IA",
+    title: isEn ? "Nova Studio | Digital Agency" : "Nova Studio | Agencia Digital de Diseï¿½o, Ingenierï¿½a e IA",
     description: isEn
       ? "We create high-level digital experiences, from stunning web apps to complex AI-powered automation systems."
-      : "Creamos experiencias digitales de alto nivel, desde aplicaciones web impresionantes hasta sistemas complejos de automatización impulsados por IA.",
+      : "Creamos experiencias digitales de alto nivel, desde aplicaciones web impresionantes hasta sistemas complejos de automatizaciï¿½n impulsados por IA.",
     keywords: isEn
       ? ["digital agency", "web design", "AI automation", "UI/UX", "web development"]
-      : ["agencia digital", "diseño web", "automatización de IA", "UI/UX", "desarrollo web"],
+      : ["agencia digital", "diseï¿½o web", "automatizaciï¿½n de IA", "UI/UX", "desarrollo web"],
     openGraph: {
       title: isEn ? "Nova Studio | Digital Agency" : "Nova Studio | Agencia Digital",
       description: isEn
@@ -45,7 +45,7 @@ export function generateMetadata({ params }: { params: { locale: string } }): Me
       title: isEn ? "Nova Studio | Digital Agency" : "Nova Studio | Agencia Digital",
       description: isEn
         ? "We build digital products that matter. Design, engineering, and AI."
-        : "Agencia especializada en diseño, ingeniería e IA. Construimos productos digitales que importan.",
+        : "Agencia especializada en diseï¿½o, ingenierï¿½a e IA. Construimos productos digitales que importan.",
     },
     alternates: {
       canonical: "https://novastudio.co",
@@ -79,9 +79,9 @@ export default async function RootLayout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }>) {
-  const { locale } = params;
+  const { locale } = await params;
 
   if (!routing.locales.includes(locale as any)) {
     notFound();
@@ -93,7 +93,7 @@ export default async function RootLayout({
     <html
       lang={locale}
       suppressHydrationWarning
-      className={${plusJakarta.variable} antialiased dark}
+      className={`${plusJakarta.variable} antialiased dark`}
     >
       <body className="min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden">
         <NextIntlClientProvider messages={messages}>

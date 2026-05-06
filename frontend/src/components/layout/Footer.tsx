@@ -1,4 +1,4 @@
-import Link from "next/link";
+ï»¿import Link from "next/link";
 import { Diamond, ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link as I18nLink } from "@/i18n/routing";
@@ -48,7 +48,7 @@ export function Footer() {
                 <Phone className="h-4 w-4" /> +34 682 37 38 24
               </a>
               <div className="flex items-center gap-2.5">
-                <MapPin className="h-4 w-4" /> Valencia, España
+                <MapPin className="h-4 w-4" /> Valencia, Espaï¿½a
               </div>
             </div>
           </div>
@@ -78,7 +78,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="mt-16 pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/30">
-            © {new Date().getFullYear()} Nova Studio. {t("derechosReservados")}
+            ï¿½ {new Date().getFullYear()} Nova Studio. {t("derechosReservados")}
           </p>
           <div className="flex items-center gap-6">
             {["X / Twitter", "LinkedIn"].map((social) => (
