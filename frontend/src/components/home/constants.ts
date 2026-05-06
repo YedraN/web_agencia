@@ -1,4 +1,4 @@
-﻿import { MonitorSmartphone, Code2, Cpu, Globe, TrendingUp, Shield, Zap } from "lucide-react";
+import { MonitorSmartphone, Code2, Cpu, Globe, TrendingUp, Shield, Zap } from "lucide-react";
 
 export const services = [
   {

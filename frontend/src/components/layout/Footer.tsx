@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { Diamond, ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link as I18nLink } from "@/i18n/routing";
@@ -48,7 +48,7 @@ export function Footer() {
                 <Phone className="h-4 w-4" /> +34 682 37 38 24
               </a>
               <div className="flex items-center gap-2.5">
-                <MapPin className="h-4 w-4" /> Valencia, Espa�a
+                <MapPin className="h-4 w-4" /> Valencia, España
               </div>
             </div>
           </div>

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { ArrowUpRight, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";

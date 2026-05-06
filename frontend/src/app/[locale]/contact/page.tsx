@@ -121,7 +121,7 @@ export default function ContactPage() {
   const contactInfo = [
     { icon: Mail, label: t("email"), value: "contact@novastudio.com", href: "mailto:juanjoyedra2017@gmail.com" },
     { icon: Clock, label: t("responseTime"), value: t("in24Hours"), href: null },
-    { icon: MapPin, label: t("location"), value: "Valencia, Espa�a", href: null },
+    { icon: MapPin, label: t("location"), value: "Valencia, España", href: null },
   ];
 
   return (

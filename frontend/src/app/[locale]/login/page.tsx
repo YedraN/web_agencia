@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -86,7 +86,7 @@ export default function LoginPage() {
                 <FormItem>
                   <FormLabel className="text-white/60 text-sm font-medium">{t("emailLabel")}</FormLabel>
                   <FormControl>
-                    <Input id="login-email" type="email" placeholder="ejemplo@ejemplo.com" autoComplete="email" disabled={isLoading} className={cn("h-12 bg-white/[0.04] border-white/[0.09] text-white placeholder:text-white/25", "focus-visible:ring-white/20 focus-visible:border-white/20 rounded-xl", "hover:border-white/15 transition-colors")} {...field} />
+                    <Input id="login-email" type="email" placeholder={t("emailPlaceholder")} autoComplete="email" disabled={isLoading} className={cn("h-12 bg-white/[0.04] border-white/[0.09] text-white placeholder:text-white/25", "focus-visible:ring-white/20 focus-visible:border-white/20 rounded-xl", "hover:border-white/15 transition-colors")} {...field} />
                   </FormControl>
                   <FormMessage className="text-red-400 text-xs" />
                 </FormItem>
@@ -100,7 +100,7 @@ export default function LoginPage() {
                   </div>
                   <FormControl>
                     <div className="relative">
-                      <Input id="login-password" type={showPassword ? "text" : "password"} placeholder="����������" autoComplete="current-password" disabled={isLoading} className={cn("h-12 bg-white/[0.04] border-white/[0.09] text-white placeholder:text-white/25", "focus-visible:ring-white/20 focus-visible:border-white/20 rounded-xl pr-12", "hover:border-white/15 transition-colors")} {...field} />
+                      <Input id="login-password" type={showPassword ? "text" : "password"} placeholder={t("passwordLabel")} autoComplete="current-password" disabled={isLoading} className={cn("h-12 bg-white/[0.04] border-white/[0.09] text-white placeholder:text-white/25", "focus-visible:ring-white/20 focus-visible:border-white/20 rounded-xl pr-12", "hover:border-white/15 transition-colors")} {...field} />
                       <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-4 top-1/2 -translate-y-1/2 text-white/30 hover:text-white/60 transition-colors" tabIndex={-1}>
                         {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                       </button>
