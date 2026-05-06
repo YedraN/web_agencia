@@ -257,7 +257,7 @@ export function BookingModal({ open, onOpenChange }: BookingModalProps) {
           name: form.name,
           email: form.email,
           topic: form.topic,
-          date: selectedDate?.toISOString(),
+          date: selectedDate?.toLocaleDateString("sv-SE"),
           time: selectedTime,
           timezone: TIMEZONE,
           duration: CALL_DURATION,
