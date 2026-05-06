@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -17,8 +17,8 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: "Nova Studio | Agencia de IA",
-  description: "Creamos experiencias digitales de alto nivel, desde aplicaciones web impresionantes hasta sistemas complejos de automatización impulsados por IA. Asóciate con Nova Studio.",
-  keywords: ["agencia digital", "diseño web", "automatización de IA", "UI/UX", "desarrollo web"],
+  description: "Creamos experiencias digitales de alto nivel, desde aplicaciones web impresionantes hasta sistemas complejos de automatizaciÃ³n impulsados por IA. AsÃ³ciate con Nova Studio.",
+  keywords: ["agencia digital", "diseÃ±o web", "automatizaciÃ³n de IA", "UI/UX", "desarrollo web"],
   openGraph: {
     title: "Nova Studio | Agencia de IA",
     description: "Creamos experiencias digitales de alto nivel para marcas ambiciosas.",
@@ -39,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="es"
       suppressHydrationWarning
       className={`${plusJakarta.variable} antialiased dark`}
     >
