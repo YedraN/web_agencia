@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { ArrowUpRight, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
@@ -7,22 +7,15 @@ import { fadeUp } from "./animations";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 
-const serviceIcons = [
-  { icon: "MonitorSmartphone", tag: "tag", title: "title", desc: "desc", iconKey: "MonitorSmartphone" },
-  { icon: "Code2", tag: "tag", title: "title", desc: "desc", iconKey: "Code2" },
-  { icon: "Cpu", tag: "tag", title: "title", desc: "desc", iconKey: "Cpu" },
-  { icon: "Globe", tag: "tag", title: "title", desc: "desc", iconKey: "Globe" },
-];
 
 export function ServicesSection() {
-  const t = useTranslations("Home");
   const ts = useTranslations("Home.Services");
 
   const services = [
-    { icon: "MonitorSmartphone", tag: "Dise�o", title: "Dise�o de Productos Digitales", desc: "Interfaces que a los usuarios les encantan � desde wireframes hasta productos pulidos y perfectos.", tagKey: "designTag" },
-    { icon: "Code2", tag: "Ingenier�a", title: "Desarrollo Web", desc: "Aplicaciones r�pidas y escalables construidas con los �ltimos frameworks y mejores pr�cticas.", tagKey: "engTag" },
-    { icon: "Cpu", tag: "IA", title: "IA y Automatizaci�n", desc: "Flujos de trabajo inteligentes y herramientas impulsadas por LLM que ahorran tiempo y reducen errores.", tagKey: "aiTag" },
-    { icon: "Globe", tag: "Branding", title: "Marca e Identidad", desc: "Lenguajes visuales cohesivos que hacen que su marca sea instant�neamente reconocible en todo el mundo.", tagKey: "brandTag" },
+    { icon: "MonitorSmartphone", tag: ts("service1Tag"), title: ts("service1Title"), desc: ts("service1Desc") },
+    { icon: "Code2", tag: ts("service2Tag"), title: ts("service2Title"), desc: ts("service2Desc") },
+    { icon: "Cpu", tag: ts("service3Tag"), title: ts("service3Title"), desc: ts("service3Desc") },
+    { icon: "Globe", tag: ts("service4Tag"), title: ts("service4Title"), desc: ts("service4Desc") },
   ];
 
   return (

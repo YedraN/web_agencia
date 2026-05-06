@@ -27,7 +27,9 @@
       "Bash(Select-Object Name, Mode)",
       "Bash(xargs grep -l \"locale\\\\|i18n\")",
       "Bash(xargs grep -l \"getTranslations\\\\|useTranslations\")",
-      "Bash(xargs grep -l \"useTranslations\\\\|getTranslations\")"
+      "Bash(xargs grep -l \"useTranslations\\\\|getTranslations\")",
+      "Bash(grep -r \"Ã\" --include=\"*.tsx\" --include=\"*.ts\" -l)",
+      "Bash(grep -r \"Ã\" --include=\"*.json\" -l)"
     ]
   }
 }

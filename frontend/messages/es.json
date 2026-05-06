@@ -45,7 +45,19 @@
       "feature1": "Diseño responsivo centrado en móviles",
       "feature2": "Accesibilidad (WCAG 2.1 AA)",
       "feature3": "Creación de sistemas de diseño",
-      "feature4": "Pruebas de usuario e iteración"
+      "feature4": "Pruebas de usuario e iteración",
+      "service1Title": "Diseño de Productos Digitales",
+      "service1Tag": "Diseño",
+      "service1Desc": "Interfaces que a los usuarios les encantan — desde wireframes hasta productos pulidos y perfectos.",
+      "service2Title": "Desarrollo Web",
+      "service2Tag": "Ingeniería",
+      "service2Desc": "Aplicaciones rápidas y escalables construidas con los últimos frameworks y mejores prácticas.",
+      "service3Title": "IA y Automatización",
+      "service3Tag": "IA",
+      "service3Desc": "Flujos de trabajo inteligentes y herramientas impulsadas por LLM que ahorran tiempo y reducen errores.",
+      "service4Title": "Marca e Identidad",
+      "service4Tag": "Branding",
+      "service4Desc": "Lenguajes visuales cohesivos que hacen que su marca sea instantáneamente reconocible en todo el mundo."
     },
     "Process": {
       "label": "Cómo Trabajamos",
@@ -333,7 +345,11 @@
       "resendSuccess": "Email reenviado",
       "resendDesc": "Revisa tu bandeja de entrada.",
       "resendError": "Error"
-    }
+    },
+    "verifyTitle": "Verifica tu email",
+    "verifyDesc": "Hemos enviado un enlace de verificación a",
+    "resending": "Enviando...",
+    "resend": "Reenviar email"
   },
   "Booking": {
     "title": "Llamada de Descubrimiento",

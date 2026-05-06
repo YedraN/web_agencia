@@ -110,10 +110,10 @@ export default function RegisterPage() {
               <div className="h-16 w-16 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center mx-auto">
                 <CheckCircle className="h-8 w-8 text-emerald-400" />
               </div>
-              <h2 className="text-2xl font-bold text-white">Verifica tu email</h2>
-              <p className="text-white/50">Hemos enviado un enlace de verificaci�n a <strong className="text-white">{registeredEmail}</strong></p>
+              <h2 className="text-2xl font-bold text-white">{t("verifyTitle")}</h2>
+              <p className="text-white/50">{t("verifyDesc")} <strong className="text-white">{registeredEmail}</strong></p>
               <Button onClick={handleResend} disabled={isResending} className="bg-white text-black hover:bg-white/90 font-semibold">
-                {isResending ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" />Enviando...</> : "Reenviar email"}
+                {isResending ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" />{t("resending")}</> : t("resend")}
               </Button>
             </div>
           ) : (

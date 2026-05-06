@@ -45,7 +45,19 @@
       "feature1": "Mobile-first responsive design",
       "feature2": "Accessibility (WCAG 2.1 AA)",
       "feature3": "Design system creation",
-      "feature4": "User testing and iteration"
+      "feature4": "User testing and iteration",
+      "service1Title": "Digital Product Design",
+      "service1Tag": "Design",
+      "service1Desc": "Interfaces users actually love — from wireframes to polished, pixel-perfect products.",
+      "service2Title": "Web Development",
+      "service2Tag": "Engineering",
+      "service2Desc": "Fast, scalable applications built with the latest frameworks and best practices.",
+      "service3Title": "AI & Automation",
+      "service3Tag": "AI",
+      "service3Desc": "Intelligent workflows and LLM-powered tools that save time and reduce errors.",
+      "service4Title": "Brand & Identity",
+      "service4Tag": "Branding",
+      "service4Desc": "Cohesive visual languages that make your brand instantly recognizable worldwide."
     },
     "Process": {
       "label": "How We Work",
@@ -333,7 +345,11 @@
       "resendSuccess": "Email resent",
       "resendDesc": "Check your inbox.",
       "resendError": "Error"
-    }
+    },
+    "verifyTitle": "Verify your email",
+    "verifyDesc": "We've sent a verification link to",
+    "resending": "Sending...",
+    "resend": "Resend email"
   },
   "Booking": {
     "title": "Discovery Call",
