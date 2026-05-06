@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useCallback } from "react";
 import { Search, Download, ChevronLeft, ChevronRight, FileText } from "lucide-react";
 import { useInvoices, useDownloadInvoicePdf } from "@/hooks/useInvoices";
@@ -8,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { useTranslations } from "next-intl";
+
 export default function FacturasPage() {
   const t = useTranslations("Dashboard.Facturas");
   const [filters, setFilters] = useState<InvoiceFilters>({ page: 1, page_size: 10, status: "", search: "" });

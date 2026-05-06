@@ -121,7 +121,7 @@ export default function ContactPage() {
   const contactInfo = [
     { icon: Mail, label: t("email"), value: "contact@novastudio.com", href: "mailto:juanjoyedra2017@gmail.com" },
     { icon: Clock, label: t("responseTime"), value: t("in24Hours"), href: null },
-    { icon: MapPin, label: t("location"), value: "Valencia, España", href: null },
+    { icon: MapPin, label: t("location"), value: "Valencia, Espaï¿½a", href: null },
   ];
 
   return (
@@ -355,7 +355,14 @@ export default function ContactPage() {
                   <div className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
                   <span className="text-xs font-semibold text-emerald-400 uppercase tracking-widest">{t("disponible")}</span>
                 </div>
-                <p className="text-sm text-white/60 leading-relaxed" dangerouslySetInnerHTML={{ __html: t.rich("disponibleDesc", { b: (chunks) => <span class="text-white font-semibold"></span> }) }} />
+                <p
+                  className="text-sm text-white/60 leading-relaxed"
+                  dangerouslySetInnerHTML={{
+                    __html: (t.rich("disponibleDesc", {
+                      b: (chunks) => `<span class="text-white font-semibold">${chunks}</span>`,
+                    }) ?? "") as string,
+                  }}
+                />
               </div>
             </div>
           </div>

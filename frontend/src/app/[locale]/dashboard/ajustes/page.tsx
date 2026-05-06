@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import { User } from "@/lib/types";
 import { useAuth } from "@/hooks/useAuth";
@@ -12,6 +14,7 @@ import { toast } from "sonner";
 import { Loader2, Plus, Zap, CheckCircle2 } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import { Skeleton } from "@/components/ui/skeleton";
+
 export default function SettingsPage() {
   const t = useTranslations("Dashboard.Ajustes");
   const { user: authUser, isLoading } = useAuth();
