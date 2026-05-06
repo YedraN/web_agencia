@@ -7,6 +7,7 @@ class NotificationSeverity(str, Enum):
     INFO = "info"
     WARNING = "warning"
     CRITICAL = "critical"
+    SUCCESS = "success"
 
 class NotificationResponse(BaseModel):
     model_config = ConfigDict(from_attributes=True, populate_by_name=True)
