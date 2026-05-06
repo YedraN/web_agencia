@@ -1,0 +1,487 @@
+﻿{
+  "Navbar": {
+    "servicios": "Servicios",
+    "agencia": "Agencia",
+    "portalCliente": "Portal del cliente",
+    "empiezaProyecto": "Empieza un proyecto"
+  },
+  "Footer": {
+    "digitalDesign": "Diseño Digital",
+    "desarrolloWeb": "Desarrollo Web",
+    "automatizacionIA": "Automatización con IA",
+    "identidadMarca": "Identidad de marca",
+    "sobreNosotros": "Sobre nosotros",
+    "contacto": "Contacto",
+    "portalClientes": "Portal de clientes",
+    "politicaPrivacidad": "Política de privacidad",
+    "descripcion": "Una agencia profesional creada para satisfacer tus necesidades a través de la tecnología.",
+    "derechosReservados": "Todos los derechos reservados."
+  },
+  "Home": {
+    "Hero": {
+      "badge": "Disponible para nuevos proyectos · 2026",
+      "title": "Construimos",
+      "titleItalic": "productos digitales",
+      "titleEnd": "que importan.",
+      "subtitle": "Somos una agencia especializada en diseño, ingeniería e IA. Construimos productos digitales que importan.",
+      "ctaPrimary": "Iniciar un Proyecto",
+      "ctaSecondary": "Ver Nuestro Trabajo"
+    },
+    "Stats": {
+      "stat1": "3.2×",
+      "stat1Label": "Crecimiento promedio de ingresos para clientes en el primer año",
+      "stat2": "98%",
+      "stat2Label": "Tasa de satisfacción del cliente en todos los compromisos",
+      "stat3": "40+",
+      "stat3Label": "Productos entregados en 12 países",
+      "stat4": "<2 sem",
+      "stat4Label": "Desde el inicio hasta el primer prototipo funcional"
+    },
+    "Services": {
+      "label": "Lo Que Hacemos",
+      "title": "Experiencia digital de",
+      "titleItalic": "extremo a extremo.",
+      "verTodos": "Ver todos los servicios",
+      "feature1": "Diseño responsivo centrado en móviles",
+      "feature2": "Accesibilidad (WCAG 2.1 AA)",
+      "feature3": "Creación de sistemas de diseño",
+      "feature4": "Pruebas de usuario e iteración"
+    },
+    "Process": {
+      "label": "Cómo Trabajamos",
+      "title": "Nuestro proceso,",
+      "titleItalic": "simplificado."
+    },
+    "WhyUs": {
+      "label": "Por Qué Nova Studio",
+      "title": "Construido para",
+      "titleItalic": "equipos ambiciosos.",
+      "description": "La mayoría de las agencias prometen demasiado y no cumplen lo suficiente. Operamos de manera diferente. Equipo pequeño, transparencia radical y una inclinación por la entrega.",
+      "conocenos": "Conócenos",
+      "item1Title": "Orientado a Resultados",
+      "item1Desc": "Medimos todo y optimizamos sin descanso. Si no funciona, nos adaptamos.",
+      "item2Title": "Equipo Solo Senior",
+      "item2Desc": "Sin juniors en su proyecto. Cada compromiso está liderado por un senior experimentado.",
+      "item3Title": "Ejecución Rápida",
+      "item3Desc": "Primer prototipo en menos de 2 semanas. Nos movemos rápido sin sacrificar la calidad."
+    },
+    "CTA": {
+      "title": "Construyamos",
+      "titleItalic": "algo grandioso.",
+      "subtitle": "Cuéntenos sobre su proyecto. Nos pondremos en contacto con usted en un plazo de 24 horas con un asesoramiento honesto, sin argumentos de venta.",
+      "cta": "Póngase en Contacto"
+    }
+  },
+  "Contact": {
+    "label": "Ponte en contacto",
+    "title": "Construyamos algo",
+    "titleItalic": "genial.",
+    "subtitle": "Háblanos de tu proyecto. Te responderemos en 24 horas con consejos honestos, un cronograma aproximado y una cifra aproximada, sin compromiso.",
+    "nameLabel": "Nombre completo",
+    "namePlaceholder": "Tu nombre",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "ejemplo@ejemplo.com",
+    "companyLabel": "Compañía (opcional)",
+    "companyPlaceholder": "Compañía",
+    "serviceLabel": "Servicio necesario",
+    "servicePlaceholder": "Selecciona un servicio...",
+    "budgetLabel": "Rango de presupuesto",
+    "budgetPlaceholder": "Selecciona un rango de presupuesto...",
+    "messageLabel": "Háblanos de tu proyecto",
+    "messagePlaceholder": "Describe tu proyecto, objetivos, plazos y cualquier otro detalle relevante...",
+    "submitting": "Enviando...",
+    "submit": "Enviar mensaje",
+    "messageReceived": "¡Mensaje recibido!",
+    "messageReceivedDesc": "Revisaremos tu proyecto y te responderemos en 24 horas. Revisa tu bandeja de entrada.",
+    "contactDetails": "Datos de contacto",
+    "email": "Correo electrónico",
+    "responseTime": "Tiempo de respuesta",
+    "in24Hours": "En 24 horas",
+    "location": "Ubicación",
+    "prefieresLlamada": "¿Prefieres una llamada?",
+    "prefieresLlamadaDesc": "Agenda una llamada de descubrimiento gratuita de 30 minutos. Elige el horario que mejor te convenga.",
+    "agendarLlamada": "Agendar una llamada",
+    "disponible": "Disponible",
+    "disponibleDesc": "Actualmente tenemos capacidad para <b>1–2 nuevos proyectos</b> a partir de este trimestre.",
+    "services": {
+      "diseno": "Diseño de productos digitales",
+      "ingenieria": "Ingeniería web",
+      "ia": "IA y automatización",
+      "marca": "Marca e identidad",
+      "fullstack": "Proyecto Full-Stack",
+      "otro": "Otro"
+    },
+    "budgets": {
+      "b1": "Menos de 200€",
+      "b2": "200€ - 500€",
+      "b3": "500€ - 1000€",
+      "b4": "1000€ - 2000€",
+      "b5": "2000€+",
+      "b6": "Hablemos"
+    },
+    "validation": {
+      "nameRequired": "El nombre es requerido",
+      "emailInvalid": "Ingrese un correo electrónico válido",
+      "serviceRequired": "Por favor seleccione un servicio",
+      "budgetRequired": "Por favor seleccione un rango de presupuesto",
+      "messageRequired": "Por favor describa su proyecto (mínimo 20 caracteres)"
+    },
+    "toast": {
+      "success": "Mensaje enviado",
+      "successDesc": "Te responderemos en 24 horas.",
+      "error": "Algo salió mal. Por favor envíanos un correo electrónico directamente."
+    }
+  },
+  "ServicesPage": {
+    "label": "¿Qué hacemos?",
+    "title": "Servicios diseñados para",
+    "titleItalic": "impacto.",
+    "subtitle": "Ofrecemos servicios digitales completos. Ya sea que necesites una habilidad especializada o un socio full-stack, nos adaptamos a tus necesidades.",
+    "s1": {
+      "title": "Diseño de productos digitales",
+      "subtitle": "UX & UI Design",
+      "description": "Diseñamos interfaces que los usuarios realmente disfrutan usando. Desde el concepto inicial hasta archivos Figma perfectos, cada pantalla se crea pensando en usuarios reales, no solo en la estética.",
+      "features": ["Investigación de UX y pruebas de usuario", "Arquitectura de la información", "Wireframing y prototipado", "Diseño UI de alta fidelidad", "Creación de sistemas de diseño", "Accesibilidad (WCAG 2.1 AA)"]
+    },
+    "s2": {
+      "title": "Ingeniería web",
+      "subtitle": "Frontend & Backend",
+      "description": "Creamos aplicaciones rápidas, escalables y mantenibles utilizando las tecnologías más adecuadas para tus necesidades. No seguimos tendencias ciegamente, elegimos lo que funciona.",
+      "features": ["Aplicaciones React / Next.js", "APIs REST y GraphQL", "Diseño y optimización de bases de datos", "Despliegue en la nube (AWS, Vercel)", "Optimización del rendimiento", "CI/CD y DevOps"]
+    },
+    "s3": {
+      "title": "IA y automatización",
+      "subtitle": "LLMs & Intelligent Workflows",
+      "description": "Integramos IA en productos reales, no en demos. Desde el procesamiento inteligente de documentos hasta asistentes personalizados impulsados por LLM, creamos automatizaciones que realmente ahorran tiempo y dinero.",
+      "features": ["Integración de LLM (GPT-4, Claude, Gemini)", "Chatbots y agentes de IA personalizados", "Procesamiento de documentos y datos", "Automatización de flujos de trabajo (n8n, Zapier)", "Análisis predictivo", "Sistemas de contenido asistidos por IA"]
+    },
+    "s4": {
+      "title": "Marca e identidad",
+      "subtitle": "Estrategia visual",
+      "description": "Tu marca es más que un logo. Desarrollamos identidades visuales completas que escalan en todos los puntos de contacto, desde la web hasta la imprenta, desde presentaciones hasta redes sociales.",
+      "features": ["Diseño de logos y marcas", "Sistemas de color y tipografía", "Voz y posicionamiento de marca", "Creación de activos de marketing", "Diseño de presentaciones", "Kit de redes sociales"]
+    },
+    "cta": "Hablar de este servicio",
+    "ctaTitle": "¿No estás seguro de lo que necesitas?",
+    "ctaSubtitle": "Reserva una reunión gratuita de 30 minutos. Escucharemos, haremos las preguntas correctas y recomendaremos el mejor camino a seguir, sin presión de ventas.",
+    "ctaButton": "Reservar una reunión"
+  },
+  "About": {
+    "label": "La Agencia",
+    "title": "Somos Nova Studio.",
+    "titleItalic": "Equipo pequeño, grandes ideas.",
+    "subtitle": "Fundada en 2026, somos una agencia digital especialistas en IA. No aceptamos 40 clientes a la vez. Nos enfocamos en un puñado de proyectos ambiciosos y ponemos todo nuestro esfuerzo en hacerlos excepcionales.",
+    "whyTitle": "Por qué existimos",
+    "story1": "La mayoría de las agencias digitales crecieron demasiado rápido. Escalaron a cientos de empleados, aceptaron a todos los clientes que pudieron y comenzaron a optimizar por ingresos en lugar de resultados. Tu proyecto sería manejado por quien estuviera disponible, no por quien fuera el mejor.",
+    "story2": "Creamos Nova Studio como la solución. Una agencia pequeña y enfocada donde cada persona hace su trabajo adecuándose a tus criterios sin ningún problema.",
+    "story3": "Somos selectivos con los proyectos que aceptamos, no porque seamos arrogantes, sino porque creemos genuinamente que menos proyectos, pero mejores, conducen a mejores resultados para todos.",
+    "stats": {
+      "s1": "Proyectos completados",
+      "s2": "Satisfacción del cliente",
+      "s3": "Retención promedio",
+      "s4": "Países atendidos"
+    },
+    "principles": "Nuestros Principios",
+    "operamos": "Cómo operamos",
+    "v1": { "title": "Transparencia radical", "desc": "Siempre sabrás en qué estamos trabajando, por qué y cuánto cuesta. Sin cargos ocultos, sin sorpresas." },
+    "v2": { "title": "Calidad sobre cantidad", "desc": "Trabajamos con menos clientes para dar a cada proyecto la atención que merece. Tu proyecto nunca es solo un número." },
+    "v3": { "title": "Talento senior, siempre", "desc": "Cada proyecto es liderado por seniors experimentados. No entregamos tu proyecto a juniors." },
+    "v4": { "title": "Resultados que tienen sentido", "desc": "Medimos el éxito por los resultados, no por las entregas. Si no mueve la aguja, iteramos." },
+    "ctaTitle": "¿Suena como un buen equipo?",
+    "ctaSubtitle": "Tenemos capacidad para uno o dos nuevos clientes este trimestre. Si estás construyendo algo ambicioso, queremos saber de ti.",
+    "ctaButton": "Empecemos a trabajar"
+  },
+  "Portfolio": {
+    "label": "Trabajos seleccionados",
+    "title": "Proyectos de los que estamos",
+    "titleItalic": "orgullosos.",
+    "subtitle": "Una selección de proyectos realizados para nuestros clientes. Cada uno es el resultado de una colaboración profunda basada en la confianza, una comunicación clara y resultados medibles.",
+    "categories": {
+      "c1": "Ingeniería Web + Diseño",
+      "c2": "Diseño de Aplicaciones Móviles",
+      "c3": "Automatización de IA",
+      "c4": "Identidad de Marca"
+    },
+    "ctaTitle": "¿Quieres ser nuestro próximo caso de éxito?",
+    "ctaSubtitle": "Seleccionamos un número limitado de proyectos cada trimestre para garantizar la calidad. Consulta disponibilidad ahora.",
+    "ctaButton": "Hablemos"
+  },
+  "Login": {
+    "back": "Volver al sitio web",
+    "title": "Portal de Clientes",
+    "subtitle": "Inicia sesión para seguir tus proyectos y facturas.",
+    "emailLabel": "Correo electrónico",
+    "passwordLabel": "Contraseña",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "submitting": "Iniciando sesión...",
+    "submit": "Iniciar sesión",
+    "or": "O",
+    "noAccount": "¿No tienes una cuenta?",
+    "requestAccess": "Solicitar acceso",
+    "validation": {
+      "emailRequired": "El correo electrónico es obligatorio",
+      "emailInvalid": "Por favor, introduce una dirección de correo electrónico válida",
+      "passwordRequired": "La contraseña es obligatoria",
+      "passwordMin": "La contraseña debe tener al menos 6 caracteres"
+    },
+    "toast": {
+      "welcome": "¡Bienvenido de nuevo, {name}!",
+      "welcomeDesc": "Redirigiendo a tu panel de control...",
+      "errorTitle": "Autenticación fallida",
+      "errorDesc": "Correo electrónico o contraseña inválidos. Por favor, intenta de nuevo."
+    }
+  },
+  "Register": {
+    "back": "Volver a la página principal",
+    "title": "Solicitar acceso al portal",
+    "subtitle": "Crea tu cuenta para empezar a trabajar con nosotros.",
+    "benefitsTitle": "Lo que obtienes con el Portal de Clientes",
+    "benefits": [
+      "Seguimiento del progreso del proyecto en tiempo real",
+      "Comunicación directa con tu equipo",
+      "Facturas, contratos y archivos compartidos",
+      "Aprobar diseños y revisar hitos",
+      "Acceso a tu canal de equipo dedicado"
+    ],
+    "nameLabel": "Nombre completo",
+    "namePlaceholder": "Tu nombre",
+    "companyLabel": "Empresa",
+    "companyPlaceholder": "Empresa",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "ejemplo@ejemplo.com",
+    "passwordLabel": "Contraseña",
+    "passwordPlaceholder": "Crea una contraseña segura",
+    "confirmPasswordLabel": "Confirmar contraseña",
+    "confirmPasswordPlaceholder": "Repite tu contraseña",
+    "passwordReq1": "Al menos 8 caracteres",
+    "passwordReq2": "Una letra mayúscula",
+    "passwordReq3": "Un número",
+    "submitting": "Creando cuenta...",
+    "submit": "Crear cuenta",
+    "terms": "Términos de servicio",
+    "privacy": "Política de privacidad",
+    "termsText": "Al crear una cuenta aceptas nuestros",
+    "and": "y",
+    "alreadyClient": "¿Ya eres cliente?",
+    "login": "Iniciar sesión",
+    "validation": {
+      "nameRequired": "El nombre es obligatorio",
+      "nameMin": "El nombre debe tener al menos 2 caracteres",
+      "companyRequired": "El nombre de la empresa es obligatorio",
+      "emailRequired": "El email es obligatorio",
+      "emailInvalid": "Por favor, introduce una dirección de correo electrónico válida",
+      "passwordMin": "La contraseña debe tener al menos 8 caracteres",
+      "passwordUpper": "Debe contener al menos una letra mayúscula",
+      "passwordNumber": "Debe contener al menos un número",
+      "confirmRequired": "Por favor, confirma tu contraseña",
+      "passwordMatch": "Las contraseñas no coinciden"
+    },
+    "toast": {
+      "success": "Cuenta creada!",
+      "successDesc": "Bienvenido a Nova Studio. Redirigiendo...",
+      "errorTitle": "Registro fallido",
+      "errorDesc": "Algo ha ido mal, por favor inténtalo de nuevo.",
+      "emailVerify": "Revisa tu email para confirmar la cuenta",
+      "resendSuccess": "Email reenviado",
+      "resendDesc": "Revisa tu bandeja de entrada.",
+      "resendError": "Error"
+    }
+  },
+  "Booking": {
+    "title": "Llamada de Descubrimiento",
+    "duration": "minutos",
+    "platform": "Google Meet",
+    "timezone": "Zona horaria",
+    "step1": {
+      "title": "Selecciona una fecha",
+      "selectDate": "Selecciona una fecha para ver las horas disponibles",
+      "availableTimes": "Horas disponibles"
+    },
+    "step2": {
+      "title": "Tus datos",
+      "change": "Cambiar",
+      "nameLabel": "Nombre completo",
+      "namePlaceholder": "John Doe",
+      "emailLabel": "Correo electrónico",
+      "emailPlaceholder": "ejemplo@ejemplo.com",
+      "topicLabel": "¿Sobre qué te gustaría hablar?",
+      "topicOptional": "(opcional)",
+      "topicPlaceholder": "e.g. Necesitamos una nueva plataforma de e-commerce y estamos evaluando agencias..."
+    },
+    "step3": {
+      "title": "¡Reserva confirmada!",
+      "description": "Hemos enviado una confirmación a",
+      "nos vemos": "Nos vemos el",
+      "volver": "Volver al sitio",
+      "addCalendar": "Añadir al calendario"
+    },
+    "footer": {
+      "back": "Volver",
+      "continue": "Continuar",
+      "confirming": "Confirmando...",
+      "confirm": "Confirmar Reserva"
+    },
+    "validation": {
+      "name": "Por favor, introduce tu nombre",
+      "email": "Por favor, introduce un correo electrónico válido"
+    },
+    "toast": {
+      "error": "No se pudo confirmar la reserva. Por favor, inténtalo de nuevo o envíanos un correo electrónico directamente.",
+      "calendar": "Añadir al calendario — próximamente"
+    },
+    "days": ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sá"],
+    "months": ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+    "error": "No se pudo crear la reserva"
+  },
+  "Dashboard": {
+    "Sidebar": {
+      "workspace": "Espacio de trabajo",
+      "inicio": "Inicio",
+      "proyectos": "Proyectos",
+      "facturas": "Facturas",
+      "notificaciones": "Notificaciones",
+      "ajustes": "Ajustes",
+      "logout": "Cerrar sesión"
+    },
+    "Topbar": {
+      "toggleSidebar": "Alternar barra lateral",
+      "notifications": "Notificaciones",
+      "user": "Usuario",
+      "settings": "Configuración de cuenta",
+      "signOut": "Cerrar sesión"
+    },
+    "Overview": {
+      "title": "Vista del cliente",
+      "activeProjects": "Proyectos activos",
+      "totalSpent": "Total Invertido (YTD)",
+      "nextMilestone": "Próximo hito",
+      "pendingInvoices": "Facturas pendientes",
+      "recentActivity": "Actividad reciente"
+    },
+    "Proyectos": {
+      "title": "Proyectos",
+      "subtitle": "Gestiona tus proyectos y su progreso.",
+      "noProjects": "No tienes proyectos aún."
+    },
+    "Facturas": {
+      "title": "Facturas",
+      "subtitle": "Historial de facturación y documentos descargables.",
+      "filters": "Filtros",
+      "searchLabel": "Número de factura",
+      "searchPlaceholder": "Buscar...",
+      "statusFilter": "Estado",
+      "all": "Todos",
+      "draft": "Borrador",
+      "sent": "Enviada",
+      "viewed": "Vista",
+      "paid": "Pagada",
+      "overdue": "Vencida",
+      "cancelled": "Cancelada",
+      "date": "Fecha",
+      "client": "Cliente",
+      "dueDate": "Vencimiento",
+      "amount": "Monto",
+      "status": "Estado",
+      "actions": "Acciones",
+      "downloadPdf": "Descargar PDF",
+      "errorLoading": "Error al cargar las facturas.",
+      "noInvoices": "No hay facturas para los filtros seleccionados.",
+      "totalInvoices": "factura en total",
+      "totalInvoicesPlural": "facturas en total"
+    },
+    "Notificaciones": {
+      "title": "Notificaciones",
+      "subtitle": "Tienes {count} {count, plural, one {alerta pendiente} other {alertas pendientes}}.",
+      "filterBy": "Filtrar por",
+      "all": "Todas",
+      "unread": "No leídas",
+      "critical": "Solo Críticas",
+      "warning": "Avisos",
+      "markAll": "Marcar todas",
+      "noNotifications": "No hay notificaciones",
+      "emptyInbox": "Tu bandeja está limpia acorde a los filtros seleccionados.",
+      "new": "Nueva",
+      "markRead": "Marcar como leída",
+      "toast": {
+        "markRead": "Notificación marcada como leída",
+        "markReadError": "Error al marcar la notificación",
+        "markAllSuccess": "Todas las notificaciones leídas",
+        "markAllError": "Error al marcar todas las notificaciones"
+      }
+    },
+    "Ajustes": {
+      "title": "Ajustes",
+      "subtitle": "Configura tu perfil personal, integraciones y facturación.",
+      "tabs": {
+        "profile": "Perfil",
+        "integrations": "Integraciones",
+        "billing": "Facturación"
+      },
+      "profile": {
+        "title": "Información Personal",
+        "description": "Actualiza los detalles de tu cuenta pública e inicio de sesión.",
+        "name": "Nombre",
+        "company": "Empresa",
+        "email": "Correo Electrónico",
+        "emailNote": "Su correo de inicio de sesión no puede ser cambiado aquí.",
+        "changeAvatar": "Cambiar Avatar",
+        "saving": "Guardando...",
+        "saveChanges": "Guardar Cambios",
+        "success": "Perfil actualizado correctamente."
+      },
+      "integrations": {
+        "title": "Conectar Servicios Externos",
+        "description": "Conecta con las herramientas que tu equipo ya utiliza.",
+        "connected": "Conectado",
+        "notConnected": "No conectado",
+        "configure": "Configurar",
+        "connect": "Conectar"
+      },
+      "billing": {
+        "title": "Plan Actual",
+        "description": "Estás utilizando el plan",
+        "limit": "Límite de 100 ejecuciones al mes.",
+        "usage": "Uso de Ejecuciones (Este Mes)",
+        "approaching": "Te estás acercando al límite de tu plan",
+        "upgradeDesc": "Mejora tu plan para ejecuciones ilimitadas.",
+        "upgrade": "Mejorar a Pro",
+        "month": "/ mes"
+      }
+    }
+  },
+  "ConfigSlideOver": {
+    "title": "Configurar Parámetros",
+    "description": "Ajusta los valores dinámicos para",
+    "noParams": "No hay parámetros configurables para esta automatización.",
+    "cancel": "Cancelar",
+    "saving": "Guardando...",
+    "saveChanges": "Guardar Cambios",
+    "selectOption": "Selecciona una opción",
+    "toast": {
+      "success": "Configuración actualizada correctamente",
+      "error": "No se pudo guardar la configuración"
+    },
+    "labels": {
+      "targetEmails": "Emails de Destino",
+      "frequency": "Frecuencia (minutos)",
+      "billingCycle": "Ciclo de Facturación",
+      "weekly": "Semanal",
+      "monthly": "Mensual",
+      "templateId": "ID de Plantilla",
+      "defaultGroups": "Grupos por defecto (separar por coma)"
+    }
+  },
+  "Common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "retry": "Reintentar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "search": "Buscar...",
+    "noResults": "Sin resultados",
+    "next": "Siguiente",
+    "previous": "Anterior"
+  }
+}

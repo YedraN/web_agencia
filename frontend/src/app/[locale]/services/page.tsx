@@ -3,10 +3,11 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { buttonVariants } from "@/components/ui/button";
-import { ArrowRight, ArrowUpRight, Palette, Code2, Cpu, Layers } from "lucide-react";
-import Link from "next/link";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 
 const fadeUp: Record<string, any> = {
   hidden: { opacity: 0, y: 24 },
@@ -16,78 +17,23 @@ const fadeUp: Record<string, any> = {
   }),
 };
 
-const services = [
-  {
-    id: "design",
-    icon: Palette,
-    number: "01",
-    title: "Diseño de productos digitales",
-    subtitle: "UX & UI Design",
-    description:
-      "Diseñamos interfaces que los usuarios realmente disfrutan usando. Desde el concepto inicial hasta archivos Figma perfectos, cada pantalla se crea pensando en usuarios reales, no solo en la estética.",
-    features: [
-      "Investigación de UX y pruebas de usuario",
-      "Arquitectura de la información",
-      "Wireframing y prototipado",
-      "Diseño UI de alta fidelidad",
-      "Creación de sistemas de diseño",
-      "Accesibilidad (WCAG 2.1 AA)",
-    ],
-  },
-  {
-    id: "engineering",
-    icon: Code2,
-    number: "02",
-    title: "Ingeniería web",
-    subtitle: "Frontend & Backend",
-    description:
-      "Creamos aplicaciones rápidas, escalables y mantenibles utilizando las tecnologías más adecuadas para tus necesidades. No seguimos tendencias ciegamente, elegimos lo que funciona.",
-    features: [
-      "Aplicaciones React / Next.js",
-      "APIs REST y GraphQL",
-      "Diseño y optimización de bases de datos",
-      "Despliegue en la nube (AWS, Vercel)",
-      "Optimización del rendimiento",
-      "CI/CD y DevOps",
-    ],
-  },
-  {
-    id: "ai",
-    icon: Cpu,
-    number: "03",
-    title: "IA y automatización",
-    subtitle: "LLMs & Intelligent Workflows",
-    description:
-      "Integramos IA en productos reales, no en demos. Desde el procesamiento inteligente de documentos hasta asistentes personalizados impulsados por LLM, creamos automatizaciones que realmente ahorran tiempo y dinero.",
-    features: [
-      "Integración de LLM (GPT-4, Claude, Gemini)",
-      "Chatbots y agentes de IA personalizados",
-      "Procesamiento de documentos y datos",
-      "Automatización de flujos de trabajo (n8n, Zapier)",
-      "Análisis predictivo",
-      "Sistemas de contenido asistidos por IA",
-    ],
-  },
-  {
-    id: "branding",
-    icon: Layers,
-    number: "04",
-    title: "Marca e identidad",
-    subtitle: "Estrategia visual",
-    description:
-      "Tu marca es más que un logo. Desarrollamos identidades visuales completas que escalan en todos los puntos de contacto, desde la web hasta la imprenta, desde presentaciones hasta redes sociales.",
-    features: [
-      "Diseño de logos y marcas",
-      "Sistemas de color y tipografía",
-      "Voz y posicionamiento de marca",
-      "Creación de activos de marketing",
-      "Diseño de presentaciones",
-      "Kit de redes sociales",
-    ],
-  },
-];
+const iconSvgs: Record<string, React.ReactNode> = {
+  Palette: <path d="M13.5 3a4.5 4.5 0 0 0-4.26 3.05L9 7H6a3 3 0 0 0 0 6h1.5L9 15a4.5 4.5 0 0 0 4.26 3A4.5 4.5 0 0 0 18 13.5V3h-4.5z"/>,
+  Code2: <><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></>,
+  Cpu: <><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></>,
+  Layers: <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>,
+};
 
 export default function ServicesPage() {
+  const t = useTranslations("ServicesPage");
+
+  const services = [
+    { id: "design", icon: "Palette", number: "01", title: t("s1.title"), subtitle: t("s1.subtitle"), description: t("s1.description"), features: t.raw("s1.features") },
+    { id: "engineering", icon: "Code2", number: "02", title: t("s2.title"), subtitle: t("s2.subtitle"), description: t("s2.description"), features: t.raw("s2.features") },
+    { id: "ai", icon: "Cpu", number: "03", title: t("s3.title"), subtitle: t("s3.subtitle"), description: t("s3.description"), features: t.raw("s3.features") },
+    { id: "branding", icon: "Layers", number: "04", title: t("s4.title"), subtitle: t("s4.subtitle"), description: t("s4.description"), features: t.raw("s4.features") },
+  ];
+
   return (
     <div className="flex min-h-screen flex-col bg-[#090909]">
       <Navbar />
@@ -98,16 +44,16 @@ export default function ServicesPage() {
           <div className="mx-auto max-w-7xl px-6 sm:px-10">
             <motion.p variants={fadeUp} initial="hidden" animate="visible"
               className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-4">
-              ¿Qué hacemos?
+              {t("label")}
             </motion.p>
             <motion.h1 variants={fadeUp} initial="hidden" animate="visible" custom={0.5}
               className="text-6xl md:text-7xl font-extrabold text-white tracking-[-0.04em] leading-[0.95] max-w-3xl mb-6">
-              Servicios diseñados para{" "}
-              <span className="text-white/25 font-light italic">impacto.</span>
+              {t("title")}{" "}
+              <span className="text-white/25 font-light italic">{t("titleItalic")}</span>
             </motion.h1>
             <motion.p variants={fadeUp} initial="hidden" animate="visible" custom={1}
               className="text-lg text-white/45 max-w-xl leading-relaxed">
-              Ofrecemos servicios digitales completos. Ya sea que necesites una habilidad especializada o un socio full-stack, nos adaptamos a tus necesidades.
+              {t("subtitle")}
             </motion.p>
           </div>
         </section>
@@ -137,7 +83,9 @@ export default function ServicesPage() {
                       </span>
                     </div>
                     <div className="h-14 w-14 rounded-2xl bg-white/[0.06] flex items-center justify-center mb-8">
-                      <svc.icon className="h-6 w-6 text-white/60" />
+                      <svg className="h-6 w-6 text-white/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        {iconSvgs[svc.icon]}
+                      </svg>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-[1.05] mb-6">
                       {svc.title}
@@ -152,14 +100,14 @@ export default function ServicesPage() {
                         "rounded-full bg-white text-black hover:bg-white/90 font-semibold group p-4.5"
                       )}
                     >
-                      Hablar de este servicio
+                      {t("cta")}
                       <ArrowRight className="ml-2 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </div>
 
                   {/* Right */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {svc.features.map((feat) => (
+                    {svc.features.map((feat: string) => (
                       <div
                         key={feat}
                         className="p-4 rounded-xl border border-white/[0.06] bg-white/[0.02] text-sm text-white/60 font-medium"
@@ -178,16 +126,16 @@ export default function ServicesPage() {
         <section className="py-32">
           <div className="mx-auto max-w-4xl px-6 sm:px-10 text-center">
             <h2 className="text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-[0.95] mb-6">
-              ¿No estás seguro de lo que necesitas?
+              {t("ctaTitle")}
             </h2>
             <p className="text-white/45 text-lg mb-10 max-w-lg mx-auto">
-              Reserva una reunión gratuita de 30 minutos. Escucharemos, haremos las preguntas correctas y recomendaremos el mejor camino a seguir, sin presión de ventas.
+              {t("ctaSubtitle")}
             </p>
             <Link
               href="/contact"
               className={cn(buttonVariants({ size: "lg" }), "rounded-full bg-white text-black hover:bg-white/90 font-bold h-14 px-8")}
             >
-              Reservar una reunión
+              {t("ctaButton")}
               <ArrowUpRight className="ml-2 h-4 w-4" />
             </Link>
           </div>
@@ -198,5 +146,3 @@ export default function ServicesPage() {
     </div>
   );
 }
-
-

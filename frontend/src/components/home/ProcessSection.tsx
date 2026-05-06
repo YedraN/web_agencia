@@ -1,10 +1,26 @@
-ï»¿"use client";
+"use client";
 
 import { motion } from "framer-motion";
 import { fadeUp } from "./animations";
-import { processSteps } from "./constants";
+import { useTranslations } from "next-intl";
+
+const steps = [
+  { num: "01", titleKey: "discoveryTitle", descKey: "discoveryDesc" },
+  { num: "02", titleKey: "designTitle", descKey: "designDesc" },
+  { num: "03", titleKey: "buildTitle", descKey: "buildDesc" },
+  { num: "04", titleKey: "launchTitle", descKey: "launchDesc" },
+];
 
 export function ProcessSection() {
+  const t = useTranslations("Home.Process");
+
+  const processSteps = [
+    { num: "01", title: "Descubrimiento y Estrategia", desc: "Deep-dive en sus objetivos, usuarios y mercado. Definimos cómo es el éxito antes de escribir una sola línea de código." },
+    { num: "02", title: "Diseño y Prototipo", desc: "Diseños de alta fidelidad y prototipos interactivos que le permiten ver y sentir el producto antes de construirlo." },
+    { num: "03", title: "Construcción e Iteración", desc: "Ciclos de desarrollo ágiles con demostraciones semanales. Siempre sabe en qué estamos trabajando y por qué." },
+    { num: "04", title: "Lanzamiento y Escalado", desc: "Nos encargamos del despliegue, monitoreamos el rendimiento y nos quedamos con usted después del lanzamiento para iterar y crecer." },
+  ];
+
   return (
     <section className="py-32 border-t border-white/[0.06]">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
@@ -15,7 +31,7 @@ export function ProcessSection() {
           viewport={{ once: true }}
           className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-4"
         >
-          CÃ³mo Trabajamos
+          {t("label")}
         </motion.p>
         <motion.h2
           variants={fadeUp}
@@ -25,8 +41,8 @@ export function ProcessSection() {
           custom={0.5}
           className="text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-[1.05] mb-20"
         >
-          Nuestro proceso,{" "}
-          <span className="text-white/30 font-light italic">simplificado.</span>
+          {t("title")}{" "}
+          <span className="text-white/30 font-light italic">{t("titleItalic")}</span>
         </motion.h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">

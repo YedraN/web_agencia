@@ -1,0 +1,487 @@
+﻿{
+  "Navbar": {
+    "servicios": "Services",
+    "agencia": "Agency",
+    "portalCliente": "Client portal",
+    "empiezaProyecto": "Start a project"
+  },
+  "Footer": {
+    "digitalDesign": "Digital Design",
+    "desarrolloWeb": "Web Development",
+    "automatizacionIA": "AI Automation",
+    "identidadMarca": "Brand Identity",
+    "sobreNosotros": "About us",
+    "contacto": "Contact",
+    "portalClientes": "Client portal",
+    "politicaPrivacidad": "Privacy Policy",
+    "descripcion": "A professional agency built to meet your needs through technology.",
+    "derechosReservados": "All rights reserved."
+  },
+  "Home": {
+    "Hero": {
+      "badge": "Available for new projects · 2026",
+      "title": "We build",
+      "titleItalic": "digital products",
+      "titleEnd": "that matter.",
+      "subtitle": "We're an agency specializing in design, engineering, and AI. We build digital products that matter.",
+      "ctaPrimary": "Start a Project",
+      "ctaSecondary": "See Our Work"
+    },
+    "Stats": {
+      "stat1": "3.2×",
+      "stat1Label": "Average revenue growth for clients in year one",
+      "stat2": "98%",
+      "stat2Label": "Client satisfaction rate across all engagements",
+      "stat3": "40+",
+      "stat3Label": "Products shipped across 12 countries",
+      "stat4": "<2 wk",
+      "stat4Label": "From kickoff to first working prototype"
+    },
+    "Services": {
+      "label": "What We Do",
+      "title": "End-to-end digital",
+      "titleItalic": "expertise.",
+      "verTodos": "View all services",
+      "feature1": "Mobile-first responsive design",
+      "feature2": "Accessibility (WCAG 2.1 AA)",
+      "feature3": "Design system creation",
+      "feature4": "User testing and iteration"
+    },
+    "Process": {
+      "label": "How We Work",
+      "title": "Our process,",
+      "titleItalic": "simplified."
+    },
+    "WhyUs": {
+      "label": "Why Nova Studio",
+      "title": "Built for",
+      "titleItalic": "ambitious teams.",
+      "description": "Most agencies overpromise and underdeliver. We operate differently. Small team, radical transparency, and a bias for shipping.",
+      "conocenos": "Meet us",
+      "item1Title": "Results-Oriented",
+      "item1Desc": "We measure everything and optimize relentlessly. If it doesn't work, we adapt.",
+      "item2Title": "Senior-Only Team",
+      "item2Desc": "No juniors on your project. Every engagement is led by an experienced senior.",
+      "item3Title": "Fast Execution",
+      "item3Desc": "First prototype in under 2 weeks. We move fast without sacrificing quality."
+    },
+    "CTA": {
+      "title": "Let's build",
+      "titleItalic": "something great.",
+      "subtitle": "Tell us about your project. We'll get back to you within 24 hours with honest advice, no sales pitch.",
+      "cta": "Get in Touch"
+    }
+  },
+  "Contact": {
+    "label": "Get in touch",
+    "title": "Let's build something",
+    "titleItalic": "great.",
+    "subtitle": "Tell us about your project. We'll respond within 24 hours with honest advice, a rough timeline, and a ballpark number. No strings attached.",
+    "nameLabel": "Full name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@example.com",
+    "companyLabel": "Company (optional)",
+    "companyPlaceholder": "Company",
+    "serviceLabel": "Service needed",
+    "servicePlaceholder": "Select a service...",
+    "budgetLabel": "Budget range",
+    "budgetPlaceholder": "Select a budget range...",
+    "messageLabel": "Tell us about your project",
+    "messagePlaceholder": "Describe your project, goals, timeline, and any other relevant details...",
+    "submitting": "Sending...",
+    "submit": "Send message",
+    "messageReceived": "Message received!",
+    "messageReceivedDesc": "We'll review your project and get back to you within 24 hours. Check your inbox.",
+    "contactDetails": "Contact details",
+    "email": "Email",
+    "responseTime": "Response time",
+    "in24Hours": "Within 24 hours",
+    "location": "Location",
+    "prefieresLlamada": "Prefer a call?",
+    "prefieresLlamadaDesc": "Book a free 30-minute discovery call. Pick the time that works best for you.",
+    "agendarLlamada": "Book a call",
+    "disponible": "Available",
+    "disponibleDesc": "We currently have capacity for <b>1–2 new projects</b> starting this quarter.",
+    "services": {
+      "diseno": "Digital product design",
+      "ingenieria": "Web engineering",
+      "ia": "AI & automation",
+      "marca": "Brand & identity",
+      "fullstack": "Full-Stack project",
+      "otro": "Other"
+    },
+    "budgets": {
+      "b1": "Less than €200",
+      "b2": "€200 - €500",
+      "b3": "€500 - €1,000",
+      "b4": "€1,000 - €2,000",
+      "b5": "€2,000+",
+      "b6": "Let's talk"
+    },
+    "validation": {
+      "nameRequired": "Name is required",
+      "emailInvalid": "Please enter a valid email address",
+      "serviceRequired": "Please select a service",
+      "budgetRequired": "Please select a budget range",
+      "messageRequired": "Please describe your project (minimum 20 characters)"
+    },
+    "toast": {
+      "success": "Message sent",
+      "successDesc": "We'll respond within 24 hours.",
+      "error": "Something went wrong. Please email us directly."
+    }
+  },
+  "ServicesPage": {
+    "label": "What do we do?",
+    "title": "Services designed for",
+    "titleItalic": "impact.",
+    "subtitle": "We offer comprehensive digital services. Whether you need a specialized skill or a full-stack partner, we adapt to your needs.",
+    "s1": {
+      "title": "Digital product design",
+      "subtitle": "UX & UI Design",
+      "description": "We design interfaces that users actually enjoy using. From initial concept to polished Figma files, every screen is built with real users in mind, not just aesthetics.",
+      "features": ["UX research and user testing", "Information architecture", "Wireframing and prototyping", "High-fidelity UI design", "Design system creation", "Accessibility (WCAG 2.1 AA)"]
+    },
+    "s2": {
+      "title": "Web engineering",
+      "subtitle": "Frontend & Backend",
+      "description": "We build fast, scalable, and maintainable applications using the most suitable technologies for your needs. We don't blindly follow trends — we choose what works.",
+      "features": ["React / Next.js applications", "REST and GraphQL APIs", "Database design and optimization", "Cloud deployment (AWS, Vercel)", "Performance optimization", "CI/CD and DevOps"]
+    },
+    "s3": {
+      "title": "AI & automation",
+      "subtitle": "LLMs & Intelligent Workflows",
+      "description": "We integrate AI into real products, not demos. From intelligent document processing to custom LLM-powered assistants, we build automations that actually save time and money.",
+      "features": ["LLM integration (GPT-4, Claude, Gemini)", "Custom AI chatbots and agents", "Document and data processing", "Workflow automation (n8n, Zapier)", "Predictive analytics", "AI-assisted content systems"]
+    },
+    "s4": {
+      "title": "Brand & identity",
+      "subtitle": "Visual strategy",
+      "description": "Your brand is more than a logo. We develop complete visual identities that scale across every touchpoint — from web to print, presentations to social media.",
+      "features": ["Logo and brand design", "Color and typography systems", "Brand voice and positioning", "Marketing asset creation", "Presentation design", "Social media kit"]
+    },
+    "cta": "Talk about this service",
+    "ctaTitle": "Not sure what you need?",
+    "ctaSubtitle": "Book a free 30-minute meeting. We'll listen, ask the right questions, and recommend the best path forward — no sales pressure.",
+    "ctaButton": "Book a meeting"
+  },
+  "About": {
+    "label": "The Agency",
+    "title": "We are Nova Studio.",
+    "titleItalic": "Small team, big ideas.",
+    "subtitle": "Founded in 2026, we're a digital agency specializing in AI. We don't take on 40 clients at once. We focus on a handful of ambitious projects and pour everything into making them exceptional.",
+    "whyTitle": "Why we exist",
+    "story1": "Most digital agencies grew too fast. They scaled to hundreds of employees, took on every client they could, and started optimizing for revenue over results. Your project would be handled by whoever was available, not whoever was best.",
+    "story2": "We created Nova Studio as the solution. A small, focused agency where every person does their job well, adapting to your criteria without any hassle.",
+    "story3": "We're selective about the projects we take on — not because we're arrogant, but because we genuinely believe that fewer, better projects lead to better results for everyone.",
+    "stats": {
+      "s1": "Projects completed",
+      "s2": "Client satisfaction",
+      "s3": "Average retention",
+      "s4": "Countries served"
+    },
+    "principles": "Our Principles",
+    "operamos": "How we operate",
+    "v1": { "title": "Radical transparency", "desc": "You'll always know what we're working on, why, and how much it costs. No hidden charges, no surprises." },
+    "v2": { "title": "Quality over quantity", "desc": "We work with fewer clients to give each project the attention it deserves. Your project is never just a number." },
+    "v3": { "title": "Senior talent, always", "desc": "Every project is led by experienced seniors. We never hand your project off to juniors." },
+    "v4": { "title": "Results that make sense", "desc": "We measure success by outcomes, not deliverables. If it doesn't move the needle, we iterate." },
+    "ctaTitle": "Sound like a good team?",
+    "ctaSubtitle": "We have room for one or two new clients this quarter. If you're building something ambitious, we'd love to hear from you.",
+    "ctaButton": "Let's get to work"
+  },
+  "Portfolio": {
+    "label": "Selected work",
+    "title": "Projects we're",
+    "titleItalic": "proud of.",
+    "subtitle": "A selection of projects delivered for our clients. Each one is the result of a deep collaboration built on trust, clear communication, and measurable results.",
+    "categories": {
+      "c1": "Web Engineering + Design",
+      "c2": "Mobile App Design",
+      "c3": "AI Automation",
+      "c4": "Brand Identity"
+    },
+    "ctaTitle": "Want to be our next success story?",
+    "ctaSubtitle": "We select a limited number of projects each quarter to ensure quality. Check availability now.",
+    "ctaButton": "Let's talk"
+  },
+  "Login": {
+    "back": "Back to website",
+    "title": "Client Portal",
+    "subtitle": "Sign in to track your projects and invoices.",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "forgotPassword": "Forgot your password?",
+    "submitting": "Signing in...",
+    "submit": "Sign in",
+    "or": "OR",
+    "noAccount": "Don't have an account?",
+    "requestAccess": "Request access",
+    "validation": {
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "passwordRequired": "Password is required",
+      "passwordMin": "Password must be at least 6 characters"
+    },
+    "toast": {
+      "welcome": "Welcome back, {name}!",
+      "welcomeDesc": "Redirecting to your dashboard...",
+      "errorTitle": "Authentication failed",
+      "errorDesc": "Invalid email or password. Please try again."
+    }
+  },
+  "Register": {
+    "back": "Back to homepage",
+    "title": "Request portal access",
+    "subtitle": "Create your account to start working with us.",
+    "benefitsTitle": "What you get with the Client Portal",
+    "benefits": [
+      "Real-time project progress tracking",
+      "Direct communication with your team",
+      "Invoices, contracts, and shared files",
+      "Approve designs and review milestones",
+      "Access to your dedicated team channel"
+    ],
+    "nameLabel": "Full name",
+    "namePlaceholder": "Your name",
+    "companyLabel": "Company",
+    "companyPlaceholder": "Company",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Create a secure password",
+    "confirmPasswordLabel": "Confirm password",
+    "confirmPasswordPlaceholder": "Repeat your password",
+    "passwordReq1": "At least 8 characters",
+    "passwordReq2": "One uppercase letter",
+    "passwordReq3": "One number",
+    "submitting": "Creating account...",
+    "submit": "Create account",
+    "terms": "Terms of service",
+    "privacy": "Privacy policy",
+    "termsText": "By creating an account you accept our",
+    "and": "and",
+    "alreadyClient": "Already a client?",
+    "login": "Sign in",
+    "validation": {
+      "nameRequired": "Name is required",
+      "nameMin": "Name must be at least 2 characters",
+      "companyRequired": "Company name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "passwordMin": "Password must be at least 8 characters",
+      "passwordUpper": "Must contain at least one uppercase letter",
+      "passwordNumber": "Must contain at least one number",
+      "confirmRequired": "Please confirm your password",
+      "passwordMatch": "Passwords do not match"
+    },
+    "toast": {
+      "success": "Account created!",
+      "successDesc": "Welcome to Nova Studio. Redirecting...",
+      "errorTitle": "Registration failed",
+      "errorDesc": "Something went wrong, please try again.",
+      "emailVerify": "Check your email to confirm your account",
+      "resendSuccess": "Email resent",
+      "resendDesc": "Check your inbox.",
+      "resendError": "Error"
+    }
+  },
+  "Booking": {
+    "title": "Discovery Call",
+    "duration": "min",
+    "platform": "Google Meet",
+    "timezone": "Timezone",
+    "step1": {
+      "title": "Select a date",
+      "selectDate": "Select a date to see available times",
+      "availableTimes": "Available times"
+    },
+    "step2": {
+      "title": "Your details",
+      "change": "Change",
+      "nameLabel": "Full name",
+      "namePlaceholder": "John Doe",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@example.com",
+      "topicLabel": "What would you like to discuss?",
+      "topicOptional": "(optional)",
+      "topicPlaceholder": "e.g. We need a new e-commerce platform and are evaluating agencies..."
+    },
+    "step3": {
+      "title": "Booking confirmed!",
+      "description": "We've sent a confirmation to",
+      "nos vemos": "See you on",
+      "volver": "Back to site",
+      "addCalendar": "Add to calendar"
+    },
+    "footer": {
+      "back": "Back",
+      "continue": "Continue",
+      "confirming": "Confirming...",
+      "confirm": "Confirm Booking"
+    },
+    "validation": {
+      "name": "Please enter your name",
+      "email": "Please enter a valid email address"
+    },
+    "toast": {
+      "error": "Could not confirm booking. Please try again or email us directly.",
+      "calendar": "Add to calendar — coming soon"
+    },
+    "days": ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
+    "months": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    "error": "Could not create booking"
+  },
+  "Dashboard": {
+    "Sidebar": {
+      "workspace": "Workspace",
+      "inicio": "Overview",
+      "proyectos": "Projects",
+      "facturas": "Invoices",
+      "notificaciones": "Notifications",
+      "ajustes": "Settings",
+      "logout": "Sign out"
+    },
+    "Topbar": {
+      "toggleSidebar": "Toggle sidebar",
+      "notifications": "Notifications",
+      "user": "User",
+      "settings": "Account Settings",
+      "signOut": "Sign out"
+    },
+    "Overview": {
+      "title": "Client view",
+      "activeProjects": "Active projects",
+      "totalSpent": "Total Spent (YTD)",
+      "nextMilestone": "Next milestone",
+      "pendingInvoices": "Pending invoices",
+      "recentActivity": "Recent activity"
+    },
+    "Proyectos": {
+      "title": "Projects",
+      "subtitle": "Manage your projects and their progress.",
+      "noProjects": "You don't have any projects yet."
+    },
+    "Facturas": {
+      "title": "Invoices",
+      "subtitle": "Billing history and downloadable documents.",
+      "filters": "Filters",
+      "searchLabel": "Invoice number",
+      "searchPlaceholder": "Search...",
+      "statusFilter": "Status",
+      "all": "All",
+      "draft": "Draft",
+      "sent": "Sent",
+      "viewed": "Viewed",
+      "paid": "Paid",
+      "overdue": "Overdue",
+      "cancelled": "Cancelled",
+      "date": "Date",
+      "client": "Client",
+      "dueDate": "Due",
+      "amount": "Amount",
+      "status": "Status",
+      "actions": "Actions",
+      "downloadPdf": "Download PDF",
+      "errorLoading": "Error loading invoices.",
+      "noInvoices": "No invoices for the selected filters.",
+      "totalInvoices": "invoice total",
+      "totalInvoicesPlural": "invoices total"
+    },
+    "Notificaciones": {
+      "title": "Notifications",
+      "subtitle": "You have {count} {count, plural, one {pending alert} other {pending alerts}}.",
+      "filterBy": "Filter by",
+      "all": "All",
+      "unread": "Unread",
+      "critical": "Critical only",
+      "warning": "Warnings",
+      "markAll": "Mark all",
+      "noNotifications": "No notifications",
+      "emptyInbox": "Your inbox is clean based on the selected filters.",
+      "new": "New",
+      "markRead": "Mark as read",
+      "toast": {
+        "markRead": "Notification marked as read",
+        "markReadError": "Error marking notification",
+        "markAllSuccess": "All notifications read",
+        "markAllError": "Error marking all notifications"
+      }
+    },
+    "Ajustes": {
+      "title": "Settings",
+      "subtitle": "Configure your personal profile, integrations, and billing.",
+      "tabs": {
+        "profile": "Profile",
+        "integrations": "Integrations",
+        "billing": "Billing"
+      },
+      "profile": {
+        "title": "Personal Information",
+        "description": "Update your public account and login details.",
+        "name": "Name",
+        "company": "Company",
+        "email": "Email",
+        "emailNote": "Your login email cannot be changed here.",
+        "changeAvatar": "Change Avatar",
+        "saving": "Saving...",
+        "saveChanges": "Save Changes",
+        "success": "Profile updated successfully."
+      },
+      "integrations": {
+        "title": "Connect External Services",
+        "description": "Connect with tools your team already uses.",
+        "connected": "Connected",
+        "notConnected": "Not connected",
+        "configure": "Configure",
+        "connect": "Connect"
+      },
+      "billing": {
+        "title": "Current Plan",
+        "description": "You are on the",
+        "limit": "Limit of 100 executions per month.",
+        "usage": "Execution Usage (This Month)",
+        "approaching": "You are approaching the limit of your",
+        "upgradeDesc": "Upgrade your plan for unlimited executions.",
+        "upgrade": "Upgrade to Pro",
+        "month": "/ month"
+      }
+    }
+  },
+  "ConfigSlideOver": {
+    "title": "Configure Parameters",
+    "description": "Adjust dynamic values for",
+    "noParams": "No configurable parameters for this automation.",
+    "cancel": "Cancel",
+    "saving": "Saving...",
+    "saveChanges": "Save Changes",
+    "selectOption": "Select an option",
+    "toast": {
+      "success": "Configuration updated successfully",
+      "error": "Could not save configuration"
+    },
+    "labels": {
+      "targetEmails": "Target Emails",
+      "frequency": "Frequency (minutes)",
+      "billingCycle": "Billing Cycle",
+      "weekly": "Weekly",
+      "monthly": "Monthly",
+      "templateId": "Template ID",
+      "defaultGroups": "Default groups (comma separated)"
+    }
+  },
+  "Common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "retry": "Retry",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "search": "Search...",
+    "noResults": "No results",
+    "next": "Next",
+    "previous": "Previous"
+  }
+}
