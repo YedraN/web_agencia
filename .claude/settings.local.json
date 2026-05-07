@@ -31,7 +31,9 @@
       "Bash(grep -r \"Ã\" --include=\"*.tsx\" --include=\"*.ts\" -l)",
       "Bash(grep -r \"Ã\" --include=\"*.json\" -l)",
       "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\juanj\\\\Documents\\\\web_agencia\\\\backend\\\\app\" -Recurse -Filter \"__init__.py\")",
-      "Bash(Select-Object FullName)"
+      "Bash(Select-Object FullName)",
+      "PowerShell(Get-Command *)",
+      "Bash(git stash *)"
     ]
   }
 }
