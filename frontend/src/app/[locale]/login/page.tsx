@@ -79,9 +79,19 @@ export default function LoginPage() {
     }
   }
 
-  function handleResendInit() {
-    setUnverifiedEmail("RESEND");
-    setResent(false);
+  async function handleResendFromInput() {
+    const email = form.getValues("email");
+    if (!email) return;
+    setResending(true);
+    try {
+      await resendConfirmationEmail(email);
+      setResent(true);
+      toast.success("Email de confirmación reenviado");
+    } catch (error: any) {
+      toast.error(error.message || "Error al reenviar el email");
+    } finally {
+      setResending(false);
+    }
   }
 
   return (
@@ -150,7 +160,7 @@ export default function LoginPage() {
                 </div>
               ) : (
                 <Button
-                  onClick={unverifiedEmail === "RESEND" ? async () => { if (form.getValues("email")) { setResending(true); try { await resendConfirmationEmail(form.getValues("email")); setResent(true); } catch (e: any) { toast.error(e.message); } setResending(false); } } : handleResend}
+                  onClick={unverifiedEmail === "RESEND" ? handleResendFromInput : handleResend}
                   disabled={resending || (unverifiedEmail === "RESEND" && !form.getValues("email"))}
                   className="w-full h-12 rounded-xl bg-white text-black font-bold text-[15px] hover:bg-white/90 transition-colors"
                 >
@@ -167,53 +177,54 @@ export default function LoginPage() {
               </button>
             </div>
           ) : (
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
-              <FormField control={form.control} name="email" render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-white/60 text-sm font-medium">{t("emailLabel")}</FormLabel>
-                  <FormControl>
-                    <Input id="login-email" type="email" placeholder={t("emailPlaceholder")} autoComplete="email" disabled={isLoading} className={cn("h-12 bg-white/[0.04] border-white/[0.09] text-white placeholder:text-white/25", "focus-visible:ring-white/20 focus-visible:border-white/20 rounded-xl", "hover:border-white/15 transition-colors")} {...field} />
-                  </FormControl>
-                  <FormMessage className="text-red-400 text-xs" />
-                </FormItem>
-              )} />
+            <>
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+                  <FormField control={form.control} name="email" render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-white/60 text-sm font-medium">{t("emailLabel")}</FormLabel>
+                      <FormControl>
+                        <Input id="login-email" type="email" placeholder={t("emailPlaceholder")} autoComplete="email" disabled={isLoading} className={cn("h-12 bg-white/[0.04] border-white/[0.09] text-white placeholder:text-white/25", "focus-visible:ring-white/20 focus-visible:border-white/20 rounded-xl", "hover:border-white/15 transition-colors")} {...field} />
+                      </FormControl>
+                      <FormMessage className="text-red-400 text-xs" />
+                    </FormItem>
+                  )} />
 
-              <FormField control={form.control} name="password" render={({ field }) => (
-                <FormItem>
-                  <div className="flex items-center justify-between">
-                    <FormLabel className="text-white/60 text-sm font-medium">{t("passwordLabel")}</FormLabel>
-                    <Link href="/forgot-password" className="text-xs text-white/40 hover:text-white transition-colors">{t("forgotPassword")}</Link>
-                  </div>
-                  <FormControl>
-                    <div className="relative">
-                      <Input id="login-password" type={showPassword ? "text" : "password"} placeholder={t("passwordLabel")} autoComplete="current-password" disabled={isLoading} className={cn("h-12 bg-white/[0.04] border-white/[0.09] text-white placeholder:text-white/25", "focus-visible:ring-white/20 focus-visible:border-white/20 rounded-xl pr-12", "hover:border-white/15 transition-colors")} {...field} />
-                      <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-4 top-1/2 -translate-y-1/2 text-white/30 hover:text-white/60 transition-colors" tabIndex={-1}>
-                        {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
-                      </button>
-                    </div>
-                  </FormControl>
-                  <FormMessage className="text-red-400 text-xs" />
-                </FormItem>
-              )} />
+                  <FormField control={form.control} name="password" render={({ field }) => (
+                    <FormItem>
+                      <div className="flex items-center justify-between">
+                        <FormLabel className="text-white/60 text-sm font-medium">{t("passwordLabel")}</FormLabel>
+                        <Link href="/forgot-password" className="text-xs text-white/40 hover:text-white transition-colors">{t("forgotPassword")}</Link>
+                      </div>
+                      <FormControl>
+                        <div className="relative">
+                          <Input id="login-password" type={showPassword ? "text" : "password"} placeholder={t("passwordLabel")} autoComplete="current-password" disabled={isLoading} className={cn("h-12 bg-white/[0.04] border-white/[0.09] text-white placeholder:text-white/25", "focus-visible:ring-white/20 focus-visible:border-white/20 rounded-xl pr-12", "hover:border-white/15 transition-colors")} {...field} />
+                          <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-4 top-1/2 -translate-y-1/2 text-white/30 hover:text-white/60 transition-colors" tabIndex={-1}>
+                            {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                          </button>
+                        </div>
+                      </FormControl>
+                      <FormMessage className="text-red-400 text-xs" />
+                    </FormItem>
+                  )} />
 
-              <Button id="login-submit" type="submit" disabled={isLoading} className="w-full h-12 rounded-xl bg-white text-black font-bold text-[15px] hover:bg-white/90 transition-colors mt-2">
-                {isLoading ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" />{t("submitting")}</> : t("submit")}
-              </Button>
-            </form>
-          </Form>
+                  <Button id="login-submit" type="submit" disabled={isLoading} className="w-full h-12 rounded-xl bg-white text-black font-bold text-[15px] hover:bg-white/90 transition-colors mt-2">
+                    {isLoading ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" />{t("submitting")}</> : t("submit")}
+                  </Button>
+                </form>
+              </Form>
 
-          <div className="my-8 flex items-center gap-4">
-            <div className="flex-1 h-px bg-white/[0.06]" />
-            <span className="text-xs text-white/25 font-medium">{t("or")}</span>
-            <div className="flex-1 h-px bg-white/[0.06]" />
-          </div>
+              <div className="my-8 flex items-center gap-4">
+                <div className="flex-1 h-px bg-white/[0.06]" />
+                <span className="text-xs text-white/25 font-medium">{t("or")}</span>
+                <div className="flex-1 h-px bg-white/[0.06]" />
+              </div>
 
-          <p className="text-center text-sm text-white/40">
-            {t("noAccount")}{" "}
-            <Link href="/register" className="text-white font-semibold hover:text-white/70 transition-colors underline underline-offset-4">{t("requestAccess")}</Link>
-          </p>
-          )}
+              <p className="text-center text-sm text-white/40">
+                {t("noAccount")}{" "}
+                <Link href="/register" className="text-white font-semibold hover:text-white/70 transition-colors underline underline-offset-4">{t("requestAccess")}</Link>
+              </p>
+            </>
           )}
         </div>
       </div>
