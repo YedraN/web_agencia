@@ -14,6 +14,7 @@ class UserResponse(BaseModel):
     company: str
     avatar_url: str | None = None
     plan: Literal["free", "starter", "pro", "enterprise"] = "free"
+    verified: bool = False
 
     class Config:
         from_attributes = True

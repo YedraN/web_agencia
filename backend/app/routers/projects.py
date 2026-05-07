@@ -1,3 +1,18 @@
+"""
+Módulo de gestión de proyectos.
+
+Endpoints para listar y gestionar proyectos de la organización del usuario.
+
+## Autenticación: Token JWT de Supabase (Bearer token)
+
+## Estado de proyectos:
+- `draft`: Borrador
+- `planning`: En planificación
+- `in_progress`: En progreso
+- `review`: En revisión
+- `completed`: Completado
+- `cancelled`: Cancelado
+"""
 from fastapi import APIRouter, Depends, Query
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
@@ -12,10 +27,23 @@ from app.schemas.project import ProjectResponse
 
 from typing import List
 
-router = APIRouter(prefix="/api/projects", tags=["projects"])
+router = APIRouter(prefix="/api/projects", tags=["Projects"])
 
 
-@router.get("", response_model=List[ProjectResponse])
+@router.get(
+    "",
+    response_model=List[ProjectResponse],
+    summary="Listar proyectos",
+    description="""
+    Lista los proyectos de la organización del usuario actual.
+    
+    ## Parámetros:
+    - `page` (default=1): Página actual
+    - `limit` (default=20, máx=100): Elementos por página
+    
+    ## Respuesta: Array de proyectos con sus milestones
+    """,
+)
 async def get_projects(
     page: int = Query(1, ge=1),
     limit: int = Query(20, ge=1, le=100),

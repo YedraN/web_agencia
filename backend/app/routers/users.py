@@ -1,3 +1,10 @@
+"""
+Módulo de gestión de usuarios.
+
+Endpoints para obtener información del usuario autenticado.
+
+Autenticación: Token JWT de Supabase (Bearer token)
+"""
 from fastapi import APIRouter, Depends, Request
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
@@ -8,10 +15,36 @@ from app.models.organization import Organization, OrganizationMember
 from app.schemas.auth import UserResponse
 from app.utils.dependencies import get_current_user
 
-router = APIRouter(prefix="/api/users", tags=["users"])
+router = APIRouter(prefix="/api/users", tags=["Users"])
 
 
-@router.get("/me", response_model=UserResponse)
+@router.get(
+    "/me",
+    response_model=UserResponse,
+    summary="Obtener perfil del usuario actual",
+    description="""
+    Devuelve la información del usuario autenticado, incluyendo:
+    - Datos personales (nombre, email, avatar)
+    - Información de la organización (nombre, plan)
+    - Estado de verificación del email
+    
+    ## Respuesta:
+    ```json
+    {
+      "id": "uuid-del-usuario",
+      "name": "Nombre completo",
+      "email": "email@ejemplo.com",
+      "company": "Nombre de la empresa",
+      "avatar_url": "https://...",
+      "plan": "free",
+      "verified": true
+    }
+    ```
+    
+    ## Errores:
+    - 401: Token de autenticación inválido o expirado
+    """,
+)
 async def get_me(
     request: Request,
     db: AsyncSession = Depends(get_db),
@@ -33,4 +66,5 @@ async def get_me(
         company=org.nombre if org else "",
         avatar_url=current_user.avatar_url,
         plan=org.plan.value if org else "free",
+        verified=current_user.verificado,
     )

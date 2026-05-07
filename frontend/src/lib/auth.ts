@@ -11,7 +11,12 @@ export async function login(data: LoginData): Promise<{ user: User }> {
     email: data.email,
     password: data.password,
   });
-  if (error) throw new Error(error.message);
+  if (error) {
+    if (error.message.toLowerCase().includes("email not confirmed")) {
+      throw new Error("EMAIL_NOT_CONFIRMED");
+    }
+    throw new Error(error.message);
+  }
 
   // Fetch full profile from backend (org, plan, etc.)
   const token = authData.session.access_token;
@@ -39,6 +44,18 @@ export async function login(data: LoginData): Promise<{ user: User }> {
 export async function resendVerification(email: string): Promise<void> {
   const { error } = await supabase.auth.resend({ type: "signup", email });
   if (error) throw new Error(error.message);
+}
+
+export async function resendConfirmationEmail(email: string): Promise<void> {
+  const res = await fetch(`${API_URL}/api/auth/resend-confirmation`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email }),
+  });
+  if (!res.ok) {
+    const data = await res.json().catch(() => ({}));
+    throw new Error(data.detail || "Error al reenviar el email");
+  }
 }
 
 export async function register(data: RegisterData): Promise<{ user: User; needsEmailVerification?: boolean }> {

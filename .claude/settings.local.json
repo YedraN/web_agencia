@@ -33,7 +33,9 @@
       "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\juanj\\\\Documents\\\\web_agencia\\\\backend\\\\app\" -Recurse -Filter \"__init__.py\")",
       "Bash(Select-Object FullName)",
       "PowerShell(Get-Command *)",
-      "Bash(git stash *)"
+      "Bash(git stash *)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\FDCV\\\\Documents\\\\web_agencia\" -Recurse -Force -ErrorAction SilentlyContinue)",
+      "Bash(Select-Object FullName -First 100)"
     ]
   }
 }

@@ -8,12 +8,17 @@ class Settings(BaseSettings):
     allowed_origins: str = "https://webagencia.vercel.app"
     app_env: str = "development"
     port: int = 8000
+    frontend_url: str = "https://webagencia.vercel.app"
 
     # Supabase
     supabase_url: str = ""
     supabase_anon_key: str = ""
     supabase_service_role_key: str = ""
     supabase_jwt_secret: str = ""  # Dashboard → Settings → API → JWT Secret
+
+    # Resend (email)
+    resend_api_key: str = ""
+    email_from: str = "noreply@webagencia.com"
 
     @property
     def origins_list(self) -> List[str]:

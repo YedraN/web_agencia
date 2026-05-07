@@ -1,3 +1,13 @@
+"""
+Módulo de dashboard.
+
+Endpoints para obtener datos del dashboard del usuario:
+- Estadísticas generales (proyectos, facturas, hitos próximos)
+- Actividad reciente
+- Próximos hitos de proyectos
+
+## Autenticación: Token JWT de Supabase (Bearer token)
+"""
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, func, and_
@@ -11,7 +21,7 @@ from app.schemas.dashboard import DashboardStatsResponse, ActivityItem, Mileston
 from app.utils.dependencies import get_current_user
 from app.models.profile import Perfil
 
-router = APIRouter(prefix="/api/dashboard", tags=["dashboard"])
+router = APIRouter(prefix="/api/dashboard", tags=["Dashboard"])
 
 
 # ---------------------------------------------------------------------------

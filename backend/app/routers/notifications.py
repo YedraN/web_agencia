@@ -1,3 +1,15 @@
+"""
+Módulo de notificaciones.
+
+Endpoints para obtener y gestionar notificaciones del usuario.
+
+## Autenticación: Token JWT de Supabase (Bearer token)
+
+## Tipos de notificación:
+- `info`: Información general
+- `warning`: Advertencia
+- `critical`: Crítica (requiere acción inmediata)
+"""
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, update, and_
@@ -8,14 +20,18 @@ from app.utils.dependencies import get_current_user
 from app.models.profile import Perfil
 from typing import List
 
-router = APIRouter(prefix="/api/notifications", tags=["notifications"])
+router = APIRouter(prefix="/api/notifications", tags=["Notifications"])
 
-@router.get("", response_model=List[NotificationResponse])
+@router.get(
+    "",
+    response_model=List[NotificationResponse],
+    summary="Obtener notificaciones",
+    description="Devuelve todas las notificaciones del usuario actual ordenadas por fecha",
+)
 async def get_notifications(
     db: AsyncSession = Depends(get_db),
     current_user: Perfil = Depends(get_current_user)
 ):
-    """Obtiene las notificaciones del usuario actual"""
     result = await db.execute(
         select(Notification)
         .where(Notification.usuario_id == current_user.id)

@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { useAppStore } from "@/store/useAppStore";
 import { cn } from "@/lib/utils";
-import { LayoutDashboard, Briefcase, FileText, Bell, Settings, Diamond, LogOut } from "lucide-react";
+import { LayoutDashboard, Briefcase, FileText, Bell, Settings, Diamond, LogOut, ShieldCheck } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useRouter } from "@/i18n/routing";
 import { useState, useEffect } from "react";
@@ -17,7 +17,7 @@ export function Sidebar() {
   const pathname = usePathname();
   const { sidebarOpen } = useAppStore();
   const router = useRouter();
-  const { user, isLoading } = useAuth();
+  const { user, isLoading, isSuperAdmin } = useAuth();
 
   const navItems = [
     { name: t("inicio"), href: "/dashboard", icon: LayoutDashboard },
@@ -25,6 +25,7 @@ export function Sidebar() {
     { name: t("facturas"), href: "/dashboard/facturas", icon: FileText },
     { name: t("notificaciones"), href: "/dashboard/notificaciones", icon: Bell },
     { name: t("ajustes"), href: "/dashboard/ajustes", icon: Settings },
+    ...(isSuperAdmin ? [{ name: t("admin"), href: "/dashboard/admin", icon: ShieldCheck }] : []),
   ];
 
   const getInitials = (name?: string) => {

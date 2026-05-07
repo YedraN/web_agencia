@@ -4,6 +4,7 @@ from app.models.project import Project, ProjectMilestone
 from app.models.invoice import Invoice
 from app.models.activity import ActivityLog
 from app.models.notification import Notification
+from app.models.confirmation import EmailConfirmationToken
 
 __all__ = [
     "Perfil",
@@ -14,4 +15,5 @@ __all__ = [
     "Invoice",
     "ActivityLog",
     "Notification",
+    "EmailConfirmationToken",
 ]

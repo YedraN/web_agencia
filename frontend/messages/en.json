@@ -427,6 +427,7 @@
       "facturas": "Invoices",
       "notificaciones": "Notifications",
       "ajustes": "Settings",
+      "admin": "Admin",
       "logout": "Sign out"
     },
     "Topbar": {
@@ -533,6 +534,58 @@
         "upgrade": "Upgrade to Pro",
         "month": "/ month"
       }
+    }
+  },
+  "Admin": {
+    "title": "Admin Panel",
+    "accessDenied": "Access denied. Super admins only.",
+    "tabs": {
+      "stats": "Statistics",
+      "users": "Users",
+      "orgs": "Organizations"
+    },
+    "stats": {
+      "totalUsers": "Total users",
+      "activeUsers": "Active users",
+      "totalOrgs": "Organizations",
+      "totalProjects": "Projects",
+      "totalInvoices": "Invoices",
+      "totalRevenue": "Total revenue"
+    },
+    "users": {
+      "title": "User list",
+      "name": "Name",
+      "email": "Email",
+      "status": "Status",
+      "joined": "Joined",
+      "active": "Active",
+      "inactive": "Inactive",
+      "resetPassword": "Reset password",
+      "deactivate": "Deactivate",
+      "activate": "Activate",
+      "purge": "Purge data",
+      "resetSuccess": "Recovery email sent",
+      "resetError": "Error sending recovery email",
+      "toggleSuccess": "User status updated",
+      "toggleError": "Error updating status",
+      "purgeConfirm": "Are you sure you want to delete all data for this user? This action cannot be undone.",
+      "purgeSuccess": "User data deleted",
+      "purgeError": "Error purging user data",
+      "noUsers": "No users registered."
+    },
+    "orgs": {
+      "title": "Organization list",
+      "name": "Name",
+      "plan": "Plan",
+      "members": "Members",
+      "status": "Status",
+      "created": "Created",
+      "active": "Active",
+      "inactive": "Inactive",
+      "deleteConfirm": "Are you sure you want to delete this organization and all its data? This action cannot be undone.",
+      "deleteSuccess": "Organization deleted",
+      "deleteError": "Error deleting organization",
+      "noOrgs": "No organizations registered."
     }
   },
   "ConfigSlideOver": {

@@ -1,3 +1,21 @@
+"""
+Módulo de gestión de facturas.
+
+Endpoints para crear, listar, ver y descargar facturas de la organización.
+
+## Autenticación: Token JWT de Supabase (Bearer token)
+
+## Estado de facturas:
+- `draft`: Borrador
+- `sent`: Enviada
+- `viewed`: Vista por cliente
+- `paid`: Pagada
+- `overdue`: Vencida
+- `cancelled`: Cancelada
+
+## Moneda:
+Todas las cantidades se almacenan en centavos (cents) para evitar problemas de precisión.
+"""
 from fastapi import APIRouter, Depends, HTTPException, Query, status
 from fastapi.responses import StreamingResponse
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -13,7 +31,7 @@ from app.models.invoice import Invoice, InvoiceStatus
 from app.models.organization import OrganizationMember, Organization
 from app.schemas.invoice import InvoiceCreate, InvoiceResponse, InvoiceListResponse
 
-router = APIRouter(prefix="/api/invoices", tags=["invoices"])
+router = APIRouter(prefix="/api/invoices", tags=["Invoices"])
 
 
 def _get_user_org_subquery(user_id: str):
@@ -24,12 +42,36 @@ def _get_user_org_subquery(user_id: str):
     )
 
 
-@router.get("", response_model=InvoiceListResponse)
+@router.get(
+    "",
+    response_model=InvoiceListResponse,
+    summary="Listar facturas",
+    description="""
+    Lista las facturas de la organización del usuario actual.
+    
+    ## Parámetros:
+    - `page` (default=1): Página actual
+    - `page_size` (default=10, máx=100): Elementos por página
+    - `status` (opcional): Filtrar por estado
+    - `search` (opcional): Buscar por número de factura
+    
+    ## Respuesta:
+    ```json
+    {
+      "items": [...],
+      "total": 50,
+      "page": 1,
+      "page_size": 10,
+      "total_pages": 5
+    }
+    ```
+    """,
+)
 async def list_invoices(
     page: int = Query(1, ge=1),
     page_size: int = Query(10, ge=1, le=100),
-    status: Optional[str] = Query(None),
-    search: Optional[str] = Query(None),
+    status: Optional[str] = Query(None, description="Filtrar por estado"),
+    search: Optional[str] = Query(None, description="Buscar por número"),
     db: AsyncSession = Depends(get_db),
     current_user: Perfil = Depends(get_current_user),
 ):

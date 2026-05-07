@@ -13,6 +13,7 @@ interface AuthContextValue {
   session: Session | null;
   isLoading: boolean;
   isAuthenticated: boolean;
+  isSuperAdmin: boolean;
   logout: () => Promise<void>;
   refreshUser: () => Promise<void>;
 }
@@ -84,8 +85,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         user,
         session,
         isLoading,
-        // Authenticated = valid Supabase session, regardless of profile load status
         isAuthenticated: !!session,
+        isSuperAdmin: !!(session?.user?.app_metadata?.is_super_admin),
         logout,
         refreshUser,
       }}

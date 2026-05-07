@@ -11,6 +11,6 @@ async def verify_supabase_token(token: str) -> dict | None:
             algorithms=["HS256"],
             options={"verify_aud": False},
         )
-        return {"sub": payload.get("sub", ""), "email": payload.get("email", "")}
+        return payload
     except JWTError:
         return None

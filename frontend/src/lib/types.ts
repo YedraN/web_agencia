@@ -5,6 +5,7 @@ export type User = {
   company: string;
   avatarUrl?: string;
   plan: "free" | "starter" | "pro" | "enterprise";
+  verified?: boolean;
 };
 
 export type NotificationSeverity = "info" | "warning" | "critical";

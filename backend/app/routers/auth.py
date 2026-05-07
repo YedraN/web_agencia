@@ -1,9 +1,22 @@
+"""
+Módulo de autenticación y configuración de usuario.
+
+Endpoints para:
+- Onboarding de nuevos usuarios (configurar perfil y organización)
+- Manejo de errores de rate limiting
+
+Autenticación: Token JWT de Supabase (Bearer token)
+"""
 import re
 import uuid
 from datetime import datetime, timezone
 from fastapi import APIRouter, Depends, HTTPException, Request
+from fastapi.responses import JSONResponse
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
+from slowapi import Limiter
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
 
 from app.database import get_db
 from app.models.profile import Perfil
@@ -11,7 +24,20 @@ from app.models.organization import Organization, OrganizationMember, Organizati
 from app.schemas.auth import OnboardingData, UserResponse
 from app.utils.dependencies import get_current_user
 
-router = APIRouter(prefix="/api/auth", tags=["auth"])
+limiter = Limiter(key_func=get_remote_address)
+
+router = APIRouter(prefix="/api/auth", tags=["Authentication"])
+
+
+@router.exception_handler(RateLimitExceeded)
+async def rate_limit_handler(request: Request, exc: RateLimitExceeded):
+    return JSONResponse(
+        status_code=429,
+        content={
+            "detail": "Demasiados intentos de login. Intenta de nuevo en 15 minutos.",
+            "retry_after": "15 minutes",
+        },
+    )
 
 
 def _slugify(text: str) -> str:
@@ -21,15 +47,33 @@ def _slugify(text: str) -> str:
     return re.sub(r"^-+|-+$", "", text)
 
 
-@router.post("/onboarding", response_model=UserResponse, status_code=201)
+@router.post(
+    "/onboarding",
+    response_model=UserResponse,
+    status_code=201,
+    summary="Completar configuración de usuario",
+    description="""
+    Configura el perfil del usuario y crea su organización tras el registro en Supabase Auth.
+    
+    **Este endpoint debe llamarse solo una vez** después del registro exitoso.
+    
+    ## Proceso:
+    1. Guarda el nombre completo del usuario
+    2. Crea una nueva organización con el nombre de empresa
+    3. Genera un slug único para la organización
+    4. Asigna al usuario como owner de la organización
+    
+    ## Errores:
+    - 409: La organización ya está configurada para este usuario
+    - 401: Token de autenticación inválido o expirado
+    """,
+)
 async def onboarding(
     data: OnboardingData,
     request: Request,
     db: AsyncSession = Depends(get_db),
     current_user: Perfil = Depends(get_current_user),
 ):
-    """Configura perfil y organización tras el registro en Supabase Auth.
-    Llamar una sola vez justo después del signUp."""
 
     existing = await db.execute(
         select(OrganizationMember).where(OrganizationMember.usuario_id == current_user.id)

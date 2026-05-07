@@ -427,6 +427,7 @@
       "facturas": "Facturas",
       "notificaciones": "Notificaciones",
       "ajustes": "Ajustes",
+      "admin": "Administración",
       "logout": "Cerrar sesión"
     },
     "Topbar": {
@@ -533,6 +534,65 @@
         "upgrade": "Mejorar a Pro",
         "month": "/ mes"
       }
+    }
+  },
+  "Admin": {
+    "title": "Panel de Administración",
+    "accessDenied": "Acceso denegado. Solo para super administradores.",
+    "tabs": {
+      "stats": "Estadísticas",
+      "users": "Usuarios",
+      "orgs": "Organizaciones"
+    },
+    "stats": {
+      "totalUsers": "Usuarios totales",
+      "activeUsers": "Usuarios activos",
+      "totalOrgs": "Organizaciones",
+      "totalProjects": "Proyectos",
+      "totalInvoices": "Facturas",
+      "totalRevenue": "Facturación total"
+    },
+    "users": {
+      "title": "Listado de usuarios",
+      "name": "Nombre",
+      "email": "Email",
+      "status": "Estado",
+      "joined": "Registro",
+      "active": "Activo",
+      "inactive": "Inactivo",
+      "resetPassword": "Resetear contraseña",
+      "deactivate": "Desactivar",
+      "activate": "Activar",
+      "purge": "Purgar datos",
+      "resetSuccess": "Email de recuperación enviado",
+      "resetError": "Error al enviar email de recuperación",
+      "toggleSuccess": "Estado del usuario actualizado",
+      "toggleError": "Error al cambiar estado",
+      "purgeConfirm": "¿Seguro que quieres eliminar todos los datos de este usuario? Esta acción no se puede deshacer.",
+      "purgeSuccess": "Datos del usuario eliminados",
+      "purgeError": "Error al purgar datos del usuario",
+      "noUsers": "No hay usuarios registrados."
+    },
+    "orgs": {
+      "title": "Listado de organizaciones",
+      "name": "Nombre",
+      "plan": "Plan",
+      "members": "Miembros",
+      "status": "Estado",
+      "created": "Creada",
+      "active": "Activa",
+      "inactive": "Inactiva",
+      "deleteConfirm": "¿Seguro que quieres eliminar esta organización y todos sus datos? Esta acción no se puede deshacer.",
+      "deleteSuccess": "Organización eliminada",
+      "deleteError": "Error al eliminar la organización",
+      "noOrgs": "No hay organizaciones registradas."
+    },
+    "search": "Buscar",
+    "page": "Página",
+    "exportSuccess": "Exportación completada",
+    "users": {
+      "verified": "Verificado",
+      "lastAccess": "Último acceso"
     }
   },
   "ConfigSlideOver": {

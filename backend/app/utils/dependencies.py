@@ -48,3 +48,42 @@ async def get_current_user(
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Usuario desactivado")
 
     return perfil
+
+
+async def get_super_admin_user(
+    request: Request,
+    credentials: HTTPAuthorizationCredentials | None = Depends(security),
+    db: AsyncSession = Depends(get_db),
+) -> Perfil:
+    if not credentials:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="No autenticado",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+
+    payload = await verify_supabase_token(credentials.credentials)
+    if not payload:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Token inválido o expirado",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+
+    app_metadata = payload.get("app_metadata") or {}
+    if not app_metadata.get("is_super_admin", False):
+        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Acceso denegado")
+
+    user_id: str = payload.get("sub", "")
+    if not user_id:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Token inválido")
+
+    request.state.user_email = payload.get("email", "")
+
+    result = await db.execute(select(Perfil).where(Perfil.id == uuid.UUID(user_id)))
+    perfil = result.scalar_one_or_none()
+
+    if not perfil:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Perfil no encontrado")
+
+    return perfil
