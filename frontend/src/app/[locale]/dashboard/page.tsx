@@ -54,9 +54,90 @@ export default function DashboardOverviewPage() {
           </>
         )}
       </div>
-      <div className="col-span-full lg:col-span-3 p-8">
-        <h3 className="text-xl font-heading font-bold tracking-tight mb-6">{t("recentActivity")}</h3>
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 p-8 pt-0">
+        <div className="col-span-full lg:col-span-2">
+          <h3 className="text-xl font-heading font-bold tracking-tight mb-6">{t("recentActivity")}</h3>
+          {/* Aquí iría el componente real de actividad reciente */}
+          <div className="text-white/50 bg-white/[0.02] border border-white/5 rounded-lg p-8 flex items-center justify-center">
+            No hay actividad reciente.
+          </div>
+        </div>
+
+        <div className="col-span-full lg:col-span-1">
+          <h3 className="text-xl font-heading font-bold tracking-tight mb-6">Próximos Hitos</h3>
+          <UpcomingMilestonesWidget />
+        </div>
       </div>
     </div>
+  );
+}
+
+interface MilestoneWidgetData {
+  id: string;
+  nombre: string;
+  status: string;
+  fecha_vencimiento: string | null;
+  project?: { nombre: string };
+}
+
+function UpcomingMilestonesWidget() {
+  const { data: milestones, isLoading } = useQuery({
+    queryKey: ["upcomingMilestones"],
+    queryFn: async () => {
+      const res = await fetch(`${API_URL}/api/milestones?limit=5`, { credentials: "include" });
+      if (!res.ok) throw new Error("Error");
+      const data = await res.json();
+      return data.filter((m: MilestoneWidgetData) => m.status !== "completed").slice(0, 5);
+    }
+  });
+
+  if (isLoading) {
+    return (
+      <Card className="bg-white/[0.02] border-white/5">
+        <CardContent className="p-6 space-y-4">
+          <Skeleton className="h-10 w-full bg-white/10" />
+          <Skeleton className="h-10 w-full bg-white/10" />
+        </CardContent>
+      </Card>
+    );
+  }
+
+  if (!milestones || milestones.length === 0) {
+    return (
+      <Card className="bg-white/[0.02] border-white/5">
+        <CardContent className="p-6 flex flex-col items-center justify-center text-center space-y-3">
+          <Clock className="h-8 w-8 text-white/20" />
+          <p className="text-sm text-white/50">No hay hitos pendientes próximos.</p>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  return (
+    <Card className="bg-white/[0.02] border-white/5">
+      <CardContent className="p-0">
+        <div className="divide-y divide-white/5">
+          {milestones.map((m: MilestoneWidgetData) => (
+            <div key={m.id} className="p-4 hover:bg-white/[0.02] transition-colors flex items-start gap-4">
+              <div className="mt-0.5 bg-primary/20 p-1.5 rounded-full">
+                <Clock className="h-3 w-3 text-primary" />
+              </div>
+              <div className="space-y-1 overflow-hidden">
+                <p className="text-sm font-medium text-white truncate">{m.nombre}</p>
+                <div className="flex items-center gap-2 text-xs text-white/50">
+                  {m.project && <span className="truncate max-w-[120px]">{m.project.nombre}</span>}
+                  {m.fecha_vencimiento && (
+                    <>
+                      <span>•</span>
+                      <span>{new Date(m.fecha_vencimiento).toLocaleDateString()}</span>
+                    </>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
   );
 }

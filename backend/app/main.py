@@ -11,8 +11,10 @@ from app.routers.users import router as users_router
 from app.routers.notifications import router as notifications_router
 from app.routers.projects import router as projects_router
 from app.routers.invoices import router as invoices_router
+from app.routers.search import router as search_router
 from app.routers.admin import router as admin_router
 from app.routers.confirmation import router as confirmation_router
+from app.routers.milestones import router as milestones_router
 
 limiter = Limiter(key_func=get_remote_address)
 
@@ -61,8 +63,10 @@ app.include_router(users_router)
 app.include_router(notifications_router)
 app.include_router(projects_router)
 app.include_router(invoices_router)
+app.include_router(search_router)
 app.include_router(admin_router)
 app.include_router(confirmation_router)
+app.include_router(milestones_router)
 
 
 @app.exception_handler(HTTPException)
