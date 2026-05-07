@@ -38,25 +38,26 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const router = useRouter();
 
   useEffect(() => {
+    // Resolve auth state from stored session first, then load profile in background.
     supabase.auth.getSession().then(async ({ data: { session } }) => {
       setSession(session);
+      setIsLoading(false); // Auth state known — unblock the UI
       if (session) {
         const profile = await fetchProfile(session.access_token);
         setUser(profile);
       }
-      setIsLoading(false);
     });
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (_event, session) => {
         setSession(session);
+        setIsLoading(false); // Auth state known — unblock the UI
         if (session) {
           const profile = await fetchProfile(session.access_token);
           setUser(profile);
         } else {
           setUser(null);
         }
-        setIsLoading(false);
       }
     );
 
@@ -79,7 +80,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <AuthContext.Provider
-      value={{ user, session, isLoading, isAuthenticated: !!user, logout, refreshUser }}
+      value={{
+        user,
+        session,
+        isLoading,
+        // Authenticated = valid Supabase session, regardless of profile load status
+        isAuthenticated: !!session,
+        logout,
+        refreshUser,
+      }}
     >
       {children}
     </AuthContext.Provider>

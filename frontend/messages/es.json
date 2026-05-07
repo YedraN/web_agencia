@@ -344,7 +344,8 @@
       "emailVerify": "Revisa tu email para confirmar la cuenta",
       "resendSuccess": "Email reenviado",
       "resendDesc": "Revisa tu bandeja de entrada.",
-      "resendError": "Error"
+      "resendError": "Error",
+      "alreadyRegistered": "Este email ya está registrado. Por favor inicia sesión."
     },
     "verifyTitle": "Verifica tu email",
     "verifyDesc": "Hemos enviado un enlace de verificación a",

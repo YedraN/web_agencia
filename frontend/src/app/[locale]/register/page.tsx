@@ -49,12 +49,16 @@ export default function RegisterPage() {
   async function onSubmit(values: FormValues) {
     setIsLoading(true);
     try {
-      await registerUser({ name: values.name, company: values.company, email: values.email, password: values.password });
-      toast.success(t("toast.success"), { description: t("toast.successDesc") });
-      router.push("/dashboard");
-    } catch (error: any) {
-      if (error?.message === "Revisa tu email para confirmar la cuenta") {
+      const result = await registerUser({ name: values.name, company: values.company, email: values.email, password: values.password });
+      if (result.needsEmailVerification) {
         setRegisteredEmail(values.email);
+      } else {
+        toast.success(t("toast.success"), { description: t("toast.successDesc") });
+        router.push("/dashboard");
+      }
+    } catch (error: any) {
+      if (error?.message === "EMAIL_ALREADY_REGISTERED") {
+        toast.error(t("toast.errorTitle"), { description: t("toast.alreadyRegistered") });
       } else {
         toast.error(t("toast.errorTitle"), { description: error?.message || t("toast.errorDesc") });
       }

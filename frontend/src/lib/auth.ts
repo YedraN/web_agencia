@@ -41,14 +41,25 @@ export async function resendVerification(email: string): Promise<void> {
   if (error) throw new Error(error.message);
 }
 
-export async function register(data: RegisterData): Promise<{ user: User }> {
+export async function register(data: RegisterData): Promise<{ user: User; needsEmailVerification?: boolean }> {
   const { data: authData, error } = await supabase.auth.signUp({
     email: data.email,
     password: data.password,
     options: { data: { nombre_completo: data.name, company: data.company } },
   });
-  if (error) throw new Error(error.message);
-  if (!authData.session) throw new Error("Revisa tu email para confirmar la cuenta");
+
+  if (error) {
+    // Supabase returns this when the email is already confirmed
+    if (error.message.toLowerCase().includes("already registered") || error.message.toLowerCase().includes("already exists")) {
+      throw new Error("EMAIL_ALREADY_REGISTERED");
+    }
+    throw new Error(error.message);
+  }
+
+  // Email confirmation required — session is null
+  if (!authData.session) {
+    return { user: { id: "", name: data.name, email: data.email, company: data.company, plan: "free" }, needsEmailVerification: true };
+  }
 
   // Setup org via backend
   const res = await fetch(`${API_URL}/api/auth/onboarding`, {
@@ -59,10 +70,24 @@ export async function register(data: RegisterData): Promise<{ user: User }> {
     },
     body: JSON.stringify({ nombre_completo: data.name, company: data.company }),
   });
+
   if (!res.ok) {
+    // 409 means the org was already configured (e.g. retry after network error) — not fatal
+    if (res.status === 409) {
+      return {
+        user: {
+          id: authData.user?.id || "",
+          name: data.name,
+          email: data.email,
+          company: data.company,
+          plan: "free",
+        },
+      };
+    }
     const err = await res.json().catch(() => ({}));
     throw new Error(err.detail || "Error al configurar tu cuenta");
   }
+
   const user: User = await res.json();
   return { user };
 }

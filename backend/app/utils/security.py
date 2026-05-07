@@ -1,21 +1,16 @@
-import httpx
+from jose import jwt, JWTError
 from app.config import settings
 
 
 async def verify_supabase_token(token: str) -> dict | None:
-    """Verifica el token contra la API de Supabase Auth y devuelve {sub, email}."""
+    """Verifica el JWT de Supabase localmente. Sin llamadas de red."""
     try:
-        async with httpx.AsyncClient(timeout=5.0) as client:
-            resp = await client.get(
-                f"{settings.supabase_url}/auth/v1/user",
-                headers={
-                    "Authorization": f"Bearer {token}",
-                    "apikey": settings.supabase_service_role_key,
-                },
-            )
-        if resp.status_code == 200:
-            data = resp.json()
-            return {"sub": data["id"], "email": data.get("email", "")}
-    except httpx.RequestError:
-        pass
-    return None
+        payload = jwt.decode(
+            token,
+            settings.supabase_jwt_secret,
+            algorithms=["HS256"],
+            options={"verify_aud": False},
+        )
+        return {"sub": payload.get("sub", ""), "email": payload.get("email", "")}
+    except JWTError:
+        return None

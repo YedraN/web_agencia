@@ -344,7 +344,8 @@
       "emailVerify": "Check your email to confirm your account",
       "resendSuccess": "Email resent",
       "resendDesc": "Check your inbox.",
-      "resendError": "Error"
+      "resendError": "Error",
+      "alreadyRegistered": "This email is already registered. Please sign in instead."
     },
     "verifyTitle": "Verify your email",
     "verifyDesc": "We've sent a verification link to",
