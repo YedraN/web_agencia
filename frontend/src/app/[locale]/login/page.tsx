@@ -214,6 +214,7 @@ export default function LoginPage() {
             <Link href="/register" className="text-white font-semibold hover:text-white/70 transition-colors underline underline-offset-4">{t("requestAccess")}</Link>
           </p>
           )}
+          )}
         </div>
       </div>
     </div>

@@ -39,17 +39,6 @@ limiter = Limiter(key_func=get_remote_address)
 router = APIRouter(prefix="/api/admin", tags=["Admin"])
 
 
-@router.exception_handler(RateLimitExceeded)
-async def admin_rate_limit_handler(request: Request, exc: RateLimitExceeded):
-    return JSONResponse(
-        status_code=429,
-        content={
-            "detail": "Demasiadas solicitudes. Por favor, inténtalo más tarde.",
-            "retry_after": exc.detail,
-        },
-)
-
-
 def _supabase_admin_headers() -> dict:
     return {
         "Authorization": f"Bearer {settings.supabase_service_role_key}",
