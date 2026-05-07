@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect, useSearchParams } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { toast } from "sonner";
 import { Diamond, Loader2, MailCheck, AlertCircle, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
