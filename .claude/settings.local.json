@@ -35,7 +35,9 @@
       "PowerShell(Get-Command *)",
       "Bash(git stash *)",
       "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\FDCV\\\\Documents\\\\web_agencia\" -Recurse -Force -ErrorAction SilentlyContinue)",
-      "Bash(Select-Object FullName -First 100)"
+      "Bash(Select-Object FullName -First 100)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\FDCV\\\\Documents\\\\web_agencia\" -Directory)",
+      "Bash(Select-Object Name)"
     ]
   }
 }

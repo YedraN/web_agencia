@@ -125,7 +125,7 @@ export default function MilestonesPage() {
         </div>
 
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
-          <DialogTrigger asChild>
+          <DialogTrigger>
             <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
               <Plus className="mr-2 h-4 w-4" /> Nuevo Hito
             </Button>
@@ -148,7 +148,7 @@ export default function MilestonesPage() {
 
               <div className="space-y-2">
                 <Label htmlFor="project">Proyecto</Label>
-                <Select value={formData.project_id} onValueChange={(val) => setFormData({ ...formData, project_id: val })} required>
+                <Select value={formData.project_id} onValueChange={(val) => setFormData({ ...formData, project_id: val || "" })} required>
                   <SelectTrigger className="bg-white/5 border-white/10">
                     <SelectValue placeholder="Selecciona un proyecto" />
                   </SelectTrigger>
