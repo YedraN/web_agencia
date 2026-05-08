@@ -11,6 +11,8 @@ import { AuthProvider } from "@/contexts/AuthContext";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { NotificationProvider } from "@/contexts/NotificationContext";
+import { cookies } from "next/headers";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -90,6 +92,8 @@ export default async function RootLayout({
   }
 
   const messages = await getMessages();
+  const cookieStore = await cookies();
+  const token = cookieStore.get("token")?.value;
 
   return (
     <html
@@ -107,10 +111,12 @@ export default async function RootLayout({
           >
             <QueryProvider>
               <AuthProvider>
-                <TooltipProvider>
-                  {children}
-                  <Toaster richColors position="bottom-right" />
-                </TooltipProvider>
+                <NotificationProvider token={token ?? ""}>
+                  <TooltipProvider>
+                    {children}
+                    <Toaster richColors position="bottom-right" />
+                  </TooltipProvider>
+                </NotificationProvider>
               </AuthProvider>
             </QueryProvider>
           </ThemeProvider>
