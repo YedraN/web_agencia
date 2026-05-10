@@ -73,7 +73,7 @@
       "launchDesc": "We handle deployment, monitor performance, and stay with you after launch to iterate and grow."
     },
     "WhyUs": {
-      "label": "Why Nova Studio",
+      "label": "Why Vynta",
       "title": "Built for",
       "titleItalic": "ambitious teams.",
       "description": "Most agencies overpromise and underdeliver. We operate differently. Small team, radical transparency, and a bias for shipping.",
@@ -216,12 +216,12 @@
   },
   "About": {
     "label": "The Agency",
-    "title": "We are Nova Studio.",
+    "title": "We are Vynta.",
     "titleItalic": "Small team, big ideas.",
     "subtitle": "Founded in 2026, we're a digital agency specializing in AI. We don't take on 40 clients at once. We focus on a handful of ambitious projects and pour everything into making them exceptional.",
     "whyTitle": "Why we exist",
     "story1": "Most digital agencies grew too fast. They scaled to hundreds of employees, took on every client they could, and started optimizing for revenue over results. Your project would be handled by whoever was available, not whoever was best.",
-    "story2": "We created Nova Studio as the solution. A small, focused agency where every person does their job well, adapting to your criteria without any hassle.",
+    "story2": "We created Vynta as the solution. A small, focused agency where every person does their job well, adapting to your criteria without any hassle.",
     "story3": "We're selective about the projects we take on — not because we're arrogant, but because we genuinely believe that fewer, better projects lead to better results for everyone.",
     "stats": {
       "s1": "Projects completed",
@@ -338,7 +338,7 @@
     },
     "toast": {
       "success": "Account created!",
-      "successDesc": "Welcome to Nova Studio. Redirecting...",
+      "successDesc": "Welcome to Vynta. Redirecting...",
       "errorTitle": "Registration failed",
       "errorDesc": "Something went wrong, please try again.",
       "emailVerify": "Check your email to confirm your account",

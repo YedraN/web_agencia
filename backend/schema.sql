@@ -1,5 +1,5 @@
 -- ============================================================
--- Nova Studio — Web Agency Management System
+-- Vynta — Web Agency Management System
 -- PostgreSQL / Supabase Schema v2.0
 -- Base de datos: koqkmhqyofhvjqtxwqrj (eu-west-1)
 -- ============================================================

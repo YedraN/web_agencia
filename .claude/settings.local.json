@@ -37,7 +37,9 @@
       "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\FDCV\\\\Documents\\\\web_agencia\" -Recurse -Force -ErrorAction SilentlyContinue)",
       "Bash(Select-Object FullName -First 100)",
       "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\FDCV\\\\Documents\\\\web_agencia\" -Directory)",
-      "Bash(Select-Object Name)"
+      "Bash(Select-Object Name)",
+      "Bash(Get-ChildItem *)",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\juanj\\\\Documents\\\\web_agencia\\\\frontend\\\\src\\\\app\" -Recurse | Where-Object { $_.Name -match \"sitemap|robots\" })"
     ]
   }
 }

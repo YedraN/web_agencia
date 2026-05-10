@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { LandingClient } from "./landing-client";
 
 export const metadata: Metadata = {
-  title: "Agencia de Diseño y Desarrollo Web Profesional | Nova Studio",
+  title: "Agencia de Diseño y Desarrollo Web Profesional | Vynta",
   description:
     "Agencia digital especializada en diseño y desarrollo web a medida. Webs corporativas, tiendas online y aplicaciones web optimizadas para SEO. Pide presupuesto sin compromiso.",
   keywords: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     "rediseño web",
   ],
   alternates: {
-    canonical: "https://novastudio.co/agencia-digital",
+    canonical: "https://vynta.dev/agencia-digital",
   },
   robots: {
     index: true,
@@ -42,17 +42,17 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Agencia de Diseño y Desarrollo Web Profesional | Nova Studio",
+    title: "Agencia de Diseño y Desarrollo Web Profesional | Vynta",
     description:
       "Diseñamos y desarrollamos webs profesionales que convierten visitantes en clientes. Resultados visibles en menos de 4 semanas.",
     type: "website",
     locale: "es_ES",
-    siteName: "Nova Studio",
-    url: "https://novastudio.co/agencia-digital",
+    siteName: "Vynta",
+    url: "https://vynta.dev/agencia-digital",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Agencia de Diseño y Desarrollo Web | Nova Studio",
+    title: "Agencia de Diseño y Desarrollo Web | Vynta",
     description:
       "Webs profesionales, rápidas y optimizadas para SEO. Pide presupuesto sin compromiso.",
   },
@@ -62,10 +62,10 @@ export default function AgenciaDigitalLanding() {
   const organizationLd = {
     "@context": "https://schema.org",
     "@type": ["Organization", "ProfessionalService"],
-    name: "Nova Studio",
+    name: "Vynta",
     description:
       "Agencia de diseño y desarrollo web profesional. Especialistas en webs corporativas, tiendas online y aplicaciones a medida.",
-    url: "https://novastudio.co/agencia-digital",
+    url: "https://vynta.dev/agencia-digital",
     telephone: "+34-682-37-38-24",
     email: "juanjoyedra2017@gmail.com",
     priceRange: "€€",
@@ -100,7 +100,7 @@ export default function AgenciaDigitalLanding() {
     "@context": "https://schema.org",
     "@type": "Service",
     serviceType: "Diseño y desarrollo web",
-    provider: { "@type": "Organization", name: "Nova Studio" },
+    provider: { "@type": "Organization", name: "Vynta" },
     areaServed: { "@type": "Country", name: "España" },
     description:
       "Diseño y desarrollo de páginas web profesionales, tiendas online y aplicaciones web a medida con SEO incluido.",

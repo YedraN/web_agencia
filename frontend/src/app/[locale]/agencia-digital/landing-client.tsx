@@ -985,7 +985,7 @@ export function LandingClient() {
             </span>
           </div>
           <p className="text-xs text-white/30">
-            © {new Date().getFullYear()} Nova Studio · Valencia, España · Todos los
+            © {new Date().getFullYear()} Vynta · Valencia, España · Todos los
             derechos reservados.
           </p>
         </div>

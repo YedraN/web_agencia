@@ -1,4 +1,4 @@
-# Supabase — Nova Studio
+# Supabase — Vynta
 
 ## Proyecto
 

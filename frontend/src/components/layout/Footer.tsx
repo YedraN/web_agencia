@@ -34,14 +34,14 @@ export function Footer() {
                 <Diamond className="h-4 w-4 text-black fill-black" />
               </div>
               <span className="text-[17px] font-bold tracking-tight text-white">
-                Nova<span className="text-white/40">Studio</span>
+                Vynta
               </span>
             </I18nLink>
             <p className="text-sm text-white/40 leading-relaxed max-w-xs">
               {t("descripcion")}
             </p>
             <div className="space-y-3 text-sm text-white/40">
-              <a href="mailto:hello@novastudio.co" className="flex items-center gap-2.5 hover:text-white transition-colors">
+              <a href="mailto:hello@vynta.dev" className="flex items-center gap-2.5 hover:text-white transition-colors">
                 <Mail className="h-4 w-4" /> juanjoyedra2017@gmail.com
               </a>
               <a href="tel:+1234567890" className="flex items-center gap-2.5 hover:text-white transition-colors">
@@ -78,7 +78,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="mt-16 pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/30">
-            © {new Date().getFullYear()} Nova Studio. {t("derechosReservados")}
+            © {new Date().getFullYear()} Vynta. {t("derechosReservados")}
           </p>
           <div className="flex items-center gap-6">
             {["X / Twitter", "LinkedIn"].map((social) => (

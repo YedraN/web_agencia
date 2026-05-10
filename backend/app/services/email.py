@@ -11,7 +11,7 @@ async def send_confirmation_email(email: str, token: str, nombre: str | None = N
         r = resend.Emails.send({
             "from": settings.email_from,
             "to": email,
-            "subject": "Confirma tu email - Nova Studio",
+            "subject": "Confirma tu email - Vynta",
             "html": f"""
             <!DOCTYPE html>
             <html>
@@ -28,11 +28,11 @@ async def send_confirmation_email(email: str, token: str, nombre: str | None = N
             <body>
                 <div class="container">
                     <h1>¡Bienvenido{nombre and f' {nombre}' or ''}!</h1>
-                    <p>Gracias por registrarte en Nova Studio. Para completar tu cuenta, necesitamos confirmar tu dirección de email.</p>
+                    <p>Gracias por registrarte en Vynta. Para completar tu cuenta, necesitamos confirmar tu dirección de email.</p>
                     <a href="{confirmation_url}" class="button">Confirmar mi email</a>
                     <p style="margin-top: 20px; font-size: 14px;">Este enlace expira en 24 horas.</p>
                     <div class="footer">
-                        Si no te registraste en Nova Studio, puedes ignorar este email.
+                        Si no te registraste en Vynta, puedes ignorar este email.
                     </div>
                 </div>
             </body>
@@ -52,7 +52,7 @@ async def send_recovery_email(email: str, token: str, nombre: str | None = None)
         r = resend.Emails.send({
             "from": settings.email_from,
             "to": email,
-            "subject": "Recuperación de contraseña - Nova Studio",
+            "subject": "Recuperación de contraseña - Vynta",
             "html": f"""
             <!DOCTYPE html>
             <html>
@@ -69,7 +69,7 @@ async def send_recovery_email(email: str, token: str, nombre: str | None = None)
             <body>
                 <div class="container">
                     <h1>Hola{nombre and f' {nombre}' or ''},</h1>
-                    <p>Has solicitado restablecer tu contraseña en Nova Studio. Haz clic en el siguiente botón para elegir una nueva contraseña:</p>
+                    <p>Has solicitado restablecer tu contraseña en Vynta. Haz clic en el siguiente botón para elegir una nueva contraseña:</p>
                     <a href="{recovery_url}" class="button">Restablecer contraseña</a>
                     <p style="margin-top: 20px; font-size: 14px;">Este enlace expira en 1 hora.</p>
                     <div class="footer">
