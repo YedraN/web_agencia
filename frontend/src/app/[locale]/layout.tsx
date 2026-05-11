@@ -116,6 +116,7 @@ export default async function RootLayout({
                   <TooltipProvider>
                     {children}
                     <Toaster richColors position="bottom-right" />
+                    <Analytics />
                   </TooltipProvider>
                 </NotificationProvider>
               </AuthProvider>
@@ -124,7 +125,5 @@ export default async function RootLayout({
         </NextIntlClientProvider>
       </body>
     </html>
-
-    <Analytics />
   );
 }
