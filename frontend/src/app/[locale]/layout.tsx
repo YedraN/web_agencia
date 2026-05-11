@@ -13,6 +13,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { NotificationProvider } from "@/contexts/NotificationContext";
 import { cookies } from "next/headers";
+import { Analytics } from "@vercel/analytics/next"
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
