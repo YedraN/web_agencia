@@ -127,6 +127,30 @@ export async function getCurrentUser(): Promise<User | null> {
   }
 }
 
+export async function forgotPassword(email: string): Promise<void> {
+  const res = await fetch(`${API_URL}/api/auth/forgot-password`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email }),
+  });
+  if (!res.ok) {
+    const data = await res.json().catch(() => ({}));
+    throw new Error(data.detail || "Error al enviar el email de recuperación");
+  }
+}
+
+export async function resetPassword(token: string, password: string): Promise<void> {
+  const res = await fetch(`${API_URL}/api/auth/reset-password`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ token, password }),
+  });
+  if (!res.ok) {
+    const data = await res.json().catch(() => ({}));
+    throw new Error(data.detail || "Error al restablecer la contraseña");
+  }
+}
+
 export async function apiFetch(path: string, options: RequestInit = {}): Promise<Response> {
   const { data: { session } } = await supabase.auth.getSession();
   return fetch(`${API_URL}${path}`, {

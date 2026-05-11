@@ -291,6 +291,45 @@
       "errorDesc": "Correo electrónico o contraseña inválidos. Por favor, intenta de nuevo."
     }
   },
+  "ForgotPassword": {
+    "back": "Volver al inicio de sesión",
+    "title": "Recuperar contraseña",
+    "subtitle": "Introduce tu correo y te enviaremos un enlace para restablecer tu contraseña.",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "tu@email.com",
+    "submit": "Enviar enlace de recuperación",
+    "submitting": "Enviando...",
+    "successTitle": "Revisa tu correo",
+    "successDesc": "Si el email está registrado, recibirás un enlace de recuperación en breve.",
+    "validation": {
+      "emailRequired": "El correo electrónico es obligatorio",
+      "emailInvalid": "Por favor, introduce una dirección de correo electrónico válida"
+    },
+    "toast": {
+      "errorTitle": "Error al enviar el email"
+    }
+  },
+  "ResetPassword": {
+    "back": "Volver al inicio de sesión",
+    "title": "Nueva contraseña",
+    "subtitle": "Introduce tu nueva contraseña para completar el restablecimiento.",
+    "passwordLabel": "Nueva contraseña",
+    "confirmLabel": "Confirmar contraseña",
+    "submit": "Restablecer contraseña",
+    "submitting": "Guardando...",
+    "invalidToken": "El enlace de recuperación es inválido o ha expirado.",
+    "validation": {
+      "passwordRequired": "La contraseña es obligatoria",
+      "passwordMin": "La contraseña debe tener al menos 6 caracteres",
+      "confirmRequired": "Por favor, confirma tu contraseña",
+      "confirmMismatch": "Las contraseñas no coinciden"
+    },
+    "toast": {
+      "successTitle": "Contraseña restablecida",
+      "successDesc": "Ya puedes iniciar sesión con tu nueva contraseña.",
+      "errorTitle": "Error al restablecer la contraseña"
+    }
+  },
   "Register": {
     "back": "Volver a la página principal",
     "title": "Solicitar acceso al portal",

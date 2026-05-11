@@ -291,6 +291,45 @@
       "errorDesc": "Invalid email or password. Please try again."
     }
   },
+  "ForgotPassword": {
+    "back": "Back to sign in",
+    "title": "Recover password",
+    "subtitle": "Enter your email and we'll send you a link to reset your password.",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@email.com",
+    "submit": "Send recovery link",
+    "submitting": "Sending...",
+    "successTitle": "Check your email",
+    "successDesc": "If the email is registered, you'll receive a recovery link shortly.",
+    "validation": {
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address"
+    },
+    "toast": {
+      "errorTitle": "Error sending email"
+    }
+  },
+  "ResetPassword": {
+    "back": "Back to sign in",
+    "title": "New password",
+    "subtitle": "Enter your new password to complete the reset.",
+    "passwordLabel": "New password",
+    "confirmLabel": "Confirm password",
+    "submit": "Reset password",
+    "submitting": "Saving...",
+    "invalidToken": "The recovery link is invalid or has expired.",
+    "validation": {
+      "passwordRequired": "Password is required",
+      "passwordMin": "Password must be at least 6 characters",
+      "confirmRequired": "Please confirm your password",
+      "confirmMismatch": "Passwords do not match"
+    },
+    "toast": {
+      "successTitle": "Password reset",
+      "successDesc": "You can now sign in with your new password.",
+      "errorTitle": "Error resetting password"
+    }
+  },
   "Register": {
     "back": "Back to homepage",
     "title": "Request portal access",

@@ -14,8 +14,8 @@ export default function AgencyHome() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Nova Studio",
-    description: "Digital agency specializing in design, engineering, and artificial intelligence",
-    url: "https://novastudio.co",
+    description: "Agencia digital especializada en diseño, ingeniería e inteligencia artificial",
+    url: "https://vynta.dev",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Valencia",

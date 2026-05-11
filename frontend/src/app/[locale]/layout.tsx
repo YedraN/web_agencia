@@ -52,10 +52,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
         : "Agencia especializada en diseño, ingeniería e IA. Construimos productos digitales que importan.",
     },
     alternates: {
-      canonical: "https://novastudio.co",
+      canonical: "https://vynta.dev",
       languages: {
-        es: "https://novastudio.co",
-        en: "https://novastudio.co/en",
+        es: "https://vynta.dev",
+        en: "https://vynta.dev/en",
       },
     },
     robots: {
