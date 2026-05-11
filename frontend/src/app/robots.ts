@@ -5,8 +5,21 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
-        allow: ["/", "/en/", "/about", "/en/about", "/services", "/en/services", "/portfolio", "/en/portfolio", "/contact", "/en/contact"],
-        disallow: ["/dashboard", "/login", "/register", "/forgot-password", "/reset-password", "/confirm-email", "/en/dashboard", "/en/login", "/en/register"],
+        allow: "/",
+        disallow: [
+          "/dashboard",
+          "/en/dashboard",
+          "/login",
+          "/en/login",
+          "/register",
+          "/en/register",
+          "/confirm-email",
+          "/en/confirm-email",
+          "/forgot-password",
+          "/en/forgot-password",
+          "/reset-password",
+          "/en/reset-password",
+        ],
       },
     ],
     sitemap: "https://vynta.dev/sitemap.xml",

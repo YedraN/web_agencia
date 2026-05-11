@@ -73,7 +73,7 @@
       "launchDesc": "Nos encargamos del despliegue, monitoreamos el rendimiento y nos quedamos contigo después del lanzamiento para iterar y crecer."
     },
     "WhyUs": {
-      "label": "Por Qué Nova Studio",
+      "label": "Por Qué Vynta",
       "title": "Construido para",
       "titleItalic": "equipos ambiciosos.",
       "description": "La mayoría de las agencias prometen demasiado y no cumplen lo suficiente. Operamos de manera diferente. Equipo pequeño, transparencia radical y una inclinación por la entrega.",
@@ -216,12 +216,12 @@
   },
   "About": {
     "label": "La Agencia",
-    "title": "Somos Nova Studio.",
+    "title": "Somos Vynta.",
     "titleItalic": "Equipo pequeño, grandes ideas.",
     "subtitle": "Fundada en 2026, somos una agencia digital especialistas en IA. No aceptamos 40 clientes a la vez. Nos enfocamos en un puñado de proyectos ambiciosos y ponemos todo nuestro esfuerzo en hacerlos excepcionales.",
     "whyTitle": "Por qué existimos",
     "story1": "La mayoría de las agencias digitales crecieron demasiado rápido. Escalaron a cientos de empleados, aceptaron a todos los clientes que pudieron y comenzaron a optimizar por ingresos en lugar de resultados. Tu proyecto sería manejado por quien estuviera disponible, no por quien fuera el mejor.",
-    "story2": "Creamos Nova Studio como la solución. Una agencia pequeña y enfocada donde cada persona hace su trabajo adecuándose a tus criterios sin ningún problema.",
+    "story2": "Creamos Vynta como la solución. Una agencia pequeña y enfocada donde cada persona hace su trabajo adecuándose a tus criterios sin ningún problema.",
     "story3": "Somos selectivos con los proyectos que aceptamos, no porque seamos arrogantes, sino porque creemos genuinamente que menos proyectos, pero mejores, conducen a mejores resultados para todos.",
     "stats": {
       "s1": "Proyectos completados",
@@ -377,7 +377,7 @@
     },
     "toast": {
       "success": "Cuenta creada!",
-      "successDesc": "Bienvenido a Nova Studio. Redirigiendo...",
+      "successDesc": "Bienvenido a Vynta. Redirigiendo...",
       "errorTitle": "Registro fallido",
       "errorDesc": "Algo ha ido mal, por favor inténtalo de nuevo.",
       "emailVerify": "Revisa tu email para confirmar la cuenta",

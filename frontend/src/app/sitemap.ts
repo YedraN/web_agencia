@@ -1,29 +1,33 @@
 import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://vynta.dev";
+const baseUrl = "https://vynta.dev";
 
-const publicRoutes = ["", "/about", "/services", "/portfolio", "/contact"];
+const publicPages = [
+  { path: "", priority: 1.0, changeFrequency: "weekly" as const },
+  { path: "/about", priority: 0.8, changeFrequency: "monthly" as const },
+  { path: "/services", priority: 0.9, changeFrequency: "monthly" as const },
+  { path: "/portfolio", priority: 0.8, changeFrequency: "monthly" as const },
+  { path: "/contact", priority: 0.7, changeFrequency: "yearly" as const },
+  { path: "/agencia-digital", priority: 0.9, changeFrequency: "monthly" as const },
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
+  const routes: MetadataRoute.Sitemap = [];
 
-  const entries: MetadataRoute.Sitemap = [];
-
-  for (const route of publicRoutes) {
-    // Spanish (default locale — no prefix)
-    entries.push({
-      url: `${BASE_URL}${route}`,
-      lastModified: now,
-      changeFrequency: route === "" ? "weekly" : "monthly",
-      priority: route === "" ? 1.0 : 0.8,
+  for (const page of publicPages) {
+    routes.push({
+      url: `${baseUrl}${page.path}`,
+      lastModified: new Date(),
+      changeFrequency: page.changeFrequency,
+      priority: page.priority,
       alternates: {
         languages: {
-          es: `${BASE_URL}${route}`,
-          en: `${BASE_URL}/en${route}`,
+          es: `${baseUrl}${page.path}`,
+          en: `${baseUrl}/en${page.path}`,
         },
       },
     });
   }
 
-  return entries;
+  return routes;
 }

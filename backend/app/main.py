@@ -19,9 +19,9 @@ from app.routers.milestones import router as milestones_router
 limiter = Limiter(key_func=get_remote_address)
 
 app = FastAPI(
-    title="Nova Studio API",
+    title="Vynta API",
     description="""## Introducción
-API REST para la gestión de la agencia digital Nova Studio.
+API REST para la gestión de la agencia digital Vynta.
 
 ## Autenticación
 Todos los endpoints (excepto `/auth/confirm` y `/auth/resend-confirmation`) requieren un token de acceso JWT en el header:

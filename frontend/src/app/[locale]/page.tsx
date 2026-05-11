@@ -13,8 +13,8 @@ export default function AgencyHome() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Nova Studio",
-    description: "Agencia digital especializada en diseño, ingeniería e inteligencia artificial",
+    name: "Vynta",
+    description: "Digital agency specializing in design, engineering, and artificial intelligence",
     url: "https://vynta.dev",
     address: {
       "@type": "PostalAddress",

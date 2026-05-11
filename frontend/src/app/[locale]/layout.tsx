@@ -27,8 +27,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
   return {
     title: isEn
-      ? "Nova Studio | Digital Agency"
-      : "Nova Studio | Agencia Digital de Diseño, Ingeniería e IA",
+      ? "Vynta | Digital Agency"
+      : "Vynta | Agencia Digital de Diseño, Ingeniería e IA",
     description: isEn
       ? "We create high-level digital experiences, from stunning web apps to complex AI-powered automation systems."
       : "Creamos experiencias digitales de alto nivel, desde aplicaciones web impresionantes hasta sistemas complejos de automatización impulsados por IA.",
@@ -36,23 +36,23 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       ? ["digital agency", "web design", "AI automation", "UI/UX", "web development"]
       : ["agencia digital", "diseño web", "automatización de IA", "UI/UX", "desarrollo web"],
     openGraph: {
-      title: isEn ? "Nova Studio | Digital Agency" : "Nova Studio | Agencia Digital",
+      title: isEn ? "Vynta | Digital Agency" : "Vynta | Agencia Digital",
       description: isEn
         ? "We create high-level digital experiences for ambitious brands."
         : "Creamos experiencias digitales de alto nivel para marcas ambiciosas.",
       type: "website",
       locale: isEn ? "en_US" : "es_ES",
-      siteName: "Nova Studio",
+      siteName: "Vynta",
     },
     twitter: {
       card: "summary_large_image",
-      title: isEn ? "Nova Studio | Digital Agency" : "Nova Studio | Agencia Digital",
+      title: isEn ? "Vynta | Digital Agency" : "Vynta | Agencia Digital",
       description: isEn
         ? "We build digital products that matter. Design, engineering, and AI."
         : "Agencia especializada en diseño, ingeniería e IA. Construimos productos digitales que importan.",
     },
     alternates: {
-      canonical: "https://vynta.dev",
+      canonical: isEn ? "https://vynta.dev/en" : "https://vynta.dev",
       languages: {
         es: "https://vynta.dev",
         en: "https://vynta.dev/en",
