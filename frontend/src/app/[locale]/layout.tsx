@@ -103,6 +103,7 @@ export default async function RootLayout({
       className={`${plusJakarta.variable} antialiased dark`}
     >
       <body className="min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden">
+        <Analytics />
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider
             attribute="class"
