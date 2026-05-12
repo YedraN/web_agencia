@@ -70,6 +70,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
         "max-snippet": -1,
       },
     },
+    icons: {
+      icon: "/favicon.ico"
+    },
   };
 }
 
@@ -101,6 +104,7 @@ export default async function RootLayout({
       lang={locale}
       suppressHydrationWarning
       className={`${plusJakarta.variable} antialiased dark`}
+
     >
       <body className="min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden">
         <NextIntlClientProvider messages={messages}>
