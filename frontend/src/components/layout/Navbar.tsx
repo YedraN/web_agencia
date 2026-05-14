@@ -61,7 +61,7 @@ export function Navbar() {
               <Diamond className="h-4 w-4 text-black fill-black" />
             </div>
             <span className="text-[17px] font-bold tracking-tight text-white">
-              Nova<span className="text-white/40">Studio</span>
+              Vynta<span className="text-white/40">Dev</span>
             </span>
           </I18nLink>
 

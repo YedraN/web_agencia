@@ -67,7 +67,7 @@ export default function AgenciaDigitalLanding() {
       "Agencia de diseño y desarrollo web profesional. Especialistas en webs corporativas, tiendas online y aplicaciones a medida.",
     url: "https://vynta.dev/agencia-digital",
     telephone: "+34-682-37-38-24",
-    email: "juanjoyedra2017@gmail.com",
+    email: "contact@vynta.dev",
     priceRange: "€€",
     address: {
       "@type": "PostalAddress",

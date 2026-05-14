@@ -42,7 +42,7 @@ export function Footer() {
             </p>
             <div className="space-y-3 text-sm text-white/40">
               <a href="mailto:contact@vynta.dev" className="flex items-center gap-2.5 hover:text-white transition-colors">
-                <Mail className="h-4 w-4" /> juanjoyedra2017@gmail.com
+                <Mail className="h-4 w-4" /> contact@vynta.dev
               </a>
               <a href="tel:+1234567890" className="flex items-center gap-2.5 hover:text-white transition-colors">
                 <Phone className="h-4 w-4" /> +34 682 37 38 24
