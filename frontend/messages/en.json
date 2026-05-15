@@ -2,6 +2,7 @@
   "Navbar": {
     "servicios": "Services",
     "agencia": "Agency",
+    "blog": "Blog",
     "portalCliente": "Client portal",
     "empiezaProyecto": "Start a project"
   },
@@ -648,6 +649,17 @@
       "templateId": "Template ID",
       "defaultGroups": "Default groups (comma separated)"
     }
+  },
+  "Blog": {
+    "label": "Resources & insights",
+    "title": "Ideas that",
+    "titleItalic": "drive businesses.",
+    "subtitle": "Articles on web design, AI automation, and digital strategy. No fluff — just what works.",
+    "noPosts": "Coming soon...",
+    "minRead": "min read",
+    "backToBlog": "Back to blog",
+    "ctaLabel": "Have a project in mind?",
+    "ctaButton": "Let's talk"
   },
   "Common": {
     "loading": "Loading...",

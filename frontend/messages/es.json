@@ -2,6 +2,7 @@
   "Navbar": {
     "servicios": "Servicios",
     "agencia": "Agencia",
+    "blog": "Blog",
     "portalCliente": "Portal del cliente",
     "empiezaProyecto": "Empieza un proyecto"
   },
@@ -655,6 +656,17 @@
       "templateId": "ID de Plantilla",
       "defaultGroups": "Grupos por defecto (separar por coma)"
     }
+  },
+  "Blog": {
+    "label": "Recursos y reflexiones",
+    "title": "Ideas que",
+    "titleItalic": "impulsan negocios.",
+    "subtitle": "Artículos sobre diseño web, automatización con IA y estrategia digital. Sin fluff, solo lo que funciona.",
+    "noPosts": "Próximamente...",
+    "minRead": "min de lectura",
+    "backToBlog": "Volver al blog",
+    "ctaLabel": "¿Tienes un proyecto en mente?",
+    "ctaButton": "Hablemos"
   },
   "Common": {
     "loading": "Cargando...",

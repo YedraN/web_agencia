@@ -17,6 +17,7 @@ import { Link as I18nLink, useRouter, usePathname } from "@/i18n/routing";
 const navLinks = [
   { href: "/services", labelKey: "servicios" },
   { href: "/about", labelKey: "agencia" },
+  { href: "/blog", labelKey: "blog" },
 ];
 
 const locales = [
