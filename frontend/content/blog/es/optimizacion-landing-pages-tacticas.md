@@ -3,7 +3,7 @@ title: "Optimización de landing pages: 9 tácticas probadas para aumentar conve
 description: "Tácticas basadas en datos para optimizar tus landing pages y aumentar la tasa de conversión. Desde redacción de titulares hasta diseño de formularios."
 date: "2026-02-21"
 tags: ["Diseño Web", "Conversión", "Marketing Digital"]
-```
+---
 
 Cada elemento de tu landing page ayuda o perjudica la conversión. No hay neutral. Entender qué cambios mueven la aguja es la diferencia entre una página que vende y una que te cuesta clientes.
 

@@ -3,7 +3,7 @@ title: "Accesibilidad web: cómo hacer tu sitio compatible con WCAG y por qué e
 description: "Guía completa de accesibilidad web y cumplimiento WCAG 2.2. Pasos prácticos para hacer tu sitio web usable para todos, incluyendo personas con discapacidades."
 date: "2026-01-17"
 tags: ["Diseño Web", "Accesibilidad", "UX"]
-```
+---
 
 La accesibilidad web no es opcional. Es un requisito legal en muchos países, un factor de posicionamiento en buscadores y — lo más importante — es lo correcto. Sin embargo, la mayoría de los sitios web suspenden los estándares básicos de accesibilidad.
 

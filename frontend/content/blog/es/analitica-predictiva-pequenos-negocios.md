@@ -3,7 +3,7 @@ title: "Analítica predictiva para pequeños negocios: una introducción prácti
 description: "Cómo las pequeñas y medianas empresas pueden usar la analítica predictiva para pronosticar ventas, reducir la pérdida de clientes y tomar decisiones más inteligentes."
 date: "2026-01-24"
 tags: ["IA", "Analítica", "Negocios"]
-```
+---
 
 La analítica predictiva solía estar reservada para grandes corporaciones con departamentos de ciencia de datos. Ya no. Hoy, herramientas accesibles permiten a cualquier negocio pronosticar tendencias, anticipar comportamiento del cliente y tomar decisiones basadas en datos.
 

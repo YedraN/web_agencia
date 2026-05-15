@@ -3,7 +3,7 @@ title: "Diseño mobile-first: por qué importa y cómo implementarlo correctamen
 description: "El diseño mobile-first ya no es opcional. Aprende los principios, flujo de trabajo e implementación técnica de diseñar primero para pantallas pequeñas."
 date: "2026-03-14"
 tags: ["Diseño Web", "UX", "Móvil"]
-```
+---
 
 Más del 60% del tráfico web proviene de dispositivos móviles. En algunas industrias, supera el 80%. Sin embargo, muchos sitios aún se diseñan primero para escritorio, tratando el móvil como algo secundario.
 

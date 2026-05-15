@@ -3,7 +3,7 @@ title: "REST vs GraphQL: cómo elegir la arquitectura de API adecuada para tu pr
 description: "Comparativa entre APIs REST y GraphQL. Aprende qué enfoque se adapta mejor a las necesidades de tu proyecto en rendimiento, flexibilidad y experiencia de desarrollo."
 date: "2026-01-31"
 tags: ["Desarrollo Web", "API", "Backend"]
-```
+---
 
 Toda aplicación web necesita una API. La elección entre REST y GraphQL determina cómo se comunican tu frontend y backend — afectando rendimiento, productividad del desarrollador y experiencia de usuario.
 

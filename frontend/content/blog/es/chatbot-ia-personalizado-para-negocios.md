@@ -3,7 +3,7 @@ title: "Cómo construir un chatbot de IA personalizado para tu negocio sin gasta
 description: "Aprende a construir e implementar un chatbot de IA personalizado para soporte al cliente, generación de leads o herramientas internas. Estrategias asequibles para pymes."
 date: "2026-03-21"
 tags: ["IA", "Chatbots", "Atención al Cliente"]
-```
+---
 
 Los chatbots de IA han pasado de ser una novedad a una necesidad. Los clientes esperan respuestas instantáneas, y las empresas que las ofrecen tienen una ventaja clara.
 

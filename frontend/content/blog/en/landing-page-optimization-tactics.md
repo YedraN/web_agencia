@@ -3,7 +3,7 @@ title: "Landing page optimization: 9 proven tactics to increase conversions"
 description: "Data-backed tactics to optimize your landing pages for higher conversion rates. From headline writing to form design, learn what actually works."
 date: "2026-02-21"
 tags: ["Web Design", "Conversion", "Digital Marketing"]
-```
+---
 
 Every element on your landing page either helps or hurts conversion. There's no neutral. Understanding which changes move the needle is the difference between a page that sells and a page that costs you customers.
 

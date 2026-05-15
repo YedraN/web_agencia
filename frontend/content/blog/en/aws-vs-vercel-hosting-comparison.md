@@ -3,7 +3,7 @@ title: "AWS vs Vercel vs traditional hosting: choosing the right deployment stra
 description: "Compare AWS, Vercel, and traditional hosting providers. Learn which deployment strategy fits your project size, traffic needs, and technical capacity."
 date: "2026-02-28"
 tags: ["Web Development", "DevOps", "Cloud"]
-```
+---
 
 Choosing where to host your application is one of the most consequential decisions in web development. The wrong choice means overpaying for resources you don't need or — worse — your site going down when traffic spikes.
 

@@ -3,7 +3,7 @@ title: "CI/CD pipelines explained: how to automate your deployment workflow"
 description: "A complete introduction to CI/CD pipelines for web development. Learn how continuous integration and deployment automate testing, building, and shipping code."
 date: "2026-01-03"
 tags: ["Web Development", "DevOps", "Automation"]
-```
+---
 
 Every software team deploys code. But how they deploy makes the difference between shipping daily and shipping once a quarter — between catching bugs before they reach production and discovering them from angry customers.
 

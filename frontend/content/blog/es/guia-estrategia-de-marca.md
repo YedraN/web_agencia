@@ -3,7 +3,7 @@ title: "Estrategia de marca 101: cómo construir una identidad de marca que cone
 description: "Aprende los fundamentos de la estrategia e identidad de marca. Desde definir tu voz de marca hasta crear sistemas visuales, construye una marca que conecte con clientes."
 date: "2026-04-04"
 tags: ["Branding", "Identidad de Marca", "Estrategia Digital"]
-```
+---
 
 Una marca no es un logotipo. No es una paleta de colores ni una tipografía. Una marca es la sensación que alguien tiene sobre tu negocio — y esa sensación se construye con cada interacción.
 

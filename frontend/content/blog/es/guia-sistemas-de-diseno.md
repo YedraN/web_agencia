@@ -3,7 +3,7 @@ title: "¿Qué es un sistema de diseño y por qué tu producto digital necesita 
 description: "Introducción completa a los sistemas de diseño: qué son, cómo funcionan y por qué todo producto digital se beneficia de tener uno."
 date: "2026-03-07"
 tags: ["Diseño UX", "Diseño de Producto", "Sistemas de Diseño"]
-```
+---
 
 A medida que tu producto digital crece, la inconsistencia se cuela. Los botones se ven diferentes en distintas páginas. Los colores se desvían de la paleta original. La experiencia de usuario se siente desconectada.
 

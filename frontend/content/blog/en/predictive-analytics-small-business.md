@@ -3,7 +3,7 @@ title: "Predictive analytics for small businesses: a practical introduction"
 description: "How small and medium businesses can use predictive analytics to forecast sales, reduce churn, and make smarter decisions without a data science team."
 date: "2026-01-24"
 tags: ["AI", "Analytics", "Business"]
-```
+---
 
 Predictive analytics used to be reserved for large corporations with data science departments. Not anymore. Today, accessible tools make it possible for any business to forecast trends, anticipate customer behavior, and make data-driven decisions.
 

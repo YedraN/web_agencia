@@ -3,7 +3,7 @@ title: "Pipelines CI/CD explicados: cómo automatizar tu flujo de trabajo de des
 description: "Introducción completa a pipelines CI/CD para desarrollo web. Aprende cómo la integración y el despliegue continuos automatizan las pruebas, construcción y publicación de código."
 date: "2026-01-03"
 tags: ["Desarrollo Web", "DevOps", "Automatización"]
-```
+---
 
 Todo equipo de software despliega código. Pero cómo lo hacen marca la diferencia entre publicar a diario y hacerlo una vez al trimestre — entre detectar errores antes de producción o descubrirlos por clientes enfadados.
 

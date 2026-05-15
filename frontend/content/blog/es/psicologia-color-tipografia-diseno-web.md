@@ -3,7 +3,7 @@ title: "La psicología del color y la tipografía en el diseño web"
 description: "Cómo la psicología del color y las elecciones tipográficas afectan el comportamiento del usuario, la percepción de marca y las tasas de conversión."
 date: "2026-02-07"
 tags: ["Diseño Web", "Branding", "UX"]
-```
+---
 
 Cada color y tipografía en tu sitio web comunica algo. Los usuarios pueden no notar conscientemente estas elecciones, pero las sienten — y esos sentimientos impulsan decisiones.
 

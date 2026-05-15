@@ -3,7 +3,7 @@ title: "Integración de GPT-4 y Claude en tu producto: guía práctica"
 description: "Guía técnica para integrar modelos de lenguaje como GPT-4 y Claude en tu aplicación web. Desde conceptos básicos de API hasta mejores prácticas de producción."
 date: "2026-02-14"
 tags: ["IA", "LLM", "Desarrollo"]
-```
+---
 
 Los modelos de lenguaje han pasado de experimentales a esenciales. Integrar GPT-4, Claude o modelos similares en tu producto puede transformar tu experiencia de usuario — pero hacerlo bien requiere más que llamar a una API.
 

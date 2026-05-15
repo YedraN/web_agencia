@@ -3,7 +3,7 @@ title: "How to choose the right tech stack for your startup or MVP"
 description: "A framework for choosing the right technology stack for your startup or MVP. Balance speed, scalability, and cost to launch faster and iterate smarter."
 date: "2026-01-10"
 tags: ["Web Development", "Startups", "Tech Stack"]
-```
+---
 
 The tech stack you choose for your startup's MVP is rarely the stack you'll use at scale. The goal of an MVP is to validate your idea and get to market fast — not to build infrastructure for millions of users before you have ten.
 

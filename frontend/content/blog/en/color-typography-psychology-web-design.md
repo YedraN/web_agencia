@@ -3,7 +3,7 @@ title: "The psychology of color and typography in web design"
 description: "How color psychology and typography choices affect user behavior, brand perception, and conversion rates in web design."
 date: "2026-02-07"
 tags: ["Web Design", "Branding", "UX"]
-```
+---
 
 Every color and typeface on your website communicates something. Users may not consciously notice these choices, but they feel them — and those feelings drive decisions.
 

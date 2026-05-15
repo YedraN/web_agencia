@@ -3,7 +3,7 @@ title: "Web accessibility: how to make your site WCAG compliant and why it matte
 description: "A comprehensive guide to web accessibility and WCAG 2.2 compliance. Learn practical steps to make your website usable for everyone, including people with disabilities."
 date: "2026-01-17"
 tags: ["Web Design", "Accessibility", "UX"]
-```
+---
 
 Web accessibility is not optional. It's a legal requirement in many countries, a ranking factor in search engines, and — most importantly — it's the right thing to do. Yet most websites fail basic accessibility standards.
 

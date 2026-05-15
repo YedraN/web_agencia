@@ -3,7 +3,7 @@ title: "Guía de automatización de flujos de trabajo: cómo ahorrar 20 horas se
 description: "Guía práctica para automatizar flujos de trabajo empresariales con herramientas de IA. Aprende a reducir trabajo manual, eliminar errores y centrarte en lo que importa."
 date: "2026-04-11"
 tags: ["IA", "Automatización", "Negocios"]
-```
+---
 
 La mayoría de los empresarios saben que deberían automatizar más, pero no saben por dónde empezar. El resultado: los equipos pasan el 60% de su tiempo en tareas repetitivas que podrían ser gestionadas por software.
 

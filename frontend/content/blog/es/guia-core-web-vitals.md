@@ -3,7 +3,7 @@ title: "Core Web Vitals: guía completa de las métricas de experiencia de pági
 description: "Todo lo que necesitas saber sobre Core Web Vitals — LCP, INP y CLS. Aprende a medir, optimizar y superar la evaluación de experiencia de página de Google."
 date: "2026-03-28"
 tags: ["Desarrollo Web", "SEO", "Rendimiento"]
-```
+---
 
 Desde 2021, Core Web Vitals son un factor de posicionamiento directo en los resultados de Google. En 2026 importan más que nunca. Las páginas que no superan estas métricas pierden visibilidad, independientemente de la calidad del contenido.
 

@@ -3,7 +3,7 @@ title: "Cómo elegir el tech stack adecuado para tu startup o MVP"
 description: "Un marco de decisión para elegir la pila tecnológica correcta para tu startup o MVP. Equilibra velocidad, escalabilidad y coste para lanzar más rápido."
 date: "2026-01-10"
 tags: ["Desarrollo Web", "Startups", "Tech Stack"]
-```
+---
 
 El tech stack que elijas para el MVP de tu startup rara vez será el mismo que uses a escala. El objetivo del MVP es validar tu idea y llegar al mercado rápido — no construir infraestructura para millones de usuarios antes de tener diez.
 

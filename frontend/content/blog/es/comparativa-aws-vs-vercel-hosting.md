@@ -3,7 +3,7 @@ title: "AWS vs Vercel vs hosting tradicional: cómo elegir la estrategia de desp
 description: "Comparativa entre AWS, Vercel y proveedores de hosting tradicionales. Aprende qué estrategia de despliegue se adapta a tu proyecto, tráfico y capacidad técnica."
 date: "2026-02-28"
 tags: ["Desarrollo Web", "DevOps", "Cloud"]
-```
+---
 
 Elegir dónde alojar tu aplicación es una de las decisiones más importantes en desarrollo web. La elección equivocada significa pagar de más por recursos que no necesitas o — peor — que tu sitio caiga cuando el tráfico se dispara.
 

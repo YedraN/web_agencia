@@ -3,7 +3,7 @@ title: "How to build a custom AI chatbot for your business without breaking the 
 description: "Learn how to build and deploy a custom AI chatbot for customer support, lead generation, or internal tools. Affordable strategies for small and medium businesses."
 date: "2026-03-21"
 tags: ["AI", "Chatbots", "Customer Support"]
-```
+---
 
 AI chatbots have moved from novelty to necessity. Customers expect instant responses, and businesses that deliver them have a clear advantage. But building a chatbot sounds expensive and technically complex.
 
