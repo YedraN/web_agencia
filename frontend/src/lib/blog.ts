@@ -76,3 +76,20 @@ export async function getAllPosts(locale: string): Promise<BlogPostMeta[]> {
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 }
+
+export const POSTS_PER_PAGE = 9;
+
+export async function getPostsPaginated(
+  locale: string,
+  page: number = 1
+): Promise<{ posts: BlogPostMeta[]; total: number; totalPages: number }> {
+  const all = await getAllPosts(locale);
+  const total = all.length;
+  const totalPages = Math.ceil(total / POSTS_PER_PAGE);
+  const start = (page - 1) * POSTS_PER_PAGE;
+  return {
+    posts: all.slice(start, start + POSTS_PER_PAGE),
+    total,
+    totalPages,
+  };
+}

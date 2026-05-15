@@ -659,7 +659,11 @@
     "minRead": "min read",
     "backToBlog": "Back to blog",
     "ctaLabel": "Have a project in mind?",
-    "ctaButton": "Let's talk"
+    "ctaButton": "Let's talk",
+    "page": "Page",
+    "pageOf": "of",
+    "prevPage": "Previous page",
+    "nextPage": "Next page"
   },
   "Common": {
     "loading": "Loading...",

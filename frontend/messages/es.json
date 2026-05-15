@@ -666,7 +666,11 @@
     "minRead": "min de lectura",
     "backToBlog": "Volver al blog",
     "ctaLabel": "¿Tienes un proyecto en mente?",
-    "ctaButton": "Hablemos"
+    "ctaButton": "Hablemos",
+    "page": "Página",
+    "pageOf": "de",
+    "prevPage": "Página anterior",
+    "nextPage": "Página siguiente"
   },
   "Common": {
     "loading": "Cargando...",
