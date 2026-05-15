@@ -31,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
-  // Blog posts — Spanish slugs (canonical) + English slugs
+  // Blog posts — Spanish slugs
   const esSlugs = getPostSlugs("es");
   for (const slug of esSlugs) {
     routes.push({
@@ -39,12 +39,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
-      alternates: {
-        languages: {
-          es: `${baseUrl}/blog/${slug}`,
-          en: `${baseUrl}/en/blog/${slug}`,
-        },
-      },
+    });
+  }
+
+  // Blog posts — English slugs (separate entries with /en/ prefix)
+  const enSlugs = getPostSlugs("en");
+  for (const slug of enSlugs) {
+    routes.push({
+      url: `${baseUrl}/en/blog/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
     });
   }
 
