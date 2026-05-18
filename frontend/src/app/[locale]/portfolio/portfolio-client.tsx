@@ -22,7 +22,7 @@ export default function PortfolioPage() {
   const locale = (params.locale as string) || "es";
 
   const projects = [
-    { title: "Lumina Commerce", category: tc("c1"), desc: { es: "Rediseño completo de plataforma y migración de stack obsoleto a Next.js. Aumento del 34% en tasa de conversión en 60 días post-lanzamiento.", en: "Complete platform redesign and migration from legacy stack to Next.js. 34% increase in conversion rate within 60 days post-launch." }, gradient: "from-violet-900/40 via-violet-800/20 to-transparent", size: "lg:col-span-2 lg:row-span-2" },
+    { title: "ContentSEO", category: tc("c1"), desc: { es: "SaaS que genera SEO completo y de calidad para agencias y empresas en forma de artículos", en: "SaaS that generates complete and quality SEO for agencies and companies in the form of articles" }, image: "/contentSEO.png", size: "lg:col-span-2 lg:row-span-2" },
     { title: "FinFast App", category: tc("c2"), desc: { es: "Rediseño de una aplicación móvil fintech que redujo la tasa de abandono de usuarios en un 41%.", en: "Fintech mobile app redesign that reduced user churn by 41%." }, gradient: "from-blue-900/40 via-blue-800/20 to-transparent", size: "" },
     { title: "LogisticsX AI Pipeline", category: tc("c3"), desc: { es: "Flujo de trabajo de IA personalizado que automatizó el 80% del procesamiento manual de documentos.", en: "Custom AI workflow that automated 80% of manual document processing." }, gradient: "from-emerald-900/40 via-emerald-800/20 to-transparent", size: "" },
     { title: "Zenith Architecture Brand", category: tc("c4"), desc: { es: "Identidad visual completa y sistema de marketing para una firma de arquitectura líder.", en: "Complete visual identity and marketing system for a leading architecture firm." }, gradient: "from-amber-900/30 via-amber-800/15 to-transparent", size: "lg:col-span-2" },
@@ -59,7 +59,11 @@ export default function PortfolioPage() {
                     custom={i * 0.15}
                     className={`group relative rounded-2xl overflow-hidden bg-white/[0.02] border border-white/[0.06] ${project.size} hover:bg-white/[0.04] transition-all duration-500`}
                   >
-                    <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient}`} />
+                    {project.image ? (
+                      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${project.image}')` }} />
+                    ) : (
+                      <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient}`} />
+                    )}
                     <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] mix-blend-overlay" />
                     <div className="absolute top-6 right-6 z-10 h-9 w-9 rounded-full bg-white/5 border border-white/[0.1] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0 -translate-y-2 group-hover:translate-y-0">
                       <ArrowUpRight className="h-4 w-4 text-white" />
