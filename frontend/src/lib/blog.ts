@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
@@ -23,7 +24,19 @@ export interface BlogPostMeta {
   readingTime: number;
 }
 
-const contentDir = path.join(process.cwd(), "content", "blog");
+const contentDir = (() => {
+  const candidates = [
+    path.join(process.cwd(), "content", "blog"),
+    path.join(process.cwd(), "..", "content", "blog"),
+    path.resolve(fileURLToPath(import.meta.url), "..", "..", "..", "..", "content", "blog"),
+  ];
+  for (const dir of candidates) {
+    if (fs.existsSync(path.join(dir, "es")) || fs.existsSync(path.join(dir, "en"))) {
+      return dir;
+    }
+  }
+  return candidates[0];
+})();
 
 export function getPostSlugs(locale: string): string[] {
   const dir = path.join(contentDir, locale);
