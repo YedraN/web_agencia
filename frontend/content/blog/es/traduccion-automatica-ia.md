@@ -3,6 +3,7 @@ title: "Traducción automática con IA: mejores herramientas en 2026"
 description: "La traducción automática con IA ha alcanzado niveles de calidad casi humanos. Comparativa de DeepL, Google Translate, GPT-5 y Claude 4 para traducción."
 date: "2025-11-10"
 tags: ["Traducción IA", "Traducción Automática", "NLP", "Herramientas IA"]
+---
 >
 
 La traducción automática ha experimentado avances extraordinarios gracias a los modelos de lenguaje. En 2026, las herramientas de traducción con IA ofrecen calidad cercana a la humana para la mayoría de combinaciones lingüísticas.

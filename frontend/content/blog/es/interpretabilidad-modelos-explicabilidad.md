@@ -3,6 +3,7 @@ title: "Interpretabilidad en IA: cómo entender las decisiones de los modelos"
 description: "La interpretabilidad en IA busca entender por qué los modelos toman decisiones. Técnicas, herramientas y por qué es crucial para la confianza en IA."
 date: "2025-08-18"
 tags: ["Interpretabilidad IA", "Explicabilidad", "XAI", "Transparencia IA"]
+---
 ">
 
 La interpretabilidad de la IA (XAI) es el campo que busca hacer comprensibles las decisiones de los modelos de inteligencia artificial. A medida que los modelos se vuelven más complejos, entender por qué toman ciertas decisiones se vuelve más crucial.

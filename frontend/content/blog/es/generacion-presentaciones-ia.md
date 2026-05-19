@@ -3,6 +3,7 @@ title: "Generación de presentaciones con IA: herramientas y técnicas"
 description: "Crea presentaciones profesionales con IA en minutos. Guía de herramientas, prompts efectivos y cómo mantener la calidad visual."
 date: "2025-11-24"
 tags: ["Presentaciones IA", "Generación Contenido", "Herramientas IA", "Productividad"]
+---
 >
 
 Crear presentaciones atractivas lleva horas de trabajo. La IA está cambiando esto, permitiendo generar presentaciones completas desde un prompt o un documento en cuestión de minutos.

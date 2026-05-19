@@ -3,6 +3,7 @@ title: "Transcripción de reuniones automática con inteligencia artificial"
 description: "La transcripción automática de reuniones con IA ahorra horas de trabajo. Herramientas, precisión actual y cómo integrarlas en tu flujo de trabajo."
 date: "2025-11-17"
 tags: ["Transcripción IA", "Reuniones", "Productividad", "Speech Recognition"]
+---
 >
 
 La transcripción automática de reuniones se ha convertido en una herramienta esencial para equipos que quieren capturar, buscar y compartir el conocimiento generado en sus conversaciones.

@@ -3,6 +3,7 @@ title: "Edge AI: inferencia de inteligencia artificial en el dispositivo"
 description: "Edge AI ejecuta modelos de inteligencia artificial directamente en dispositivos sin conexión a la nube. Beneficios, casos de uso y cómo implementarla."
 date: "2026-01-19"
 tags: ["Edge AI", "IA en Dispositivo", "IoT", "Inferencia Local"]
+---
 >
 
 Edge AI es la tecnología que permite ejecutar modelos de inteligencia artificial directamente en dispositivos locales (smartphones, cámaras, sensores IoT) sin depender de conexión a la nube.

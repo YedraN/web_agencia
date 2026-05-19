@@ -3,6 +3,7 @@ title: "Distillation de modelos IA: modelos pequeños con gran rendimiento"
 description: "La distillation de modelos permite crear modelos pequeños que mantienen el rendimiento de modelos grandes. Técnicas, herramientas y aplicaciones prácticas."
 date: "2026-05-04"
 tags: ["Distillation", "Modelos IA", "Optimización", "Eficiencia"]
+---
 >
 
 La distillation de modelos (knowledge distillation) es una técnica que permite transferir el conocimiento de un modelo grande y preciso (teacher) a un modelo pequeño y eficiente (student). Es clave para desplegar IA en dispositivos con recursos limitados.

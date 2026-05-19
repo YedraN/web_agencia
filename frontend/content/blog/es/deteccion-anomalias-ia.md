@@ -3,6 +3,7 @@ title: "Detección de anomalías con IA para sistemas en producción"
 description: "La detección de anomalías con IA permite identificar problemas en sistemas en producción antes de que afecten a usuarios. Guía de técnicas y herramientas."
 date: "2026-03-02"
 tags: ["Detección Anomalías", "Monitorización", "IA", "DevOps"]
+---
 >
 
 La detección de anomalías es una de las aplicaciones más valiosas del machine learning en operaciones. Permite identificar comportamientos anómalos en sistemas en producción antes de que se conviertan en incidentes.

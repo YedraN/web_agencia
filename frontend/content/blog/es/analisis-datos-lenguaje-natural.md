@@ -3,6 +3,7 @@ title: "Análisis de datos con lenguaje natural usando IA"
 description: "El análisis de datos con lenguaje natural permite a cualquiera obtener insights de datos sin saber SQL o Python. Guía de herramientas y casos de uso."
 date: "2025-12-15"
 tags: ["Análisis Datos", "Lenguaje Natural", "NLP", "Business Intelligence"]
+---
 >
 
 El análisis de datos con lenguaje natural (NL2Query) está democratizando el acceso a los datos. Cualquier persona en una organización puede hacer preguntas sobre los datos en lenguaje natural y obtener respuestas inmediatas.

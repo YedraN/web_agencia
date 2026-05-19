@@ -3,6 +3,7 @@ title: "Fine-tuning language models for specific use cases"
 description: "Fine-tuning allows adapting language models to specific domains. Practical guide to techniques, datasets, and best practices for fine-tuning."
 date: "2026-04-13"
 tags: ["Fine-tuning", "LLMs", "Language Models", "Personalization"]
+---
 >
 
 Fine-tuning language models is the technique that allows adapting a general model to a specific domain or task. It is the most effective method for improving performance on specialized use cases.

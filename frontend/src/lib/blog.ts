@@ -93,3 +93,59 @@ export async function getPostsPaginated(
     totalPages,
   };
 }
+
+export async function getPostsByTag(
+  locale: string,
+  tag: string
+): Promise<BlogPostMeta[]> {
+  const all = await getAllPosts(locale);
+  return all.filter((post) =>
+    post.tags.some((t) => t.toLowerCase() === tag.toLowerCase())
+  );
+}
+
+export async function getAllTags(locale: string): Promise<string[]> {
+  const all = await getAllPosts(locale);
+  const tags = new Set<string>();
+  for (const post of all) {
+    for (const tag of post.tags) {
+      tags.add(tag);
+    }
+  }
+  return Array.from(tags).sort();
+}
+
+export async function getRelatedPosts(
+  locale: string,
+  currentSlug: string,
+  tags: string[],
+  maxCount: number = 3
+): Promise<BlogPostMeta[]> {
+  const all = await getAllPosts(locale);
+  const others = all.filter((p) => p.slug !== currentSlug);
+
+  const scored = others.map((post) => {
+    const sharedTags = post.tags.filter((t) => tags.includes(t)).length;
+    return { post, score: sharedTags };
+  });
+
+  scored.sort((a, b) => {
+    if (b.score !== a.score) return b.score - a.score;
+    return new Date(b.post.date).getTime() - new Date(a.post.date).getTime();
+  });
+
+  return scored.slice(0, maxCount).map((s) => s.post);
+}
+
+export async function getAdjacentPosts(
+  locale: string,
+  currentSlug: string
+): Promise<{ prev: BlogPostMeta | null; next: BlogPostMeta | null }> {
+  const all = await getAllPosts(locale);
+  const idx = all.findIndex((p) => p.slug === currentSlug);
+  if (idx === -1) return { prev: null, next: null };
+  return {
+    prev: idx < all.length - 1 ? all[idx + 1] : null,
+    next: idx > 0 ? all[idx - 1] : null,
+  };
+}

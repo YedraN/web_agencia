@@ -3,6 +3,7 @@ title: "AI sentiment analysis for reviews and social media"
 description: "AI-powered sentiment analysis helps understand public opinion about your brand. Complete guide to tools, techniques, and applications."
 date: "2025-11-03"
 tags: ["Sentiment Analysis", "Social Listening", "NLP", "Online Reputation"]
+---
 >
 
 Sentiment analysis is one of the most practical applications of natural language processing. It allows businesses to understand how customers feel about their brand, products, or services at scale.

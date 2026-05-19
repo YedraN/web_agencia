@@ -3,6 +3,7 @@ title: "Automatización de documentación técnica con inteligencia artificial"
 description: "La IA está transformando la creación de documentación técnica. Guía de herramientas y flujos de trabajo para automatizar docs, API references y guías de usuario."
 date: "2025-10-06"
 tags: ["Documentación Técnica", "Automatización", "IA", "Developer Experience"]
+---
 >
 
 La documentación técnica es una de las tareas menos queridas por los desarrolladores, pero esencial para cualquier producto. La IA está cambiando esto, permitiendo generar y mantener documentación de alta calidad con mínima intervención manual.

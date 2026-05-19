@@ -3,6 +3,7 @@ title: "Natural language data analysis using AI"
 description: "Natural language data analysis enables anyone to gain data insights without knowing SQL or Python. Guide to tools and use cases."
 date: "2025-12-15"
 tags: ["Data Analysis", "Natural Language", "NLP", "Business Intelligence"]
+---
 >
 
 Natural language data analysis (NL2Query) is democratizing access to data. Anyone in an organization can ask questions about data in natural language and get immediate answers.

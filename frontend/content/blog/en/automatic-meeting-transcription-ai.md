@@ -3,6 +3,7 @@ title: "Automatic meeting transcription with artificial intelligence"
 description: "AI automatic meeting transcription saves hours of work. Tools, current accuracy, and how to integrate them into your workflow."
 date: "2025-11-17"
 tags: ["AI Transcription", "Meetings", "Productivity", "Speech Recognition"]
+---
 >
 
 Automatic meeting transcription has become an essential tool for teams wanting to capture, search, and share knowledge generated in their conversations.

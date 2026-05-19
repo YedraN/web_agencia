@@ -3,6 +3,7 @@ title: "Computer vision in web applications: practical use cases"
 description: "Computer vision on the web enables image recognition, object detection, and augmented reality in the browser. Use cases and APIs."
 date: "2025-12-22"
 tags: ["Computer Vision", "Artificial Vision", "Web", "AI APIs"]
+---
 >
 
 Computer vision has stopped being a laboratory technology. Today, any web application can integrate visual recognition capabilities using APIs and models that run in the browser.

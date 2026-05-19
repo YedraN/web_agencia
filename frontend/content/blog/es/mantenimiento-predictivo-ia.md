@@ -3,6 +3,7 @@ title: "Mantenimiento predictivo con machine learning"
 description: "El mantenimiento predictivo con ML reduce paradas no planificadas y costes de reparación. Guía de implementación, algoritmos y casos de éxito."
 date: "2026-03-09"
 tags: ["Mantenimiento Predictivo", "Machine Learning", "Industria", "IoT"]
+---
 >
 
 El mantenimiento predictivo es una de las aplicaciones industriales más rentables del machine learning. Permite predecir cuándo fallará un equipo y programar su mantenimiento antes de que ocurra la avería.

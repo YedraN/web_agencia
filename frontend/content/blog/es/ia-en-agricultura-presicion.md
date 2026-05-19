@@ -3,6 +3,7 @@ title: "IA en agricultura de precisión: el futuro del campo"
 description: "La inteligencia artificial está revolucionando la agricultura. Drones, sensores, predicción de cosechas y optimización de recursos para una agricultura más eficiente."
 date: "2026-04-06"
 tags: ["Agricultura IA", "Agricultura Precisión", "AgTech", "Sostenibilidad"]
+---
 >
 
 La agricultura de precisión impulsada por IA está transformando el sector agrícola. Con sensores, drones y algoritmos de machine learning, los agricultores pueden tomar decisiones más informadas y optimizar cada recurso.

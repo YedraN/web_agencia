@@ -3,6 +3,7 @@ title: "Análisis de sentimiento con IA para reviews y redes sociales"
 description: "El análisis de sentimiento con IA permite entender la opinión pública sobre tu marca. Guía completa de herramientas, técnicas y aplicaciones."
 date: "2025-11-03"
 tags: ["Análisis Sentimiento", "Social Listening", "NLP", "Reputación Online"]
+---
 >
 
 El análisis de sentimiento (sentiment analysis) es una de las aplicaciones más prácticas del procesamiento de lenguaje natural. Permite a las empresas entender cómo se sienten los clientes sobre su marca, productos o servicios a escala.

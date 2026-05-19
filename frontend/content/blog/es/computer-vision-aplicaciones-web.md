@@ -3,6 +3,7 @@ title: "Computer vision en aplicaciones web: casos de uso prácticos"
 description: "La computer vision en la web permite reconocimiento de imágenes, detección de objetos y realidad aumentada en el navegador. Casos de uso y APIs."
 date: "2025-12-22"
 tags: ["Computer Vision", "Visión Artificial", "Web", "APIs IA"]
+---
 >
 
 La computer vision (visión artificial) ha dejado de ser una tecnología de laboratorio. Hoy, cualquier aplicación web puede integrar capacidades de reconocimiento visual usando APIs y modelos que se ejecutan en el navegador.

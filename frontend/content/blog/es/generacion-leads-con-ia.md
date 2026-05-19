@@ -3,6 +3,7 @@ title: "Generación de leads B2B con inteligencia artificial"
 description: "La IA está transformando la generación de leads B2B. Estrategias, herramientas y flujos de trabajo para atraer y calificar prospectos automatizadamente."
 date: "2025-10-27"
 tags: ["Generación Leads", "B2B", "IA", "Marketing Digital"]
+---
 >
 
 La generación de leads B2B es uno de los mayores desafíos de marketing. La IA está cambiando las reglas, permitiendo identificar, atraer y calificar prospectos a una escala y precisión imposibles manualmente.

@@ -3,6 +3,7 @@ title: "AI in logistics: route optimization and supply chain"
 description: "Artificial intelligence is optimizing logistics and supply chains. Efficient routes, demand prediction, and intelligent inventory management."
 date: "2026-03-30"
 tags: ["AI in Logistics", "Route Optimization", "Supply Chain", "Logistics"]
+---
 >
 
 Logistics and supply chains are undergoing an AI-driven transformation. From route optimization to demand prediction, AI is making supply chains more efficient and resilient.

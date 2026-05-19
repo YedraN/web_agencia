@@ -20,6 +20,7 @@ export function Footer() {
     ],
     Legal: [
       { label: t("politicaPrivacidad"), href: "/privacy" },
+      { label: t("terminosServicio"), href: "/terms" },
     ],
   };
 

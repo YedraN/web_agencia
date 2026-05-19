@@ -3,6 +3,7 @@ title: "Sistemas de recomendación personalizados con machine learning"
 description: "Los sistemas de recomendación impulsan las plataformas digitales. Guía de algoritmos, implementación y mejores prácticas para recomendaciones personalizadas."
 date: "2026-01-05"
 tags: ["Sistemas Recomendación", "Machine Learning", "Personalización", "Filtrado Colaborativo"]
+---
 >
 
 Los sistemas de recomendación son el motor de las plataformas digitales modernas. Desde Netflix hasta Amazon, pasando por Spotify, las recomendaciones personalizadas son responsables de una parte significativa del engagement y las ventas.

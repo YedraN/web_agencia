@@ -3,6 +3,7 @@ title: "Generative AI for rapid digital product prototyping"
 description: "Generative AI is transforming digital product prototyping. From wireframes to functional MVPs, it accelerates the entire design process."
 date: "2026-02-09"
 tags: ["AI Prototyping", "Digital Product", "Generative AI", "UX"]
+---
 >
 
 Rapid prototyping is essential for validating digital product ideas. Generative AI is dramatically accelerating this process, enabling going from concept to functional prototype in hours instead of weeks.

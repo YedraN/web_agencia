@@ -3,6 +3,7 @@ title: "AI landing page creation: from prompt to page in minutes"
 description: "AI landing pages are created in minutes. Guide to tools, best practices, and how to maintain conversion with AI-generated design."
 date: "2025-12-01"
 tags: ["Landing Pages", "AI", "Web Generation", "Conversion"]
+---
 >
 
 Creating effective landing pages used to require a designer, copywriter, and developer. With AI, you can go from idea to published page in minutes.

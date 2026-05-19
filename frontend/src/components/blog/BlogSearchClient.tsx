@@ -87,13 +87,15 @@ export default function BlogSearchClient({ posts, locale, translations }: Props)
                 {post.tags.length > 0 && (
                   <div className="flex flex-wrap gap-2 mb-4">
                     {post.tags.slice(0, 2).map((tag) => (
-                      <span
+                      <Link
                         key={tag}
-                        className="inline-flex items-center gap-1 rounded-full bg-white/[0.06] px-2.5 py-0.5 text-xs text-white/40"
+                        href={`/blog/tag/${tag}`}
+                        onClick={(e) => e.stopPropagation()}
+                        className="inline-flex items-center gap-1 rounded-full bg-white/[0.06] px-2.5 py-0.5 text-xs text-white/40 hover:text-white hover:bg-white/[0.1] transition-colors"
                       >
                         <Tag className="h-2.5 w-2.5" />
                         {tag}
-                      </span>
+                      </Link>
                     ))}
                   </div>
                 )}

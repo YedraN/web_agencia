@@ -3,6 +3,7 @@ title: "Open source vs IA propietaria: qué modelo elegir para tu empresa"
 description: "La decisión entre modelos open source y propietarios es estratégica. Comparativa de costes, control, personalización y casos de uso recomendados."
 date: "2026-01-26"
 tags: ["Open Source", "IA Propietaria", "Selección Modelo", "Estrategia IA"]
+---
 >
 
 Una de las decisiones más importantes al adoptar IA es elegir entre modelos open source (Llama 4, Mistral, DeepSeek) o propietarios (GPT-5, Claude 4, Gemini 3). Cada opción tiene ventajas según tu caso de uso.

@@ -3,6 +3,7 @@ title: "Vector databases: storage for AI applications"
 description: "Vector databases are essential for modern AI applications. Comparison of solutions, use cases, and implementation guide."
 date: "2026-04-20"
 tags: ["Vector Databases", "Vectors", "AI", "RAG"]
+---
 >
 
 Vector databases have become an essential component of modern AI infrastructure. They are the storage that enables semantic search, RAG systems, and recommendation systems.

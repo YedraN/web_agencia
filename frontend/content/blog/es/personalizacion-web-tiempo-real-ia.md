@@ -3,6 +3,7 @@ title: "Personalización web en tiempo real con inteligencia artificial"
 description: "La personalización web con IA adapta cada visita al perfil del usuario. Cómo funciona, tecnologías involucradas y resultados medibles."
 date: "2026-02-23"
 tags: ["Personalización Web", "IA", "Experiencia Usuario", "Tiempo Real"]
+---
 >
 
 La personalización web en tiempo real es una de las aplicaciones más poderosas de la IA en marketing digital. Permite mostrar a cada visitante una versión única de tu sitio adaptada a sus intereses y comportamiento.

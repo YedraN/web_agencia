@@ -1,10 +1,22 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getPostBySlug, getPostSlugs } from "@/lib/blog";
+import {
+  getPostBySlug,
+  getPostSlugs,
+  getRelatedPosts,
+  getAdjacentPosts,
+} from "@/lib/blog";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Link as I18nLink } from "@/i18n/routing";
-import { ArrowLeft, Clock, Tag } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  Clock,
+  Tag,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import { routing } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
 
@@ -66,6 +78,11 @@ export default async function BlogPostPage({ params }: Props) {
 
   const t = await getTranslations("Blog");
 
+  const [relatedPosts, { prev, next }] = await Promise.all([
+    getRelatedPosts(locale, slug, post.tags, 3),
+    getAdjacentPosts(locale, slug),
+  ]);
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -111,13 +128,14 @@ export default async function BlogPostPage({ params }: Props) {
           {post.tags.length > 0 && (
             <div className="flex flex-wrap gap-2 mb-6">
               {post.tags.map((tag) => (
-                <span
+                <I18nLink
                   key={tag}
-                  className="inline-flex items-center gap-1 rounded-full border border-white/[0.08] bg-white/[0.04] px-2.5 py-0.5 text-xs text-white/40"
+                  href={`/blog/tag/${tag}`}
+                  className="inline-flex items-center gap-1 rounded-full border border-white/[0.08] bg-white/[0.04] px-2.5 py-0.5 text-xs text-white/40 hover:text-white hover:border-white/[0.16] transition-colors"
                 >
                   <Tag className="h-2.5 w-2.5" />
                   {tag}
-                </span>
+                </I18nLink>
               ))}
             </div>
           )}
@@ -147,6 +165,72 @@ export default async function BlogPostPage({ params }: Props) {
             className="article-content"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
+
+          {/* Previous / Next navigation */}
+          {(prev || next) && (
+            <nav className="mt-16 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {prev ? (
+                <I18nLink
+                  href={`/blog/${prev.slug}`}
+                  className="group flex flex-col gap-1 rounded-2xl border border-white/[0.06] bg-white/[0.02] p-5 hover:border-white/[0.12] transition-colors"
+                >
+                  <span className="flex items-center gap-1 text-xs text-white/30">
+                    <ChevronLeft className="h-3 w-3" />
+                    {t("previousPost")}
+                  </span>
+                  <span className="text-sm text-white/70 group-hover:text-white transition-colors line-clamp-2">
+                    {prev.title}
+                  </span>
+                </I18nLink>
+              ) : (
+                <div />
+              )}
+              {next ? (
+                <I18nLink
+                  href={`/blog/${next.slug}`}
+                  className="group flex flex-col gap-1 rounded-2xl border border-white/[0.06] bg-white/[0.02] p-5 hover:border-white/[0.12] transition-colors sm:text-right"
+                >
+                  <span className="flex items-center gap-1 text-xs text-white/30 sm:justify-end">
+                    {t("nextPost")}
+                    <ChevronRight className="h-3 w-3" />
+                  </span>
+                  <span className="text-sm text-white/70 group-hover:text-white transition-colors line-clamp-2">
+                    {next.title}
+                  </span>
+                </I18nLink>
+              ) : (
+                <div />
+              )}
+            </nav>
+          )}
+
+          {/* Related posts */}
+          {relatedPosts.length > 0 && (
+            <section className="mt-16 pt-12 border-t border-white/[0.06]">
+              <h2 className="text-lg font-semibold text-white mb-6">
+                {t("relatedPosts")}
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {relatedPosts.map((rp) => (
+                  <I18nLink
+                    key={rp.slug}
+                    href={`/blog/${rp.slug}`}
+                    className="group flex flex-col rounded-2xl border border-white/[0.06] bg-white/[0.02] p-4 hover:border-white/[0.12] transition-colors"
+                  >
+                    <span className="text-sm font-medium text-white/80 group-hover:text-white transition-colors line-clamp-2 mb-2">
+                      {rp.title}
+                    </span>
+                    <span className="text-xs text-white/30 line-clamp-2 flex-1">
+                      {rp.description}
+                    </span>
+                    <span className="flex items-center gap-1 text-xs text-white/20 group-hover:text-white/50 transition-colors mt-3">
+                      {t("minRead")} <ArrowRight className="h-3 w-3" />
+                    </span>
+                  </I18nLink>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* CTA */}
           <div className="mt-16 pt-12 border-t border-white/[0.06] rounded-2xl">

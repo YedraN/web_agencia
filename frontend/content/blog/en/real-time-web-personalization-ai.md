@@ -3,6 +3,7 @@ title: "Real-time web personalization with artificial intelligence"
 description: "AI web personalization adapts each visit to the user's profile. How it works, technologies involved, and measurable results."
 date: "2026-02-23"
 tags: ["Web Personalization", "AI", "User Experience", "Real-Time"]
+---
 >
 
 Real-time web personalization is one of the most powerful applications of AI in digital marketing. It allows showing each visitor a unique version of your site adapted to their interests and behavior.

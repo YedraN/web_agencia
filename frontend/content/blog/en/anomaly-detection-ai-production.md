@@ -3,6 +3,7 @@ title: "Anomaly detection with AI for production systems"
 description: "AI anomaly detection enables identifying problems in production systems before they affect users. Guide to techniques and tools."
 date: "2026-03-02"
 tags: ["Anomaly Detection", "Monitoring", "AI", "DevOps"]
+---
 >
 
 Anomaly detection is one of the most valuable applications of machine learning in operations. It enables identifying abnormal behaviors in production systems before they become incidents.

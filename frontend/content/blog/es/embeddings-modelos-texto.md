@@ -3,6 +3,7 @@ title: "Embeddings: cómo los modelos representan el significado del texto"
 description: "Los embeddings son la base de la IA moderna. Cómo funcionan, cómo usarlos para búsqueda semántica, clasificación y sistemas RAG."
 date: "2026-04-27"
 tags: ["Embeddings", "Vectores", "NLP", "Búsqueda Semántica"]
+---
 >
 
 Los embeddings son el concepto fundamental que hace posible la IA moderna. Son representaciones numéricas del significado del texto que permiten a las máquinas entender relaciones semánticas entre palabras y documentos.

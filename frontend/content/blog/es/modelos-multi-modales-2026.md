@@ -3,6 +3,7 @@ title: "Modelos multi-modales en 2026: texto, imagen, audio y vídeo"
 description: "Los modelos multimodales procesan texto, imagen, audio y vídeo simultáneamente. Cómo funcionan, aplicaciones y por qué son el futuro de la IA."
 date: "2026-01-12"
 tags: ["Modelos Multimodales", "IA", "GPT-5", "Gemini 3"]
+---
 >
 
 Los modelos multimodales representan la evolución más importante de la IA en 2026. A diferencia de los modelos de solo texto, pueden procesar y razonar sobre múltiples tipos de datos simultáneamente.

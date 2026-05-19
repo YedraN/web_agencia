@@ -3,6 +3,7 @@ title: "Creación de landing pages con IA: de prompt a página en minutos"
 description: "Las landing pages con IA se crean en minutos. Guía de herramientas, mejores prácticas y cómo mantener la conversión con diseño generado por IA."
 date: "2025-12-01"
 tags: ["Landing Pages", "IA", "Generación Web", "Conversión"]
+---
 >
 
 Crear landing pages efectivas solía requerir diseñador, copywriter y desarrollador. Con la IA, puedes pasar de la idea a una página publicada en minutos.

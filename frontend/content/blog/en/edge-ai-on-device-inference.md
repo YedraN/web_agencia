@@ -3,6 +3,7 @@ title: "Edge AI: on-device artificial intelligence inference"
 description: "Edge AI runs artificial intelligence models directly on devices without cloud connection. Benefits, use cases, and how to implement it."
 date: "2026-01-19"
 tags: ["Edge AI", "On-Device AI", "IoT", "Local Inference"]
+---
 >
 
 Edge AI is the technology that enables running artificial intelligence models directly on local devices (smartphones, cameras, IoT sensors) without relying on cloud connection.

@@ -3,6 +3,7 @@ title: "Bases de datos vectoriales: el almacenamiento para aplicaciones de IA"
 description: "Las bases de datos vectoriales son esenciales para aplicaciones de IA moderna. Comparativa de soluciones, casos de uso y guía de implementación."
 date: "2026-04-20"
 tags: ["Bases Datos Vectoriales", "Vectores", "IA", "RAG"]
+---
 >
 
 Las bases de datos vectoriales se han convertido en un componente esencial de la infraestructura de IA moderna. Son el almacenamiento que permite la búsqueda semántica, los sistemas RAG y los sistemas de recomendación.

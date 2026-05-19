@@ -3,6 +3,7 @@ title: "Predictive maintenance with machine learning"
 description: "Predictive maintenance with ML reduces unplanned downtime and repair costs. Implementation guide, algorithms, and success stories."
 date: "2026-03-09"
 tags: ["Predictive Maintenance", "Machine Learning", "Industry", "IoT"]
+---
 >
 
 Predictive maintenance is one of the most profitable industrial applications of machine learning. It enables predicting when equipment will fail and scheduling maintenance before breakdown occurs.

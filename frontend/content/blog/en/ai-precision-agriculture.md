@@ -3,6 +3,7 @@ title: "AI in precision agriculture: the future of farming"
 description: "Artificial intelligence is revolutionizing agriculture. Drones, sensors, crop prediction, and resource optimization for more efficient farming."
 date: "2026-04-06"
 tags: ["AI Agriculture", "Precision Agriculture", "AgTech", "Sustainability"]
+---
 >
 
 AI-powered precision agriculture is transforming the agricultural sector. With sensors, drones, and machine learning algorithms, farmers can make more informed decisions and optimize every resource.

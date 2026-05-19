@@ -3,6 +3,7 @@ title: "IA generativa para prototipado rápido de productos digitales"
 description: "La IA generativa está transformando el prototipado de productos digitales. Desde wireframes hasta MVPs funcionales, acelera todo el proceso de diseño."
 date: "2026-02-09"
 tags: ["Prototipado IA", "Producto Digital", "IA Generativa", "UX"]
+---
 >
 
 El prototipado rápido es esencial para validar ideas de productos digitales. La IA generativa está acelerando este proceso drásticamente, permitiendo pasar de concepto a prototipo funcional en horas en lugar de semanas.

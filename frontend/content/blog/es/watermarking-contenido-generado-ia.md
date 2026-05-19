@@ -3,6 +3,7 @@ title: "Watermarking: cómo identificar contenido generado por IA"
 description: "El watermarking en IA permite identificar contenido generado por modelos. Técnicas actuales, estándares emergentes y por qué es importante para la transparencia."
 date: "2025-09-15"
 tags: ["Watermarking", "Contenido IA", "Identificación", "Transparencia"]
+---
 ">
 
 El watermarking (marcado de agua) en contenido generado por IA es una de las técnicas más prometedoras para garantizar la transparencia y evitar la desinformación. Tanto gobiernos como empresas están impulsando su adopción.

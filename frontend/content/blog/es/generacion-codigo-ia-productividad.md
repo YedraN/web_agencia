@@ -3,6 +3,7 @@ title: "Generación de código con IA: cómo aumenta la productividad del desarr
 description: "La generación de código con IA está transformando el desarrollo de software. Datos de productividad, herramientas y cómo integrarla en tu flujo."
 date: "2026-02-02"
 tags: ["Generación Código", "IA", "Productividad", "Desarrollo Software"]
+---
 >
 
 La generación de código con IA ha pasado de ser una novedad a una herramienta esencial para desarrolladores. Los datos muestran mejoras significativas en productividad cuando se usa correctamente.

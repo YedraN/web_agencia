@@ -3,6 +3,7 @@ title: "IA en finanzas: predicción de mercados con machine learning"
 description: "La inteligencia artificial está transformando las finanzas: predicción de mercados, detección de fraudes, trading algorítmico y asesoramiento financiero automatizado."
 date: "2025-06-09"
 tags: ["IA en Finanzas", "Predicción Mercados", "Trading Algorítmico", "Machine Learning"]
+---
 ">
 
 El sector financiero fue uno de los primeros en adoptar la inteligencia artificial a gran escala. Hoy, la IA es fundamental para la predicción de mercados, la gestión de riesgos y la detección de fraudes.

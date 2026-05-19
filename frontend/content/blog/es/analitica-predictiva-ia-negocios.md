@@ -3,6 +3,7 @@ title: "Analítica predictiva con IA para tomar decisiones de negocio"
 description: "La analítica predictiva con IA permite anticipar tendencias, comportamientos y resultados. Guía de técnicas, herramientas y aplicaciones empresariales."
 date: "2026-03-23"
 tags: ["Analítica Predictiva", "IA", "Business Intelligence", "Toma Decisiones"]
+---
 >
 
 La analítica predictiva con inteligencia artificial está transformando la toma de decisiones empresariales. Permite pasar de entender qué pasó (analítica descriptiva) a predecir qué pasará y actuar en consecuencia.

@@ -3,6 +3,7 @@ title: "IA en ventas: predicción de leads y cierre de oportunidades"
 description: "La inteligencia artificial está transformando las ventas B2B y B2C. Predicción de leads, scoring inteligente y asistentes de ventas con IA."
 date: "2025-10-20"
 tags: ["IA en Ventas", "Predicción Leads", "Scoring", "CRM IA"]
+---
 >
 
 La inteligencia artificial está revolucionando el proceso de ventas. Desde la identificación de leads hasta el cierre de oportunidades, la IA permite a los equipos comerciales ser más efectivos y eficientes.

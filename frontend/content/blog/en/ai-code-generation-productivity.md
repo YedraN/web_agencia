@@ -3,6 +3,7 @@ title: "AI code generation: how it boosts developer productivity"
 description: "AI code generation is transforming software development. Productivity data, tools, and how to integrate it into your workflow."
 date: "2026-02-02"
 tags: ["Code Generation", "AI", "Productivity", "Software Development"]
+---
 >
 
 AI code generation has gone from novelty to essential tool for developers. Data shows significant productivity improvements when used correctly.

@@ -3,6 +3,7 @@ title: "Speech recognition: practical voice recognition applications"
 description: "AI speech recognition has reached maturity. Practical applications in customer service, accessibility, automation, and more."
 date: "2025-12-29"
 tags: ["Speech Recognition", "Voice Recognition", "AI", "Accessibility"]
+---
 >
 
 Speech recognition has reached a level of accuracy that makes it viable for professional applications. In 2026, it is a mature and accessible technology.

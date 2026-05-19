@@ -3,6 +3,7 @@ title: "IA generativa en diseño de producto digital: flujos de trabajo"
 description: "La IA generativa está transformando el diseño de productos digitales. Flujos de trabajo, herramientas y cómo integrarla en el proceso de diseño."
 date: "2026-03-16"
 tags: ["Diseño Producto", "IA Generativa", "UX Design", "Herramientas Diseño"]
+---
 >
 
 La IA generativa está cambiando fundamentalmente cómo se diseñan los productos digitales. Desde la investigación inicial hasta el handoff a desarrollo, la IA puede acelerar y mejorar cada fase del proceso.

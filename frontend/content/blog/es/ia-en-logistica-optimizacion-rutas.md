@@ -3,6 +3,7 @@ title: "IA en logística: optimización de rutas y cadena de suministro"
 description: "La inteligencia artificial está optimizando la logística y la cadena de suministro. Rutas eficientes, predicción de demanda y gestión de inventario inteligente."
 date: "2026-03-30"
 tags: ["IA en Logística", "Optimización Rutas", "Cadena Suministro", "Supply Chain"]
+---
 >
 
 La logística y la cadena de suministro están experimentando una transformación impulsada por la IA. Desde la optimización de rutas hasta la predicción de demanda, la IA está haciendo las cadenas de suministro más eficientes y resilientes.

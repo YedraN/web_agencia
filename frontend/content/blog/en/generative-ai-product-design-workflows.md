@@ -3,6 +3,7 @@ title: "Generative AI in digital product design: workflows"
 description: "Generative AI is transforming digital product design. Workflows, tools, and how to integrate it into the design process."
 date: "2026-03-16"
 tags: ["Product Design", "Generative AI", "UX Design", "Design Tools"]
+---
 >
 
 Generative AI is fundamentally changing how digital products are designed. From initial research to development handoff, AI can accelerate and improve every phase of the process.

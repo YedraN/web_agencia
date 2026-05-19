@@ -3,6 +3,7 @@ title: "AI model distillation: small models with great performance"
 description: "Model distillation enables creating small models that maintain the performance of large ones. Techniques, tools, and practical applications."
 date: "2026-05-04"
 tags: ["Distillation", "AI Models", "Optimization", "Efficiency"]
+---
 >
 
 Model distillation (knowledge distillation) is a technique that transfers knowledge from a large, accurate model (teacher) to a small, efficient model (student). It is key to deploying AI on resource-limited devices.

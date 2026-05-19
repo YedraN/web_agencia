@@ -3,6 +3,7 @@ title: "Multi-modal models in 2026: text, image, audio and video"
 description: "Multi-modal models process text, image, audio, and video simultaneously. How they work, applications, and why they are the future of AI."
 date: "2026-01-12"
 tags: ["Multi-modal Models", "AI", "GPT-5", "Gemini 3"]
+---
 >
 
 Multi-modal models represent the most important evolution in AI in 2026. Unlike text-only models, they can process and reason about multiple data types simultaneously.

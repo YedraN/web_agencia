@@ -3,6 +3,7 @@ title: "AI presentation generation: tools and techniques"
 description: "Create professional AI presentations in minutes. Guide to tools, effective prompts, and how to maintain visual quality."
 date: "2025-11-24"
 tags: ["AI Presentations", "Content Generation", "AI Tools", "Productivity"]
+---
 >
 
 Creating engaging presentations takes hours of work. AI is changing this, enabling generation of complete presentations from a prompt or document in minutes.

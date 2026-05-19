@@ -3,6 +3,7 @@ title: "Personalized recommendation systems with machine learning"
 description: "Recommendation systems power digital platforms. Guide to algorithms, implementation, and best practices for personalized recommendations."
 date: "2026-01-05"
 tags: ["Recommendation Systems", "Machine Learning", "Personalization", "Collaborative Filtering"]
+---
 >
 
 Recommendation systems are the engine of modern digital platforms. From Netflix to Amazon to Spotify, personalized recommendations are responsible for a significant portion of engagement and sales.

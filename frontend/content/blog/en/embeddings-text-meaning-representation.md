@@ -3,6 +3,7 @@ title: "Embeddings: how models represent text meaning"
 description: "Embeddings are the foundation of modern AI. How they work, how to use them for semantic search, classification, and RAG systems."
 date: "2026-04-27"
 tags: ["Embeddings", "Vectors", "NLP", "Semantic Search"]
+---
 >
 
 Embeddings are the fundamental concept that makes modern AI possible. They are numerical representations of text meaning that enable machines to understand semantic relationships between words and documents.

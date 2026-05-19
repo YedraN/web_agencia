@@ -3,6 +3,7 @@ title: "IA en atención al cliente en 2026: más allá de los chatbots"
 description: "La IA en atención al cliente ha evolucionado más allá de los chatbots simples. Sistemas multi-agente, agentes autónomos y personalización predictiva."
 date: "2025-10-13"
 tags: ["Atención al Cliente", "Chatbots", "IA", "Customer Experience"]
+---
 >
 
 La atención al cliente ha sido uno de los primeros campos en adoptar IA a gran escala. Pero en 2026, hemos ido mucho más allá de los chatbots básicos que responden preguntas frecuentes.

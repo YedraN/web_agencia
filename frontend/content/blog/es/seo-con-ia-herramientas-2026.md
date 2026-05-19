@@ -3,6 +3,7 @@ title: "SEO con IA: herramientas de inteligencia artificial para posicionamiento
 description: "El SEO está siendo transformado por la IA. Herramientas, estrategias y flujos de trabajo para optimizar tu posicionamiento con inteligencia artificial."
 date: "2025-12-08"
 tags: ["SEO IA", "Posicionamiento", "Herramientas SEO", "Marketing Digital"]
+---
 >
 
 La inteligencia artificial está cambiando el SEO de forma fundamental. Desde la investigación de palabras clave hasta la optimización de contenido, la IA permite hacer mejor y más rápido todo lo que ya hacíamos.

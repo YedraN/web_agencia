@@ -3,6 +3,7 @@ title: "Speech recognition: aplicaciones prácticas de reconocimiento de voz"
 description: "El reconocimiento de voz con IA ha alcanzado madurez. Aplicaciones prácticas en atención al cliente, accesibilidad, automatización y más."
 date: "2025-12-29"
 tags: ["Speech Recognition", "Reconocimiento Voz", "IA", "Accesibilidad"]
+---
 >
 
 El reconocimiento de voz (speech recognition) ha alcanzado un nivel de precisión que lo hace viable para aplicaciones profesionales. En 2026, es una tecnología madura y accesible.
