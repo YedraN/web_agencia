@@ -14,6 +14,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { NotificationProvider } from "@/contexts/NotificationContext";
 import { cookies } from "next/headers";
 import { Analytics } from "@vercel/analytics/next"
+import Script from "next/script"
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -106,6 +107,18 @@ export default async function RootLayout({
       className={`${plusJakarta.variable} antialiased dark`}
 
     >
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=AW-18143155550"
+        strategy="afterInteractive"
+      />
+      <Script id="google-ads-config" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-18143155550');
+        `}
+      </Script>
       <body className="min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden">
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider
