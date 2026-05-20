@@ -644,7 +644,7 @@ export function LandingClient() {
                   </div>
                 </a>
                 <a
-                  href="mailto:juanjoyedra2017@gmail.com"
+                  href="mailto:contact@vynta.dev"
                   className="flex items-center gap-3 text-white/70 hover:text-white transition-colors"
                 >
                   <div className="h-10 w-10 rounded-xl bg-white/[0.05] flex items-center justify-center">
@@ -652,7 +652,7 @@ export function LandingClient() {
                   </div>
                   <div>
                     <div className="text-xs text-white/30">Email</div>
-                    <div className="text-sm font-medium">juanjoyedra2017@gmail.com</div>
+                    <div className="text-sm font-medium">contact@vynta.dev</div>
                   </div>
                 </a>
               </div>
