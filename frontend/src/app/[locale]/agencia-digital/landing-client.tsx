@@ -20,6 +20,8 @@ import {
   Loader2,
   ChevronDown,
   Star,
+  Bot,
+  Smartphone,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -94,6 +96,18 @@ const services = [
     desc: "SEO técnico desde el primer día y mantenimiento mensual para que la web siga creciendo.",
     features: ["Core Web Vitals 90+", "Datos estructurados", "Backups y seguridad", "Soporte mensual"],
   },
+  {
+    icon: Bot,
+    title: "Automatización con IA",
+    desc: "Chatbots, agentes y flujos automáticos con LLMs para optimizar procesos de negocio.",
+    features: ["Chatbots a medida", "Agentes con LLMs", "Integraciones (CRM, email…)", "Dashboard de métricas"],
+  },
+  {
+    icon: Smartphone,
+    title: "Aplicaciones móviles",
+    desc: "Apps híbridas iOS y Android con React Native. Del prototipo al store en tiempo récord.",
+    features: ["React Native / Expo", "iOS + Android", "Diseño nativo", "API + backend incluido"],
+  },
 ];
 
 const benefits = [
@@ -146,6 +160,8 @@ const projectTypes = [
   "Web corporativa",
   "Tienda online (e-commerce)",
   "Aplicación web (web app)",
+  "Automatización con IA",
+  "Aplicación móvil",
   "Rediseño de web actual",
   "Landing page para campaña",
   "Otro",
@@ -161,7 +177,7 @@ const trustBadges = [
 const faqs = [
   {
     q: "¿Cuánto cuesta diseñar y desarrollar una página web profesional?",
-    a: "El precio depende del alcance del proyecto. Una web corporativa parte desde 1.200€, una tienda online desde 2.800€ y una aplicación web a medida desde 6.000€. Te enviamos un presupuesto detallado y sin compromiso en menos de 24 horas.",
+    a: "El precio depende del alcance del proyecto. Una web corporativa parte desde 1.200€, una tienda online desde 2.800€ y una aplicación web a medida desde 6.000€. Una automatización con IA parte desde 1.200€ y una app móvil desde 4.000€. Te enviamos un presupuesto detallado y sin compromiso en menos de 24 horas.",
   },
   {
     q: "¿Cuánto tiempo tarda en estar lista mi web?",
@@ -194,6 +210,49 @@ const faqs = [
   {
     q: "¿Qué pasa si ya tengo una web y solo quiero rediseñarla?",
     a: "Hacemos rediseños y migraciones manteniendo el SEO existente. Auditamos tu web actual, identificamos qué conserva valor y construimos sobre ello sin perder posicionamiento.",
+  },
+  {
+    q: "¿Hacéis aplicaciones móviles?",
+    a: "Sí. Desarrollamos apps híbridas para iOS y Android con React Native/Expo. Un MVP parte desde 4.000€ e incluye diseño, desarrollo y publicación en App Store y Google Play. Las apps se comunican con tu backend existente o construimos uno a medida.",
+  },
+  {
+    q: "¿En qué consiste la automatización con IA?",
+    a: "Desde chatbots inteligentes integrados en tu web hasta agentes que automatizan tareas internas: responder correos, generar informes, actualizar el CRM o cualquier flujo repetitivo. Los proyectos parten desde 1.200€ dependiendo del alcance y los sistemas a integrar.",
+  },
+];
+
+const pricing = [
+  {
+    title: "Web corporativa",
+    price: "1.200",
+    features: ["Hasta 8 páginas", "SEO técnico base", "100% responsive", "Panel CMS opcional"],
+  },
+  {
+    title: "Tienda online",
+    price: "2.800",
+    popular: true,
+    features: ["Catálogo dinámico", "Pasarela de pago", "Gestión de stock", "Multi-idioma"],
+  },
+  {
+    title: "Aplicación web",
+    price: "6.000",
+    features: ["A medida", "Auth + roles", "Panel admin", "API propia"],
+  },
+  {
+    title: "Automatización IA",
+    price: "1.200",
+    features: ["Chatbot o agente", "Integración LLM", "Conexión a tus sistemas", "Métricas incluidas"],
+  },
+  {
+    title: "App móvil (MVP)",
+    price: "4.000",
+    features: ["iOS + Android", "React Native", "Backend incluido", "Publicación en stores"],
+  },
+  {
+    title: "SEO / Mantenimiento",
+    price: "250",
+    perMonth: true,
+    features: ["Backups diarios", "Actualizaciones", "Soporte mensual", "Informes de rendimiento"],
   },
 ];
 
@@ -420,7 +479,7 @@ export function LandingClient() {
               </motion.h2>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-5">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
               {services.map((svc, i) => {
                 const Icon = svc.icon;
                 return (
@@ -454,6 +513,104 @@ export function LandingClient() {
                 );
               })}
             </div>
+          </div>
+        </section>
+
+        {/* PRECIOS */}
+        <section className="py-28 border-t border-white/[0.06]">
+          <div className="mx-auto max-w-7xl px-6 sm:px-10">
+            <div className="max-w-2xl mb-16">
+              <motion.p
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-4"
+              >
+                Tarifas
+              </motion.p>
+              <motion.h2
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                custom={0.5}
+                className="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-[1.05]"
+              >
+                Precios claros,
+                <br />
+                <span className="text-white/30 font-light italic">sin letra pequeña.</span>
+              </motion.h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {pricing.map((item, i) => (
+                <motion.div
+                  key={item.title}
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  custom={i * 0.1}
+                  className={`relative flex flex-col p-8 rounded-2xl border transition-all duration-500 ${
+                    item.popular
+                      ? "border-emerald-500/30 bg-emerald-500/[0.04] hover:bg-emerald-500/[0.06]"
+                      : "border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04]"
+                  }`}
+                >
+                  {item.popular && (
+                    <div className="absolute -top-3 left-8">
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/20 border border-emerald-500/30 px-3 py-1 text-xs font-semibold text-emerald-400 uppercase tracking-widest">
+                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                        Más solicitado
+                      </span>
+                    </div>
+                  )}
+                  <h3 className="text-lg font-bold text-white mb-4">{item.title}</h3>
+                  <div className="mb-6">
+                    <span className="text-xs text-white/35 uppercase tracking-widest">desde</span>
+                    <div className="flex items-baseline gap-1 mt-1">
+                      <span className="text-5xl font-extrabold text-white tracking-tight">
+                        €{item.price}
+                      </span>
+                      {item.perMonth && (
+                        <span className="text-sm text-white/40 font-medium">/mes</span>
+                      )}
+                    </div>
+                  </div>
+                  <ul className="space-y-2.5 flex-1 mb-8">
+                    {item.features.map((feat) => (
+                      <li key={feat} className="flex items-center gap-3 text-sm text-white/55">
+                        <CheckCircle2 className="h-3.5 w-3.5 text-white/30 shrink-0" />
+                        {feat}
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href="#contacto"
+                    className={`inline-flex items-center justify-center gap-2 rounded-xl h-10 px-5 text-sm font-semibold transition-colors ${
+                      item.popular
+                        ? "bg-emerald-500/20 text-emerald-300 hover:bg-emerald-500/30 border border-emerald-500/20"
+                        : "bg-white/[0.06] text-white/70 hover:bg-white/10 hover:text-white"
+                    }`}
+                  >
+                    Pedir presupuesto
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </a>
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.p
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={0.8}
+              className="mt-10 text-center text-sm text-white/30"
+            >
+              Todos los precios son orientativos. Te enviamos presupuesto detallado y sin compromiso en menos de 24h.
+            </motion.p>
           </div>
         </section>
 
